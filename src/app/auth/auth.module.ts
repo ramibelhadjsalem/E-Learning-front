@@ -7,6 +7,7 @@ import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupProfComponent } from './signup-prof/signup-prof.component';
 import { SignupAdminComponent } from './signup-admin/signup-admin.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    RouterModule
+    RouterModule,
+     ReactiveFormsModule
   ]
 })
 export class AuthModule { }

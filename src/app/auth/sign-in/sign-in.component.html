@@ -1,1 +1,24 @@
-<p>sign-in works!</p>
+<div class="container-fluid ">
+    <div class="row ">
+        <div class="col-md-6 col-sm-12 imgcontainer">
+            <img src="../../../assets/images/login.png" alt="" class="img-fluid ">
+            <a class="align-self-center" routerLink="/register-user">Créer un compte</a>
+        </div>
+        <div class="col-md-6 p-3 d-flex align-items-center justify-content-center">
+            <form [formGroup]="loginForm">
+                <h4 class="title text-uppercase h1 my-4"> login</h4>
+                <div class=" form-control ">
+                    <i class="bi bi-person-fill"></i>
+                    <input type="text" formControlName="username" placeholder="Numbre de telephone ou Email">
+                </div>
+                <div class=" form-control ">
+                    <i class="bi bi-file-lock-fill"></i>
+                    <input  class=" border-0" type="password" formControlName="password" placeholder="Mots de passe">
+                </div>
+                <div class="form-control border-0">
+                    <input [disabled]="!loginForm.valid" type="submit" class="send-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

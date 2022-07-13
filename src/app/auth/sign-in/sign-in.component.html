@@ -5,7 +5,7 @@
             <a class="align-self-center" routerLink="/register-user">Créer un compte</a>
         </div>
         <div class="col-md-6 p-3 d-flex align-items-center justify-content-center">
-            <form [formGroup]="loginForm">
+            <form [formGroup]="loginForm" (submit)="loginForm.valid &&login()">
                 <h4 class="title text-uppercase h1 my-4"> login</h4>
                 <div class=" form-control ">
                     <i class="bi bi-person-fill"></i>
@@ -15,7 +15,8 @@
                     <i class="bi bi-file-lock-fill"></i>
                     <input  class=" border-0" type="password" formControlName="password" placeholder="Mots de passe">
                 </div>
-                <div class="form-control border-0">
+                <a class="passwordForget" routerLink="/fotgotpassword">Password oublié !</a>
+                <div class="form-control border-0 mt-3">
                     <input [disabled]="!loginForm.valid" type="submit" class="send-btn">
                 </div>
             </form>

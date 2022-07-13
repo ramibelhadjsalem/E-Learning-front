@@ -6,6 +6,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { SignupUserComponent } from './signup-user/signup-user.component';
 import { SignupProfComponent } from './signup-prof/signup-prof.component';
 import { SignupAdminComponent } from './signup-admin/signup-admin.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SignupAdminComponent } from './signup-admin/signup-admin.component';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    RouterModule
   ]
 })
 export class AuthModule { }

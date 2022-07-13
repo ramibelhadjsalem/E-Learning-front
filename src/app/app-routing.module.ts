@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
+import { ErrorLayoutComponent } from './layout/error-layout/error-layout.component';
 import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
 
 const routes: Routes = [
@@ -20,7 +21,16 @@ const routes: Routes = [
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       }
     ]
-  }
+  },
+  {
+    path: '', component:ErrorLayoutComponent ,children: [
+      {path:'**', redirectTo:'404',pathMatch:'full'},
+      {
+        path: '',
+        loadChildren: () => import('./error/error.module').then(m => m.ErrorModule)
+      }
+    ]
+  },
   
 
 ];

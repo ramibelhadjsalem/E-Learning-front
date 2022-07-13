@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-in',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.css']
 })
 export class SignInComponent implements OnInit {
-
-  constructor() { }
-
+  loginForm !: FormGroup ; 
+  constructor(private fb :FormBuilder) { }
+ 
   ngOnInit(): void {
+    this.initLogin()
+  }
+
+  initLogin(){
+    this.loginForm = this.fb.group({
+      username:['',Validators.required],
+      password : ['',Validators.required]
+    })
   }
 
 }

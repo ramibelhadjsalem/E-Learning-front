@@ -1,1 +1,62 @@
-<p>signup-prof works!</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 imgcontainer">
+        <div class="container m-3">
+        <img class="img-fluid" src="../../../assets/images/Join.png" >
+      </div>
+    </div>
+      <div class="col-md-8 p-3 d-flex align-items-center justify-content-center">
+       
+          <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()">
+            <h3 class="h1">Register Proffiseur</h3>
+            <div class="form-control m-3">
+              <i class="bi bi-person me-1"></i> 
+              <input type="text" formControlName="lastname" placeholder="Prenom">
+            </div>
+            <div class="form-control m-3">
+              <i class="bi bi-person me-1"></i>
+              <input  type="text" formControlName="firstname" placeholder="Nom">
+            </div>
+            <div class="form-control m-3">
+              <i class="bi bi-phone me-1"></i>
+              <input id="last-name" type="text" formControlName="phonenumber" placeholder="Numéro de téléphone">
+            </div>
+            <div class="form-control m-3">
+              <i class="bi bi-envelope me-1"></i>
+              <input id="last-name" type="text" formControlName="email" placeholder="email">
+            </div>
+            <div class="form-control m-3">
+              <i class="bi bi-calendar-date me-1"></i> 
+              <input  type="date" formControlName="dob" placeholder="Date de Naissance">
+            </div>
+            <div class="form-control m-3">
+              <i class="bi bi-shield-lock me-1"></i> 
+              <input  type="password" formControlName="password" placeholder="Mot de passe">
+            </div>
+            <div class="form-control m-3">
+              <i class="bi bi-shield-lock me-1"></i>
+              <input  type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
+            </div>
+            <div class="form-control m-3">
+              <i class="bi bi-shield-lock me-1"></i>
+              <input  type="text" formControlName="colege" placeholder="Lycée">
+            </div>
+            <div class="form-control m-3 d-flex flex-row">
+              <i class="bi bi-mortarboard"></i>
+              <select class="form-select " aria-label="Default select example" formControlName="level">
+                <option value="" selected disabled hidden>Choose here</option>
+                <option *ngFor="let item of leves" value="item.id" >{{item.name}}</option>
+              
+              </select>
+          </div>
+          <div class="justify-content-center">
+              <div class="form-control border-0 m-4">
+                <input type="submit" [disabled]="!registerForm.valid" class="send-btn" value="Submit">
+              </div> 
+          </div>
+        </form>
+        </div>
+      </div>
+    </div>
+  
+  

@@ -10,8 +10,8 @@ import { loggedin } from '../Models/logedin';
 export class AuthService {
   private currentUserSource = new ReplaySubject<loggedin |null>(1);
   currentUser$ = this.currentUserSource.asObservable();
-
-  apiUrl=environment.apiurl
+  apiUrl = "http://localhost:8080/api/"
+  // apiUrl=environment.apiurl
   constructor(private http:HttpClient) { }
 
   login(model:any){

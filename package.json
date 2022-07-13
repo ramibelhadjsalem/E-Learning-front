@@ -21,7 +21,11 @@
     "@angular/router": "~13.3.0",
     "@ng-bootstrap/ng-bootstrap": "^12.1.2",
     "@popperjs/core": "^2.10.2",
+<<<<<<< HEAD
+    "bootstrap": "^5.2.0-beta1",
+=======
     "bootstrap": "^5.1.3",
+>>>>>>> 2f0e756184221620ff37062391c0d550b9a4c3ea
     "bootstrap-icons": "^1.8.3",
     "ngx-toastr": "^14.3.0",
     "rxjs": "~7.5.0",

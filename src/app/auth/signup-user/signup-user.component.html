@@ -11,57 +11,89 @@
           <h3>Sign Up</h3>
           <div class="form-control m-3">
             <i class="bi bi-person me-1"></i> 
-            <input type="text" formControlName="Prenom" placeholder="Prenom">
+            <input type="text" formControlName="lastname" placeholder="Prenom">
           </div>
+          <div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="text-danger ms-4">
+            <div >lastname est obligatoire.</div>
+        </div>
           <div class="form-control m-3">
             <i class="bi bi-person me-1"></i>
-            <input  type="text" formControlName="Nom" placeholder="Nom">
+            <input  type="text" formControlName="firstname" placeholder="Nom">
           </div>
+          <div *ngIf="f['firstname'].touched && f['firstname'].invalid" class="text-danger ms-4">
+            <div >firstname est obligatoire.</div>
+        </div>
           <div class="form-control m-3">
             <i class="bi bi-phone me-1"></i>
-            <input id="last-name" type="text" formControlName="NumeroTelephone" placeholder="Numéro de téléphone">
+            <input id="last-name" type="text" formControlName="phonenumber" placeholder="Numéro de téléphone">
+          </div>
+          <div *ngIf="f['phonenumber'].touched && f['phonenumber'].invalid" class="text-danger ms-4">
+            <div >phonenumber est obligatoire.</div>
+        </div>
+          <div class="form-control m-3">
+            <i class="bi bi-calendar-date me-1"></i> 
+            <input  type="date" formControlName="dob" placeholder="Date de Naissance">
+          </div>
+          <div *ngIf="f['dob'].touched && f['dob'].invalid" class="text-danger ms-4">
+            <div >Date de Naissance est obligatoire.</div>
+        </div>
+          <div class="form-control m-3">
+            <i class="bi bi-shield-lock me-1"></i> 
+            <input  type="password" formControlName="password" placeholder="Mot de passe">
+          </div>
+          <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger ms-4">
+            <div *ngIf="f['password'].errors && f['password'].errors" class="text-danger ms-4">
+              Mot de passe must be at least 8 characters.
+            </div>
+        </div>
+        
+          <div class="form-control m-3">
+            <i class="bi bi-shield-lock me-1"></i>
+            <input  type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
+          </div>
+          <div *ngIf="f['password'].touched && f['confirmpassword'].touched && f['confirmpassword'].invalid" class="text-danger ms-4">
+           
+            <div *ngIf="f['confirmpassword'].errors " class="text-danger ms-4">
+              Mot de passe et Confirmez le mot de passe doit correspondre.
+            </div>
           </div>
           <div class="form-control m-3">
-            <i class="bi bi-calendar-date-fill me-1"></i> 
-            <input  type="date" formControlName="DatedeNaissance" placeholder="Date de Naissance">
+            <i class="bi bi-house me-1"></i>
+            <input  type="text" formControlName="ecole" placeholder="Lycée">
           </div>
-          <div class="form-control m-3">
-            <i class="bi bi-shield-lock-fill me-1"></i> 
-            <input  type="password" formControlName="Motdepasse" placeholder="Mot de passe">
-          </div>
-          <div class="form-control m-3">
-            <i class="bi bi-shield-lock-fill me-1"></i>
-            <input  type="password" formControlName="Confirmez le mot de passe" placeholder="Confirmez le mot de passe">
-          </div>
-          <div class="form-control m-3">
-            <i class="bi bi-shield-lock-fill me-1"></i>
-            <input  type="password" formControlName="Lycée" placeholder="Lycée">
-          </div>
+          <div *ngIf="f['ecole'].touched && f['ecole'].invalid" class="text-danger ms-4">
+            <div >Lycée est obligatoire.</div>
+        </div>
           <div class="form-control m-3 d-flex flex-row">
-            <i class="bi bi-mortarboard-fill"></i>
-            <select class="form-select " aria-label="Default select example" >
-              <option value="" selected disabled hidden>Choose here</option>
+            <i class="bi bi-mortarboard"></i>
+            <select class="form-select " aria-label="Default select example" formControlName="level" >
+              <option value="" selected disabled hidden>Choisissez votre niveau d'étude</option>
               <option value="Bac">Bac</option>
               <option value="3éme">3éme</option>
               <option value="2éme">2éme</option>
               <option value="1er">1er</option>
             </select>
         </div>
-          <!-- <select class="form-select m-3" aria-label="Default select example">
-            <option selected>Choisissez votre Section</option>
+        <div *ngIf="f['level'].touched && f['level'].invalid" class="text-danger ms-4">
+          <div >niveau est obligatoire.</div>
+      </div>
+        <div class="form-control m-3 d-flex flex-row" >
+          <i class="bi bi-mortarboard"></i>
+          <select class="form-select " aria-label="Default select example" formControlName="section">
+            <option value="" selected disabled hidden>Choisissez votre Section</option>
             <option value="Math">Math</option>
             <option value="Science experiments">Science experiments</option>
             <option value="Technique">Technique</option>
             <option value="Letter">Letter</option>
             <option value="Economie et gestion">Economie et gestion</option>
-          </select> -->
+          </select>
+        </div>
 
 
-
-          <p class="text-rigth">Complete the form to enable button.</p>
+          <!-- <p class="text-rigth">Complete the form to enable button.</p> -->
           <div class="justify-content-center">
             <div class="form-control border-0 m-4">
-              <input type="submit" [disabled]="!profileForm.valid" class="send-btn" value="Submit">
+              <input type="submit" [disabled]="!profileForm.valid"  class="send-btn" value="Submit">
             </div> 
           </div>
       </form>

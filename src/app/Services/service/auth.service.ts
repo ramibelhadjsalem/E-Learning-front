@@ -1,8 +1,9 @@
 import { environment } from './../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { empty, map, of, ReplaySubject } from 'rxjs';
+import { empty, map, Observable, of, ReplaySubject } from 'rxjs';
 import { loggedin } from '../Models/logedin';
+import { User } from '../Models/user';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,9 @@ export class AuthService {
       })
     )
   }
+  public register(user:User ): Observable<any>{
+    return this.http.post<any >(this.apiUrl+"signup/user", user);}
+  
 
   setCurrentUser(user:loggedin){
     localStorage.setItem('user',JSON.stringify(user));

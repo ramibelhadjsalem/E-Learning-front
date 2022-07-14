@@ -27,7 +27,7 @@ form{
   margin-bottom: 25px; 
   border-bottom: 2px solid ;
   padding: 15px 20px;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .form-select{
   width: calc(100% - 20px) !important;

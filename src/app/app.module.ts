@@ -1,3 +1,4 @@
+import { LevelService } from './Services/service/level.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -31,7 +32,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
 
   ],
-  providers: [],
+  providers: [LevelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

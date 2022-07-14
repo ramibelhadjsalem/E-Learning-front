@@ -11,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupProfComponent implements OnInit {
   registerForm !: FormGroup
-  leves :level[] =[]; 
+  levels :level[] =[]; 
   constructor(private fb :FormBuilder,private levelservice:LevelService) { }
 
   ngOnInit(): void {
@@ -40,7 +40,7 @@ export class SignupProfComponent implements OnInit {
   }
   loadLevels(){
     this.levelservice.getAll().subscribe(res=>{
-      this.leves=res
+      this.levels = res
     })
   }
 

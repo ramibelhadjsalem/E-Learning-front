@@ -1,4 +1,3 @@
-import { LevelService } from './Services/service/level.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +14,7 @@ import { LayoutModule } from './layout/layout.module';
 import { MainModule } from './main/main.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LevelService } from './Services/service/level.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     ReactiveFormsModule,
+    
+    
 
   ],
   providers: [LevelService],

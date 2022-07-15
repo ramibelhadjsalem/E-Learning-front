@@ -8,6 +8,8 @@ import { SignupProfComponent } from './signup-prof/signup-prof.component';
 import { SignupAdminComponent } from './signup-admin/signup-admin.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
+
 
 
 @NgModule({
@@ -15,13 +17,16 @@ import { ReactiveFormsModule } from '@angular/forms';
     SignInComponent,
     SignupUserComponent,
     SignupProfComponent,
-    SignupAdminComponent
+    SignupAdminComponent,
+    
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     RouterModule,
     ReactiveFormsModule,
+    SharedModule
+    
   ]
 })
 export class AuthModule { }

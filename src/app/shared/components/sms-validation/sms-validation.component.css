@@ -1,0 +1,19 @@
+
+.form-control{
+  border: 0;
+  margin-bottom: 25px; 
+  border-bottom: 2px solid ;
+  padding: 15px 20px;
+  opacity: 0.8;
+}
+.form-control:focus-within {
+  opacity: 1;
+  border-bottom: 2px solid #FF6366;
+ }
+ input{
+  width: calc(100% - 20px);
+  border: none;
+  border: 0;
+  outline: none;
+ 
+}

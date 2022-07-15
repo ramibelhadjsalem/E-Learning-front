@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs';
-import { level } from './../../Services/Models/Level';
+
+import { level } from 'src/app/services/Models/modelLevel';
 import { LevelService } from './../../Services/service/level.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
@@ -25,7 +25,6 @@ export class SignupProfComponent implements OnInit {
       phonenumber:['',Validators.required],
       email:['',Validators.required],
       dob:['',Validators.required],
-      
       password : ['',Validators.required],
       confirmpassword : ['',Validators.required],
       colege : ['',Validators.required],

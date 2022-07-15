@@ -7,7 +7,12 @@
     justify-content: center;
     align-items: center;
   }
-  
+  .imgcontainer a{
+    text-decoration: underline;
+    font-size: 15px;
+    color:#222;
+    transform: translateY(-50px);
+}
   
   h3{
     color: #FF6366;

@@ -1,5 +1,4 @@
-import { AuthService } from './Services/service/auth.service';
-import { LevelService } from './Services/service/level.service';
+
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +16,9 @@ import { MainModule } from './main/main.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { AuthService } from './Services/service/auth.service';
+import { LevelService } from './services/service/level.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(),
     ReactiveFormsModule,
+    
+    
 
   ],
   providers: [LevelService,AuthService],

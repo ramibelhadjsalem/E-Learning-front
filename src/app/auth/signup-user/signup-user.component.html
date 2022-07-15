@@ -1,34 +1,33 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-4 col-sm-12 imgcontainer">
-      <div class="container m-3">
+    <div class="col-md-6 col-sm-12 imgcontainer">
       <img class="img-fluid" src="../../../assets/images/Join.png" >
-    </div>
+      <a class="align-self-center mt-4" routerLink="/login">Se&nbsp;connecter</a>
   </div>
-    <div class="col-md-8 p-3 d-flex align-items-center justify-content-center">
+    <div class="col-md-6 p-3 d-flex align-items-center justify-content-center">
      
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-          <h3>Sign Up</h3>
+          <h3>S'inscrire</h3>
           <div class="form-control m-3">
             <i class="bi bi-person me-1"></i> 
             <input type="text" formControlName="lastname" placeholder="Prenom">
           </div>
           <div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="text-danger ms-4">
-            <div >lastname est obligatoire.</div>
+            <div >Prenom est obligatoire.</div>
         </div>
           <div class="form-control m-3">
             <i class="bi bi-person me-1"></i>
             <input  type="text" formControlName="firstname" placeholder="Nom">
           </div>
           <div *ngIf="f['firstname'].touched && f['firstname'].invalid" class="text-danger ms-4">
-            <div >firstname est obligatoire.</div>
+            <div >Nom est obligatoire.</div>
         </div>
-          <div class="form-control m-3">
+        <div class="form-control m-3">
             <i class="bi bi-phone me-1"></i>
             <input id="last-name" type="text" formControlName="phonenumber" placeholder="Numéro de téléphone">
-          </div>
-          <div *ngIf="f['phonenumber'].touched && f['phonenumber'].invalid" class="text-danger ms-4">
-            <div >phonenumber est obligatoire.</div>
+        </div>
+        <div *ngIf="f['phonenumber'].touched && f['phonenumber'].invalid" class="text-danger ms-4">
+            <div >Numéro de téléphone est obligatoire.</div>
         </div>
           <div class="form-control m-3">
             <i class="bi bi-calendar-date me-1"></i> 
@@ -66,26 +65,17 @@
         </div>
           <div class="form-control m-3 d-flex flex-row">
             <i class="bi bi-mortarboard"></i>
-            <select class="form-select " aria-label="Default select example" formControlName="level"  multiple>
+            <select class="form-select " aria-label="Default select example" formControlName="level"  (change)="ListSection($event)">
               <option value="" selected disabled hidden>Choisissez votre niveau d'étude</option>
-              <option value="Bac">Bac</option>
-              <option value="3éme">3éme</option>
-              <option value="2éme">2éme</option>
-              <option value="1er">1er</option>
+              <option *ngFor="let item of levels" [value]="item.id" >{{item.name}} </option>
             </select>
         </div>
-        <div *ngIf="f['level'].touched && f['level'].invalid" class="text-danger ms-4">
-          <div >niveau est obligatoire.</div>
-      </div>
-        <div class="form-control m-3 d-flex flex-row" >
+        
+        <div class="form-control m-3 d-flex flex-row"  *ngIf="f['level'].valid">
           <i class="bi bi-mortarboard"></i>
-          <select class="form-select " aria-label="Default select example" formControlName="section">
-            <option value="" selected disabled hidden>Choisissez votre Section</option>
-            <option value="Math">Math</option>
-            <option value="Science experiments">Science experiments</option>
-            <option value="Technique">Technique</option>
-            <option value="Letter">Letter</option>
-            <option value="Economie et gestion">Economie et gestion</option>
+          <select class="form-select"  formControlName="section" >
+            <option  value="" selected disabled hidden>Choisissez votre Section</option>
+            <option  *ngFor="let item of sections" [value]="item.id" >{{item.name}}</option>
           </select>
         </div>
 
@@ -93,11 +83,15 @@
           <!-- <p class="text-rigth">Complete the form to enable button.</p> -->
           <div class="justify-content-center">
             <div class="form-control border-0 m-4">
-              <input type="submit" [disabled]="!profileForm.valid"  class="send-btn" value="Submit">
+              <!-- <input type="submit" [disabled]="!profileForm.valid"  class="send-btn" value="Submit"> -->
+                              <!-- Button trigger modal -->
+              <input type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" [disabled]="!profileForm.valid" value="Submit">
+              <!-- Modal -->
             </div> 
           </div>
-      </form>
+        </form>
       </div>
     </div>
   </div>
-
+  
+  <app-sms-validation [phoneNumber]="f['phonenumber'].value"></app-sms-validation>

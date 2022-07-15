@@ -1,10 +1,11 @@
 
-import { level } from './../../Services/Models/Level';
-import { LevelService } from './../../Services/service/level.service';
+
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService} from '../../Services/service/auth.service';
+import { level } from 'src/app/services/Models/modelLevel';
+import { LevelService } from '../../services/service/level.service';
 
 
 
@@ -32,7 +33,6 @@ export class SignupProfComponent implements OnInit {
       username:['',Validators.required],
       email:['',Validators.required],
       dob:['',Validators.required],
-      
       password : ['',Validators.required],
       confirmpassword : ['',[Validators.required,this.passwordMatchingValidatior]],
       lycee : ['',Validators.required],

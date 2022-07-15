@@ -1,5 +1,11 @@
-import { AuthService } from '../app/services/service/auth.service';
+
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AuthService } from './Services/service/auth.service';
+
+
+
+
+
 
 @Component({
   selector: 'app-root',
@@ -7,7 +13,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit,OnDestroy{
- 
+
   title = 'E-Learning';
 
   constructor(private auth:AuthService){}
@@ -23,6 +29,6 @@ export class AppComponent implements OnInit,OnDestroy{
       if(item != null){
         this.auth.setCurrentUser(JSON.parse(item))
       }
-      
+
   }
 }

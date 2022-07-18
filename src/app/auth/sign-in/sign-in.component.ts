@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from '../../Services/service/auth.service';
-
+declare var window:any
 
 
 
@@ -35,10 +35,18 @@ export class SignInComponent implements OnInit {
     this.auth.login(this.loginForm.value).subscribe((res)=>{
       this.toastr.success("Connecté ...")
       this.route.navigateByUrl('/home')
+
+      
     },err=>{
       this.toastr.error("Username or password invalid")
       
     })
+  }
+  resetPassword(){
+    const formModel  = new window.bootstrap.Modal(
+      document.getElementById('exampleModal')
+    )
+    formModel.show()
   }
 
 }

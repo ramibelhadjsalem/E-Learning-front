@@ -38,4 +38,7 @@ export class AuthService {
     this.currentUserSource.next(null);
     
   }
+  resetPassword(phoneModel:any){
+    return this.http.post(this.apiUrl+"auth/resetpassword",phoneModel)
+  }
 }

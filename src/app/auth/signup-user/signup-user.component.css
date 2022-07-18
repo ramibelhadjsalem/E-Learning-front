@@ -1,5 +1,5 @@
 .row{
-  height: 100vh;
+  
 }
 .imgcontainer{
   display: flex;
@@ -25,25 +25,28 @@ i{
 }
 form{
   width: 100%;
-  max-width: 500px;
+  
 
 }
 .form-control{
   border: 0;
-  margin-bottom: 25px; 
+  margin-bottom: 10px; 
   border-bottom: 2px solid ;
   padding: 15px 20px;
   opacity: 0.8;
+  
 }
 .form-select{
   width: calc(100% - 20px) !important;
 }
 
-input{
+.form-control input{
+
   width: calc(100% - 20px);
   border: none;
   border: 0;
   outline: none;
+  
  
 }
 select{
@@ -69,12 +72,10 @@ select:focus {
   background-color: #ff4245;
   border-radius: 10px;
   margin: auto;
+  width: 100%;
 }
-input[type=date]{
-  content: " ";
+.text-danger{
+  font-size: small;
 }
-p {
-  text-align: start;
-  margin: 30px;
-}
+
 

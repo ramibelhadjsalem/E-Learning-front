@@ -2,7 +2,7 @@ import { environment } from '../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { empty, map, Observable, of, ReplaySubject } from 'rxjs';
-import { loggedin } from 'src/app/Services/Models/logedin';
+import { loggedin } from 'src/app/services/Models/logedin';
 
 @Injectable({
   providedIn: 'root'

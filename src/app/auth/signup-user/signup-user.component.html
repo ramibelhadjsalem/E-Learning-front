@@ -1,97 +1,138 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 col-sm-12 imgcontainer">
+    <div class="col-md-6 col-sm-12 col-lg-6 imgcontainer">
       <img class="img-fluid" src="../../../assets/images/Join.png" >
       <a class="align-self-center mt-4" routerLink="/login">Se&nbsp;connecter</a>
   </div>
-    <div class="col-md-6 p-3 d-flex align-items-center justify-content-center">
-     
+    <div class="  col-12 col-sm-12 col-md-6 col-lg-6 p-lg-5  align-items-center justify-content-center">
+      <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 mt-4">S'inscrire</h3>
         <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
-          <h3>S'inscrire</h3>
-          <div class="form-control m-3">
-            <i class="bi bi-person me-1"></i> 
-            <input type="text" formControlName="lastname" placeholder="Prenom">
-          </div>
-          <div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="text-danger ms-4">
-            <div >Prenom est obligatoire.</div>
-        </div>
-          <div class="form-control m-3">
-            <i class="bi bi-person me-1"></i>
-            <input  type="text" formControlName="firstname" placeholder="Nom">
-          </div>
-          <div *ngIf="f['firstname'].touched && f['firstname'].invalid" class="text-danger ms-4">
-            <div >Nom est obligatoire.</div>
-        </div>
-        <div class="form-control m-3">
-            <i class="bi bi-phone me-1"></i>
-            <input id="last-name" type="text" formControlName="phonenumber" placeholder="Numéro de téléphone">
-        </div>
-        <div *ngIf="f['phonenumber'].touched && f['phonenumber'].invalid" class="text-danger ms-4">
-            <div >Numéro de téléphone est obligatoire.</div>
-        </div>
-          <div class="form-control m-3">
-            <i class="bi bi-calendar-date me-1"></i> 
-            <input  type="date" formControlName="dob" placeholder="Date de Naissance">
-          </div>
-          <div *ngIf="f['dob'].touched && f['dob'].invalid" class="text-danger ms-4">
-            <div >Date de Naissance est obligatoire.</div>
-        </div>
-          <div class="form-control m-3">
-            <i class="bi bi-shield-lock me-1"></i> 
-            <input  type="password" formControlName="password" placeholder="Mot de passe">
-          </div>
-          <div *ngIf="f['password'].touched && f['password'].invalid" class="text-danger ms-4">
-            <div *ngIf="f['password'].errors && f['password'].errors" class="text-danger ms-4">
-              Mot de passe must be at least 8 characters.
+          <div class="row m-0 p-0 d-flex justify-content-center">
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control">
+                <i class="bi bi-person me-1"></i> 
+                <input type="text" formControlName="lastname" placeholder="Prenom">
+              </div>
+              <div [style.opacity]="f['lastname'].touched && f['lastname'].invalid ? 1 : 0" class="text-danger ms-4 ">
+                Prenom est obligatoire.
+              </div>
             </div>
-        </div>
-        
-          <div class="form-control m-3">
-            <i class="bi bi-shield-lock me-1"></i>
-            <input  type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
-          </div>
-          <div *ngIf="f['password'].touched && f['confirmpassword'].touched && f['confirmpassword'].invalid" class="text-danger ms-4">
-           
-            <div *ngIf="f['confirmpassword'].errors " class="text-danger ms-4">
-              Mot de passe et Confirmez le mot de passe doit correspondre.
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control">
+                <i class="bi bi-person me-1"></i>
+                <input  type="text" formControlName="firstname" placeholder="Nom">
+              </div>
+              <div [style.opacity]="f['firstname'].touched && f['firstname'].invalid ? 1:0" class="text-danger ms-4 ">
+                Nom est obligatoire.
+              </div>
             </div>
           </div>
-          <div class="form-control m-3">
-            <i class="bi bi-house me-1"></i>
-            <input  type="text" formControlName="ecole" placeholder="Lycée">
+          <div class="row m-0 p-0 d-flex justify-content-center">
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control ">
+                  <i class="bi bi-phone me-1"></i>
+                  <input id="last-name" type="text" formControlName="username" placeholder="Numéro de téléphone" class="flex-md-wrap">
+              </div>
+              <div [style.opacity]="f['username'].touched && f['username'].invalid ? 1 :0 " class="text-danger ms-4 ">
+                  Numéro de téléphone est obligatoire.
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control">
+                <i class="bi bi-calendar-date me-1"></i> 
+                <input  type="date" formControlName="dob" placeholder="Date de Naissance">
+              </div>
+              <div [style.opacity]="f['dob'].touched && f['dob'].invalid ? 1:0" class="text-danger ms-4 ">
+                Date de Naissance est obligatoire.
+              </div>
+            </div>
           </div>
-          <div *ngIf="f['ecole'].touched && f['ecole'].invalid" class="text-danger ms-4">
-            <div >Lycée est obligatoire.</div>
-        </div>
-          <div class="form-control m-3 d-flex flex-row">
-            <i class="bi bi-mortarboard"></i>
-            <select class="form-select " aria-label="Default select example" formControlName="level"  (change)="ListSection($event)">
-              <option value="" selected disabled hidden>Choisissez votre niveau d'étude</option>
-              <option *ngFor="let item of levels" [value]="item.id" >{{item.name}} </option>
-            </select>
-        </div>
-        
-        <div class="form-control m-3 d-flex flex-row"  *ngIf="f['level'].valid">
-          <i class="bi bi-mortarboard"></i>
-          <select class="form-select"  formControlName="section" >
-            <option  value="" selected disabled hidden>Choisissez votre Section</option>
-            <option  *ngFor="let item of sections" [value]="item.id" >{{item.name}}</option>
-          </select>
-        </div>
-
-
-          <!-- <p class="text-rigth">Complete the form to enable button.</p> -->
-          <div class="justify-content-center">
-            <div class="form-control border-0 m-4">
-              <!-- <input type="submit" [disabled]="!profileForm.valid"  class="send-btn" value="Submit"> -->
-                              <!-- Button trigger modal -->
-              <input type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" [disabled]="!profileForm.valid" value="Submit">
-              <!-- Modal -->
+          <div class="row m-0 p-0 d-flex justify-content-center">
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control ">
+                <i class="bi bi-shield-lock me-1"></i> 
+                <input  type="password" formControlName="password" placeholder="Mot de passe">
+              </div>
+              <div [style.opacity]="f['password'].touched && f['password'].invalid && f['password'].errors && f['password'].errors ? 1 : 0" class="text-danger ms-4 ">
+                  Mot de passe must be at least 8 characters.
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control ">
+                <i class="bi bi-shield-lock me-1"></i>
+                <input class="" type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
+              </div> 
+              <div [style.opacity]="f['password'].touched && f['confirmpassword'].touched && f['confirmpassword'].invalid ? 1 : 0" class="text-danger ">
+                <div [style.opacity]="f['confirmpassword'].errors " class="text-danger ms-4 ">
+                  Le mot de passe doit correspondre.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0 p-0 d-flex justify-content-center">
+            <div class="col-md-6 col-sm-6 ">
+              <div class="form-control ">
+                <i class="bi bi-house me-1"></i>
+                <input  type="text" formControlName="lycee" placeholder="Lycée">
+              </div>
+              <div [style.opacity]="f['lycee'].touched && f['lycee'].invalid ? 1 : 0" class="text-danger ms-4" >
+                Lycée est obligatoire.
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control ">
+                <i class="bi bi-mortarboard me-1" ></i>
+                <select class="form-select text-nowrap" aria-label="Default select example" formControlName="idlevel"  (change)="ListSection($event)">
+                  <option value="" selected disabled hidden>niveau d'étude</option>
+                  <option *ngFor="let item of levels" [value]="item.id" >{{item.name}} </option>
+                </select>
+              </div>
+              <div [style.opacity]="f['idlevel'].touched && f['idlevel'].invalid ? 1 : 0" class="text-danger ms-4" >
+                niveau est obligatoire.
+              </div>
+            </div>
+          </div>
+          <div class="row m-0 p-0 d-flex justify-content-center w-100">
+            <div class="col-md-6 col-sm-6 ">
+              <div class="form-control  d-flex flex-row "  >
+                <i class="bi bi-mortarboard"></i>
+                <select  [attr.disabled]="f['idlevel'].invalid ? '' : null" class="form-select "  formControlName="idsection" >
+                  <option  value="" selected disabled hidden>Section</option>
+                  <option  *ngFor="let item of sections" [value]="item.id" >{{item.name}}</option>
+                </select>
+              </div>
+              <div [style.opacity]="f['idsection'].touched && f['idsection'].invalid ? 1 : 0" class="text-danger ms-4 " >
+                Section est obligatoire.
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 ">
+              <div class="form-control">
+                <i class="bi bi-mortarboard me-1"></i>
+                <select  [attr.disabled]="f['idlevel'].invalid ? '' : null" class="form-select "  formControlName="option" >
+                  <option  value="" selected disabled hidden>Options</option>
+                  <option value="allemande">Allemande</option>
+                  <option value="espagnole">Espagnole</option>
+                  <option value="italienne">Italienne</option>
+                  <option value="chinoise">Chinoise</option>
+                  <option value="russe">Russe</option>
+                  <option value="turque">Turque</option>
+                  <option value="musique">Musique</option>
+                  <option value="arts">Arts & Plastiques</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        <div class="row mt-3 d-flex align-items-center justify-content-center">
+          <div class="col-md-5 ">
+            <div class="form-control border-0 ">
+              <input type="submit" [disabled]="!profileForm.valid"  class="send-btn" value="Submit">
             </div> 
           </div>
-        </form>
+        </div>
+      </form>
+      </div>
       </div>
     </div>
-  </div>
+    
   
-  <app-sms-validation [phoneNumber]="f['phonenumber'].value"></app-sms-validation>
+  <!-- <app-sms-validation [phoneNumber]="f['username'].value" id="myModel" ></app-sms-validation> -->

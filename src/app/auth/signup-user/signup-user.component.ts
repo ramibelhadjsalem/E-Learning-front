@@ -1,11 +1,15 @@
+import { map } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Section } from 'src/app/services/Models/Section';
-import { AuthService } from 'src/app/services/service/auth.service';
+declare var window: any;
 import { level } from 'src/app/services/Models/modelLevel';
-import { LevelService } from 'src/app/Services/service/level.service';
+
+import { AuthService } from '../../services/service/auth.service'
+import { LevelService } from 'src/app/services/service/level.service';
+
 @Component({
   selector: 'app-signup-user',
   templateUrl: './signup-user.component.html',
@@ -17,7 +21,7 @@ export class SignupUserComponent implements OnInit {
   sections :Section[] =[]; 
   levels :level[] =[]; 
   message !:string;
-  
+  isOpen : Boolean = false;
   
   constructor(private formBuilder : FormBuilder ,private auth:AuthService ,private levelService: LevelService,
     private route:Router,
@@ -28,12 +32,13 @@ export class SignupUserComponent implements OnInit {
       lastname : ['',Validators.required],
       firstname : ['',Validators.required],
       dob : ['',Validators.required],
-      phonenumber : ['',Validators.required],
+      username : ['',Validators.required],
       password : ['',[Validators.required,Validators.minLength(8)]],
       confirmpassword : ['',[Validators.required,this.passwordMatchingValidatior ]],
-      ecole : ['',Validators.required],
-      level : ['',Validators.required],
-      section : ['',Validators.required], 
+      lycee : ['',Validators.required],
+      idlevel : ['',Validators.required],
+      idsection : ['',Validators.required], 
+      option : ['',Validators.required], 
   }
   );
   this.loadLevels();
@@ -48,16 +53,25 @@ export class SignupUserComponent implements OnInit {
       console.log(this.message); 
   }
   
+  
  
 
-  onSubmit() {
-    // this.auth.register(this.profileForm.value).subscribe((res)=> {
-    //   this.toastr.success("register success")
-    //   this.route.navigateByUrl('/login')
-    // },
-    // err=> {
-    //   this.toastr.error(err)
-    // })
+  onSubmit(): void {
+    this.auth.register(this.profileForm.value , "user").subscribe((res)=> {
+      this.toastr.success("register success")
+      const formModal = new window.bootstrap.Modal(
+        document.getElementById('exampleModal')
+      );
+        formModal.show()
+
+    },
+    err=> {
+      // Object.entries(err.error)!.forEach((element) => {
+      //   this.toastr.error(element[0]+': '+element[1])
+      // });
+      this.toastr.error(err.error.message)
+      
+    })
 
     console.log(this.profileForm.value);
     // this.profileForm.reset();
@@ -85,3 +99,5 @@ export class SignupUserComponent implements OnInit {
     
   }
 }
+
+

@@ -16,8 +16,8 @@ import { MainModule } from './main/main.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
-import { AuthService } from './Services/service/auth.service';
 import { LevelService } from './services/service/level.service';
+import { AuthService } from './services/service/auth.service';
 
 @NgModule({
   declarations: [

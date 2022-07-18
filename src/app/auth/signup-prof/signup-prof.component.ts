@@ -3,11 +3,12 @@
 import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
-import { AuthService} from '../../Services/service/auth.service';
+
 import { level } from 'src/app/services/Models/modelLevel';
 import { LevelService } from '../../services/service/level.service';
+import { AuthService } from 'src/app/services/service/auth.service';
 
-
+declare var window: any;
 
 @Component({
   selector: 'app-signup-prof',
@@ -47,6 +48,12 @@ export class SignupProfComponent implements OnInit {
     this.auth.register(this.registerForm.value,"prof").subscribe(res=>{
       this.toastr.success("registred ...")
 
+      const formModal = new window.bootstrap.Modal(
+        document.getElementById('exampleModal')
+      );
+        formModal.show()
+
+    
     },err=>{
      
       this.toastr.error(err.error.message)

@@ -1,12 +1,18 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { SmsValidationComponent } from './components/sms-validation/sms-validation.component';
 import { FormsModule } from '@angular/forms';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
+
+
 
 
 
 @NgModule({
   declarations: [
+
     SmsValidationComponent
   ],
   imports: [
@@ -15,6 +21,8 @@ import { FormsModule } from '@angular/forms';
   ],
   exports: [
     SmsValidationComponent
+    
   ]
+  
 })
 export class SharedModule { }

@@ -1,3 +1,5 @@
+import { ResetPasswordComponent } from './../shared/reset-password/reset-password.component';
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthLayoutComponent } from './auth-layout/auth-layout.component';
@@ -12,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [
     AuthLayoutComponent,
     MainlayoutComponent,
-    ErrorLayoutComponent
+    ErrorLayoutComponent,
+    
   ],
   imports: [
     CommonModule,

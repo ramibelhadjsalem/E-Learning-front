@@ -15,7 +15,7 @@
                     <i class="bi bi-file-lock-fill"></i>
                     <input  class=" border-0" type="password" formControlName="password" placeholder="Mots de passe">
                 </div>
-                <a class="passwordForget" routerLink="/fotgotpassword">Password oublié !</a>
+                <button (click)="resetPassword()" class="passwordForget" >Password oublié !</button>
                 <div class="form-control border-0 mt-3">
                     <input [disabled]="!loginForm.valid" type="submit" class="send-btn">
                 </div>

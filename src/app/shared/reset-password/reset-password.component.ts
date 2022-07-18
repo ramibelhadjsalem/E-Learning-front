@@ -1,10 +1,12 @@
 import { Router } from '@angular/router';
 
-import { AuthService } from './../../Services/service/auth.service';
+
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/Services/service/auth.service';
+
 
 declare var window:any
 

@@ -1,3 +1,4 @@
+
 .imgcontainer{
   display: flex;
   flex-direction: column;
@@ -8,7 +9,7 @@
   text-decoration: underline;
   font-size: 15px;
   color:#fff;
-  background-color: #FF6366;
+ 
   transform: translateY(-50px);
 }
 

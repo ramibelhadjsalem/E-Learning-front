@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/service/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component,  OnInit,  } from '@angular/core';
+import { Component,  ElementRef,  OnInit,  } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 declare var window: any;
 declare var jQuery:any;
@@ -19,12 +19,10 @@ export class SmsValidationComponent implements OnInit {
   formModal:any
   
 
-  constructor(private fb:FormBuilder,private auth:AuthService, private toastr: ToastrService,private route:Router) { }
+  constructor(private el: ElementRef,private fb:FormBuilder,private auth:AuthService, private toastr: ToastrService,private route:Router) { }
 
   ngOnInit(): void {
-    this.formModal = new window.bootstrap.Modal(
-      document.getElementById('exampleModal')
-    );
+    console.log("first",this.el.nativeElement.querySelector("#exampleModal"));
 
     const item = localStorage.getItem("phoneNumber")
     
@@ -36,20 +34,24 @@ export class SmsValidationComponent implements OnInit {
       phoneNumber:[this.phoneNumber,Validators.required],
       code:["",[Validators.required,Validators.min(8)]]
     })
+    
   }
   
   sendMessage() {
     
-      console.log(this.SmsForm.value);
+    
       this.auth.confirmSms(this.SmsForm.value).subscribe(res=>{
-        console.log("res",res)
+       
 
         this.toastr.success("Comfirmé ....")
-        this.formModal.hide()
-
+        this.closeModel() 
+        
+    
 
       },err=>{
-        console.log("err",err)
+        
+        console.log(this.el.nativeElement.querySelector("#exampleModal"));
+        
        if(err.status==406){
         this.toastr.warning("Code de confirmation est incorrect")
        }
@@ -58,6 +60,11 @@ export class SmsValidationComponent implements OnInit {
        }
       })
 
+    }
+
+    closeModel(){
+      let el: HTMLElement = this.el.nativeElement.querySelector("#hideModel");
+      el.click();
     }
 
 }

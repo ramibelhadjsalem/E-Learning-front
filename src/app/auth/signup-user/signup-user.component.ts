@@ -66,7 +66,7 @@ export class SignupUserComponent implements OnInit {
         document.getElementById('exampleModal')
       );
         formModal.show()
-
+      this.route.navigateByUrl("login")
     },
     err=> {
      

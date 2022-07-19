@@ -4,9 +4,11 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn,
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
-import { level } from 'src/app/services/Models/modelLevel';
-import { LevelService } from '../../services/service/level.service';
-import { AuthService } from 'src/app/services/service/auth.service';
+import { AuthService } from 'src/app/Services/service/auth.service';
+import { level } from '../../Services/Models/modelLevel';
+import { LevelService } from '../../Services/service/level.service';
+
+
 
 declare var window: any;
 

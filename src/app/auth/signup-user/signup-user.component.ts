@@ -7,8 +7,8 @@ import { Section } from 'src/app/services/Models/Section';
 declare var window: any;
 import { level } from 'src/app/services/Models/modelLevel';
 
-import { AuthService } from '../../services/service/auth.service'
 import { LevelService } from 'src/app/services/service/level.service';
+import { AuthService } from 'src/app/Services/service/auth.service';
 
 @Component({
   selector: 'app-signup-user',
@@ -21,7 +21,9 @@ export class SignupUserComponent implements OnInit {
   sections :Section[] =[]; 
   levels :level[] =[]; 
   message !:string;
-  isOpen : Boolean = false;
+  myItem !: any;
+  key : string = "paasword";
+ 
   
   constructor(private formBuilder : FormBuilder ,private auth:AuthService ,private levelService: LevelService,
     private route:Router,
@@ -59,6 +61,9 @@ export class SignupUserComponent implements OnInit {
   onSubmit(): void {
     this.auth.register(this.profileForm.value , "user").subscribe((res)=> {
       this.toastr.success("register success")
+      localStorage.setItem(this.key , this.profileForm.value['username']);
+      this.myItem = localStorage.getItem(this.key);
+      console.log(this.myItem);
       const formModal = new window.bootstrap.Modal(
         document.getElementById('exampleModal')
       );
@@ -98,6 +103,8 @@ export class SignupUserComponent implements OnInit {
     
     
   }
+  
+  
 }
 
 

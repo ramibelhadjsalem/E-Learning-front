@@ -17,9 +17,10 @@ import { MainModule } from './main/main.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LevelService } from './Services/service/level.service';
-import { AuthService } from './Services/service/auth.service';
+
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './Services/interceptors/loading.interceptor';
+import { AuthService } from './services/service/auth.service';
 
 
 

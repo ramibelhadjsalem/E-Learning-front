@@ -12,10 +12,10 @@
                     <input type="text" formControlName="username" placeholder="Numbre de telephone ou Email">
                 </div>
                 <div class=" form-control ">
-                    <i class="bi bi-file-lock-fill"></i>
-                    <input  class=" border-0" type="password" formControlName="password" placeholder="Mots de passe">
+                    <i class="bi bi-file-lock-fill cursor-pointer"  (mouseenter) ="showPassword()" (mouseleave)="showPassword()"></i>
+                    <input  class=" border-0" [type]="type" id="password" formControlName="password" placeholder="Mots de passe">
                 </div>
-                <button (click)="resetPassword()" class="passwordForget" >Password oublié !</button>
+                <button type="button" (click)="resetPassword()" class="passwordForget" >Password oublié !</button>
                 <div class="form-control border-0 mt-3">
                     <input [disabled]="!loginForm.valid" type="submit" class="send-btn">
                 </div>

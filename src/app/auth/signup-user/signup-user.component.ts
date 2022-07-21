@@ -5,10 +5,10 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Section } from 'src/app/services/Models/Section';
 declare var window: any;
-import { level } from 'src/app/services/Models/modelLevel';
+import { level } from '../../Services/Models/modelLevel';
 
-import { AuthService } from '../../services/service/auth.service'
-import { LevelService } from 'src/app/services/service/level.service';
+import { LevelService } from '../../Services/service/level.service';
+import { AuthService } from 'src/app/Services/service/auth.service';
 
 @Component({
   selector: 'app-signup-user',
@@ -28,6 +28,8 @@ export class SignupUserComponent implements OnInit {
     private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    
+      
     this.profileForm = this.formBuilder.group({
       lastname : ['',Validators.required],
       firstname : ['',Validators.required],
@@ -59,22 +61,21 @@ export class SignupUserComponent implements OnInit {
   onSubmit(): void {
     this.auth.register(this.profileForm.value , "user").subscribe((res)=> {
       this.toastr.success("register success")
+      localStorage.setItem("phoneNumber",JSON.stringify(this.profileForm.controls['username'].value))
       const formModal = new window.bootstrap.Modal(
         document.getElementById('exampleModal')
       );
         formModal.show()
-
+      this.route.navigateByUrl("login")
     },
     err=> {
-      // Object.entries(err.error)!.forEach((element) => {
-      //   this.toastr.error(element[0]+': '+element[1])
-      // });
+     
       this.toastr.error(err.error.message)
       
     })
 
-    console.log(this.profileForm.value);
-    // this.profileForm.reset();
+    
+    
   }
  
    passwordMatchingValidatior: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
@@ -91,7 +92,7 @@ export class SignupUserComponent implements OnInit {
     
     this.levels.map((res:level): void =>{
       if(res.id ==levelId){
-        console.log("sections",res.sections)
+        
         this.sections = res.sections
       }
     })

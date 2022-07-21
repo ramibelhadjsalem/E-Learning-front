@@ -9,15 +9,23 @@
         <h5>Bonjour !</h5>
         <p> <b>Saisissez le code de vérification</b> <br>
           envoyé à votre numéro de téléphone</p>
-        <div class="form-control m-3">
-          <i class="bi bi-chat-left-text me-1"></i>
-          <input type="text" placeholder="Code Validation" [(ngModel)]="code">
-        </div>
+        <form [formGroup]="SmsForm">
+          <div class="form-control p-3">
+            <i class="bi bi-chat-left-text me-1"></i>
+            <input type="text" placeholder="Num telephone" formControlName="phoneNumber">
+          </div>
+          <div class="form-control p-3">
+            <i class="bi bi-chat-left-text me-1"></i>
+            <input type="text" placeholder="Code Validation" formControlName="code">
+          </div>
+        </form>
+      
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="sendMessage()">Validation</button>
+        <button id="hideModel" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button  type="button" class="btn btn-primary" (click)="sendMessage()">Validation</button>
       </div>
+      
     </div>
   </div>
 </div>

@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
 import { loggedin } from '../Models/logedin';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,6 +29,7 @@ export class AuthService {
     )
   }
   public register(model:any,url:String ): Observable<any>{
+    localStorage.setItem("phoneNumber",JSON.stringify(model.username))
     return this.http.post<any >(this.apiUrl+"auth/signup/"+url, model);
   }
   
@@ -43,5 +45,8 @@ export class AuthService {
   }
   resetPassword(phoneModel:any){
     return this.http.post(this.apiUrl+"auth/resetpassword",phoneModel)
+  }
+  confirmSms(model:any){
+    return this.http.post(this.apiUrl+"auth/confirmsms",model);
   }
 }

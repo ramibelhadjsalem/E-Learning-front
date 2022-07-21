@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SmsValidationComponent } from './components/sms-validation/sms-validation.component';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RouterModule } from '@angular/router';
 
@@ -14,17 +14,20 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-
+    ResetPasswordComponent,
     SmsValidationComponent
    
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    RouterModule
+    // FormsModule,
+    RouterModule,
+    ReactiveFormsModule
+    
   ],
   exports: [
-    SmsValidationComponent
+    SmsValidationComponent,
+    ResetPasswordComponent
     
     
   ]

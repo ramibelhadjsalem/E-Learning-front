@@ -6,10 +6,9 @@ const routes: Routes = [
   {
     path: '', children: [
       {
-        path: "",
+        path: "home",
         component: HomeComponent
-      },
-      
+      }
     ]
   }
 ];

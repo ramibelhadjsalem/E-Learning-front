@@ -28,7 +28,8 @@ const routes: Routes = [
       {
         path: "register-admin",
         component: SignupAdminComponent
-      },
+      } 
+      
       
     ]
   }

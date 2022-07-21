@@ -5,9 +5,11 @@ import { ErrorLayoutComponent } from './layout/error-layout/error-layout.compone
 import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
 
 const routes: Routes = [
+  
+   
   {
     path: '', component:MainlayoutComponent ,children: [
-      {path: '', redirectTo: '/', pathMatch: 'full'},
+      // {path: '', redirectTo: '/', pathMatch: 'full'},
       {
         path: '',
         loadChildren: () => import('./main/main.module').then(m => m.MainModule)
@@ -17,7 +19,7 @@ const routes: Routes = [
   {
     path: '', component:AuthLayoutComponent ,children: [
       {
-        path: '',
+        path: 'auth',
         loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
       }
     ]

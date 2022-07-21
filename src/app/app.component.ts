@@ -1,6 +1,6 @@
 
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AuthService } from './Services/service/auth.service';
+import { AuthService } from './services/service/auth.service';
 
 
 

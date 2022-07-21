@@ -19,19 +19,23 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LevelService } from './services/service/level.service';
 import { AuthService } from './services/service/auth.service';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
+  
    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule,
     NgbModule,
+    LayoutModule,
+    
     HttpClientModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot({timeOut:1000}),
     ReactiveFormsModule,
     
     

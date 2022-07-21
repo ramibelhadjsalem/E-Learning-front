@@ -2,7 +2,10 @@ import { environment } from '../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { empty, map, Observable, of, ReplaySubject } from 'rxjs';
-import { loggedin } from 'src/app/services/Models/logedin';
+
+import { Router } from '@angular/router';
+import { loggedin } from '../Models/logedin';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +15,7 @@ export class AuthService {
   currentUser$ = this.currentUserSource.asObservable();
   apiUrl = "http://localhost:8080/api/"
   // apiUrl=environment.apiurl
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient,private route:Router) { }
 
   login(model:any){
     return this.http.post<loggedin>(this.apiUrl+"auth/signin" ,model).pipe(
@@ -36,7 +39,7 @@ export class AuthService {
   logOut(){
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
-    
+    this.route.navigateByUrl("/")
   }
   resetPassword(phoneModel:any){
     return this.http.post(this.apiUrl+"auth/resetpassword",phoneModel)

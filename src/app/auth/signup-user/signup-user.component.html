@@ -1,8 +1,30 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 col-sm-12 col-lg-6 imgcontainer">
-      <img class="img-fluid" src="../../../assets/images/Join.png" >
-      <a class="align-self-center mt-4" routerLink="/login">Se&nbsp;connecter</a>
+    <div class="col-md-6 col-sm-12 col-lg-6 ">
+      <div id="carouselExampleIndicators" class="carousel slide p-5 m-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button  data-bs-target="#carouselExampleIndicators"   data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1"></button>
+          <button  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="rounded-circle" aria-label="Slide 2"></button>
+          <button  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner"  >
+          <div class="carousel-item active" data-bs-interval="10000"  >
+            <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="10000" >
+            <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="10000" >
+            <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+          </div>
+          <div class="carousel-item" data-bs-interval="10000">
+            <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+          </div>
+        </div>
+        
+      </div>
+      <!-- <a class="align-self-center mt-4" routerLink="/login">Se&nbsp;connecter</a> -->
   </div>
     <div class="  col-12 col-sm-12 col-md-6 col-lg-6 p-lg-5  align-items-center justify-content-center">
       <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 mt-4">S'inscrire</h3>
@@ -48,28 +70,6 @@
             </div>
           </div>
           <div class="row m-0 p-0 d-flex justify-content-center">
-            <div class="col-md-6 col-sm-6">
-              <div class="form-control ">
-                <i class="bi bi-shield-lock me-1"></i> 
-                <input  type="password" formControlName="password" placeholder="Mot de passe">
-              </div>
-              <div [style.opacity]="f['password'].touched && f['password'].invalid && f['password'].errors && f['password'].errors ? 1 : 0" class="text-danger ms-4 ">
-                  Mot de passe must be at least 8 characters.
-              </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-              <div class="form-control ">
-                <i class="bi bi-shield-lock me-1"></i>
-                <input class="" type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
-              </div> 
-              <div [style.opacity]="f['password'].touched && f['confirmpassword'].touched && f['confirmpassword'].invalid ? 1 : 0" class="text-danger ">
-                <div [style.opacity]="f['confirmpassword'].errors " class="text-danger ms-4 ">
-                  Le mot de passe doit correspondre.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row m-0 p-0 d-flex justify-content-center">
             <div class="col-md-6 col-sm-6 ">
               <div class="form-control ">
                 <i class="bi bi-house me-1"></i>
@@ -108,7 +108,7 @@
             <div class="col-md-6 col-sm-6 ">
               <div class="form-control">
                 <i class="bi bi-mortarboard me-1"></i>
-                <select  [attr.disabled]="f['idlevel'].invalid ? '' : null" class="form-select "  formControlName="option" >
+                <select  [attr.disabled]="f['idlevel'].invalid  ? '' : null "  class="form-select "  formControlName="option" >
                   <option  value="" selected disabled hidden>Options</option>
                   <option value="allemande">Allemande</option>
                   <option value="espagnole">Espagnole</option>
@@ -119,6 +119,28 @@
                   <option value="musique">Musique</option>
                   <option value="arts">Arts & Plastiques</option>
                 </select>
+              </div>
+            </div>
+          </div>
+          <div class="row m-0 p-0 d-flex justify-content-center">
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control ">
+                <i class="bi bi-shield-lock me-1"></i> 
+                <input  type="password" formControlName="password" placeholder="Mot de passe">
+              </div>
+              <div [style.opacity]="f['password'].touched && f['password'].invalid && f['password'].errors && f['password'].errors ? 1 : 0" class="text-danger ms-4 ">
+                  Mot de passe must be at least 8 characters.
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6">
+              <div class="form-control ">
+                <i class="bi bi-shield-lock me-1"></i>
+                <input class="" type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
+              </div> 
+              <div [style.opacity]="f['password'].touched && f['confirmpassword'].touched && f['confirmpassword'].invalid ? 1 : 0" class="text-danger ">
+                <div [style.opacity]="f['confirmpassword'].errors " class="text-danger ms-4 ">
+                  Le mot de passe doit correspondre.
+                </div>
               </div>
             </div>
           </div>

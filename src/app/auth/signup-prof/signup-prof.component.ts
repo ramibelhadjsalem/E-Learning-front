@@ -4,9 +4,13 @@ import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn,
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 
+
+import { level } from 'src/app/services/Models/modelLevel';
+import { LevelService } from '../../services/service/level.service';
 import { AuthService } from 'src/app/Services/service/auth.service';
-import { level } from '../../Services/Models/modelLevel';
-import { LevelService } from '../../Services/service/level.service';
+declare var window: any;
+
+
 
 
 
@@ -34,7 +38,6 @@ export class SignupProfComponent implements OnInit {
       firstname:['',Validators.required],
       lastname:['',Validators.required],
       username:['',Validators.required],
-      email:['',Validators.required],
       dob:['',Validators.required],
       password : ['',Validators.required],
       confirmpassword : ['',[Validators.required,this.passwordMatchingValidatior]],
@@ -48,8 +51,7 @@ export class SignupProfComponent implements OnInit {
   onSubmit(){
    
     this.auth.register(this.registerForm.value,"prof").subscribe(res=>{
-      this.toastr.success("registred ...")
-
+      this.toastr.success("register success")
       const formModal = new window.bootstrap.Modal(
         document.getElementById('exampleModal')
       );
@@ -74,5 +76,6 @@ export class SignupProfComponent implements OnInit {
     const Password =this.registerForm?.controls['password']?.value
     return control?.value === Password ? null :{ isMatching: false };
   };
+  
 
 }

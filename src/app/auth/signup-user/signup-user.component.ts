@@ -5,10 +5,9 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Section } from 'src/app/services/Models/Section';
 declare var window: any;
-import { level } from '../../Services/Models/modelLevel';
-
-import { LevelService } from '../../Services/service/level.service';
+import { LevelService } from 'src/app/services/service/level.service';
 import { AuthService } from 'src/app/Services/service/auth.service';
+import { level } from 'src/app/services/Models/modelLevel';
 
 @Component({
   selector: 'app-signup-user',
@@ -21,7 +20,8 @@ export class SignupUserComponent implements OnInit {
   sections :Section[] =[]; 
   levels :level[] =[]; 
   message !:string;
-  isOpen : Boolean = false;
+  
+ 
   
   constructor(private formBuilder : FormBuilder ,private auth:AuthService ,private levelService: LevelService,
     private route:Router,
@@ -62,6 +62,7 @@ export class SignupUserComponent implements OnInit {
     this.auth.register(this.profileForm.value , "user").subscribe((res)=> {
       this.toastr.success("register success")
       localStorage.setItem("phoneNumber",JSON.stringify(this.profileForm.controls['username'].value))
+
       const formModal = new window.bootstrap.Modal(
         document.getElementById('exampleModal')
       );
@@ -99,6 +100,8 @@ export class SignupUserComponent implements OnInit {
     
     
   }
+  
+  
 }
 
 

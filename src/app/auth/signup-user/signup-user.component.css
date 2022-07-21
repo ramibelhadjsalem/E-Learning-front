@@ -50,6 +50,7 @@ form{
 select{
   all: unset;
   width: calc(100% - 20px);
+  
 }
 select:focus {
   outline:0;
@@ -74,6 +75,17 @@ select:focus {
 }
 .text-danger{
   font-size: small;
+  
 }
-
+select:disabled{
+  background-color: #fff;
+}
+.carousel-indicators button {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background-color: #ff4245;
+}
 

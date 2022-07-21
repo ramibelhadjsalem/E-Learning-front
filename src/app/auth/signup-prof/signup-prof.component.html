@@ -1,103 +1,146 @@
-<div class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col-md-6 col-sm-12 imgcontainer">
-        <div class="container m-3">
-        <img class="img-fluid" src="../../../assets/images/Join.png" >
-      </div>
+      <div class="col-md-6 col-sm-12 col-lg-6 ">
+        <div id="carouselExampleIndicators" class="carousel slide p-5 m-5" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button  data-bs-target="#carouselExampleIndicators"   data-bs-slide-to="0" class="active rounded-circle" aria-current="true" aria-label="Slide 1"></button>
+            <button  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" class="rounded-circle" aria-label="Slide 2"></button>
+            <button  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button  data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          </div>
+          <div class="carousel-inner"  >
+            <div class="carousel-item active" data-bs-interval="10000"  >
+              <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="10000" >
+              <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="10000" >
+              <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="10000">
+              <img src="../../../assets/images/Join.png" class="d-block w-100"  alt="...">
+            </div>
+          </div>
+          
+        </div>
+        <!-- <a class="align-self-center mt-4" routerLink="/login">Se&nbsp;connecter</a> -->
     </div>
-      <div class="col-md-6 p-3 d-flex align-items-center justify-content-center">
-       
-          <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()" >
-            <h3 class="h1">Register Proffiseur</h3>
-            <div class="form-control m-3 col-6" >
-              <i class="bi bi-person me-1"></i> 
-              <input type="text" formControlName="lastname" placeholder="Prenom">
+      <div class="  col-12 col-sm-12 col-md-6 col-lg-6 p-lg-5  align-items-center justify-content-center">
+        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 mt-4">S'inscrire</h3>
+          <form [formGroup]="registerForm" (ngSubmit)="registerForm.valid && onSubmit()">
+            <div class="row m-0 p-0 d-flex justify-content-center">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-control">
+                  <i class="bi bi-person me-1"></i> 
+                  <input type="text" formControlName="lastname" placeholder="Prenom">
+                </div>
+                <div [style.opacity]="f['lastname'].touched && f['lastname'].invalid ? 1 : 0" class="text-danger ms-4 ">
+                  Prenom est obligatoire.
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-control">
+                  <i class="bi bi-person me-1"></i>
+                  <input  type="text" formControlName="firstname" placeholder="Nom">
+                </div>
+                <div [style.opacity]="f['firstname'].touched && f['firstname'].invalid ? 1:0" class="text-danger ms-4 ">
+                  Nom est obligatoire.
+                </div>
+              </div>
             </div>
-            <div *ngIf="f['lastname'].touched && f['lastname'].invalid" class="text-danger ms-4">
-              <div >lastname est obligatoire.</div>
+            <div class="row m-0 p-0 d-flex justify-content-center">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-control ">
+                    <i class="bi bi-phone me-1"></i>
+                    <input id="last-name" type="text" formControlName="username" placeholder="Numéro de téléphone" class="flex-md-wrap">
+                </div>
+                <div [style.opacity]="f['username'].touched && f['username'].invalid ? 1 :0 " class="text-danger ms-4 ">
+                    Numéro de téléphone est obligatoire.
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-control">
+                  <i class="bi bi-calendar-date me-1"></i> 
+                  <input  type="date" formControlName="dob" placeholder="Date de Naissance">
+                </div>
+                <div [style.opacity]="f['dob'].touched && f['dob'].invalid ? 1:0" class="text-danger ms-4 ">
+                  Date de Naissance est obligatoire.
+                </div>
+              </div>
             </div>
-
-
-            <div class="form-control m-3 col-6">
-              <i class="bi bi-person me-1"></i>
-              <input  type="text" formControlName="firstname" placeholder="Nom">
+            <div class="row m-0 p-0 d-flex justify-content-center">
+              <div class="col-md-6 col-sm-6 ">
+                <div class="form-control ">
+                  <i class="bi bi-house me-1"></i>
+                  <select class="form-select text-nowrap" aria-label="Default select example" formControlName="lycee">
+                    <option value="" selected disabled hidden>Lycée</option>
+                    <option value="Lycée pilote de Sousse">Lycée pilote de Sousse</option>
+                    <option value="Lycée El Amel">Lycée El Amel</option>
+                    <option value="Lycee Secondary Ali Bourgiba">Lycee Secondary Ali Bourgiba</option>
+                  </select>
+                </div>
+                <div [style.opacity]="f['lycee'].touched && f['lycee'].invalid ? 1 : 0" class="text-danger ms-4" >
+                  Lycée est obligatoire.
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-control ">
+                  <i class="bi bi-mortarboard me-1" ></i>
+                  <select class="form-select text-nowrap" aria-label="Default select example" formControlName="idLevel"  >
+                    <option value="" selected disabled hidden>spécialité</option>
+                    <option value="mathématique">Mathématique</option>
+                    <option value="arabe">Arabe</option>
+                    <option value="français">Français</option>
+                    <option value="anglais">Anglais</option>
+                    <option value="physique">Physique</option>
+                    <option value="informatique">Informatique</option>
+                    <option value="philosophie">Philosophie</option>
+                    <option value="electrique">Electrique</option>
+                    <option value="mecanique">mecanique</option>
+                    <option value="sciences">Sciences de la vie et de la terre</option>
+                    <!-- <option *ngFor="let item of levels" [value]="item.id" >{{item.name}} </option> -->
+                  </select>
+                </div>
+                <div [style.opacity]="f['idLevel'].touched && f['idLevel'].invalid ? 1 : 0" class="text-danger ms-4" >
+                  niveau est obligatoire.
+                </div>
+              </div>
             </div>
-            <div *ngIf="f['firstname'].touched && f['firstname'].invalid" class="text-danger ms-4">
-              <div >firstname est obligatoire.</div>
+            <div class="row m-0 p-0 d-flex justify-content-center">
+              <div class="col-md-6 col-sm-6">
+                <div class="form-control ">
+                  <i class="bi bi-shield-lock me-1"></i> 
+                  <input  type="password" formControlName="password" placeholder="Mot de passe">
+                </div>
+                <div [style.opacity]="f['password'].touched && f['password'].invalid && f['password'].errors? 1 : 0" class="text-danger ms-4 ">
+                    Mot de passe must be at least 8 characters.
+                </div>
+              </div>
+              <div class="col-md-6 col-sm-6">
+                <div class="form-control ">
+                  <i class="bi bi-shield-lock me-1"></i>
+                  <input class="" type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
+                </div> 
+                <div [style.opacity]="f['password'].touched && f['confirmpassword'].touched && f['confirmpassword'].invalid ? 1 : 0" class="text-danger ">
+                  <div [style.opacity]="f['confirmpassword'].errors " class="text-danger ms-4 ">
+                    Le mot de passe doit correspondre.
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div class="form-control m-3">
-              <i class="bi bi-phone me-1"></i>
-              <input id="last-name" type="text" formControlName="username" placeholder="Numéro de téléphone">
-            </div>
-            <div *ngIf="f['username'].touched && f['username'].invalid" class="text-danger ms-4">
-              <div >phonenumber est obligatoire.</div>
-            </div>
-
-
-            <div class="form-control m-3">
-              <i class="bi bi-envelope me-1"></i>
-              <input id="last-name" type="text" formControlName="email" placeholder="email">
-            </div>
-            <div *ngIf="f['email'].touched && f['email'].invalid" class="text-danger ms-4">
-              <div >email est obligatoire.</div>
-            </div>
-
-            <div class="form-control m-3">
-              <i class="bi bi-calendar-date me-1"></i> 
-              <input  type="date" formControlName="dob" placeholder="Date de Naissance">
-            </div>
-            <div *ngIf="f['dob'].touched && f['dob'].invalid" class="text-danger ms-4">
-              <div >Date de Naissance est obligatoire.</div>
-            </div>
-
-            <div class="form-control m-3">
-              <i class="bi bi-shield-lock me-1"></i> 
-              <input  type="password" formControlName="password" placeholder="Mot de passe">
-            </div>
-            <div *ngIf="f['password'].touched && f['password'].invalid && f['password'].errors" class="text-danger ms-4">
-                Mot de passe must be at least 8 characters.
-            </div>
-
-
-            <div class="form-control m-3">
-              <i class="bi bi-shield-lock me-1"></i>
-              <input  type="password" formControlName="confirmpassword" placeholder="Confirmez le mot de passe">
-            </div>
-            <div *ngIf="f['password'].touched && f['confirmpassword'].touched && f['confirmpassword'].invalid" class="text-danger ms-4">
-                Mot de passe et Confirmez le mot de passe doit correspondre.
-            </div>
-
-
-            <div class="form-control m-3">
-              <i class="bi bi-shield-lock me-1"></i>
-              <input  type="text" formControlName="lycee" placeholder="Lycée">
-            </div>
-            <div *ngIf="f['lycee'].touched && f['lycee'].invalid" class="text-danger ms-4">
-              <div >Lycée est obligatoire.</div>
-            </div>
-
-
-            <div class="form-control m-3 d-flex flex-row">
-              <i class="bi bi-mortarboard"></i>
-              <select class="form-select " aria-label="Default select example" formControlName="idLevel" >
-                <option value="" selected disabled hidden class=" d-none">Choose here</option>
-                <option *ngFor="let item of levels" [value]="item.id" >{{item.name}}</option>
-              
-              </select>
-          </div>
-          <div *ngIf="f['idLevel'].dirty && f['idLevel'].invalid" class="text-danger ms-4">
-            <div >niveau est obligatoire.</div>
-          </div>
-
-          <div class="justify-content-center">
-              <div class="form-control border-0 m-4">
-                <input  type="submit" [disabled]="!registerForm.valid" class="send-btn" value="Submit">
+          <div class="row mt-3 d-flex align-items-center justify-content-center">
+            <div class="col-md-5 ">
+              <div class="form-control border-0 ">
+                <input type="submit" [disabled]="!registerForm.valid"  class="send-btn" value="Submit">
               </div> 
+            </div>
           </div>
         </form>
         </div>
+        </div>
       </div>
-    </div>
-  
+      
+    
+    
   

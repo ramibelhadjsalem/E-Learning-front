@@ -20,8 +20,7 @@ export class SignupUserComponent implements OnInit {
   sections :Section[] =[]; 
   levels :level[] =[]; 
   message !:string;
-  myItem !: any;
-  key : string = "paasword";
+  
  
   
   constructor(private formBuilder : FormBuilder ,private auth:AuthService ,private levelService: LevelService,
@@ -62,11 +61,6 @@ export class SignupUserComponent implements OnInit {
   onSubmit(): void {
     this.auth.register(this.profileForm.value , "user").subscribe((res)=> {
       this.toastr.success("register success")
-
-      localStorage.setItem(this.key , this.profileForm.value['username']);
-      this.myItem = localStorage.getItem(this.key);
-      console.log(this.myItem);
-
       localStorage.setItem("phoneNumber",JSON.stringify(this.profileForm.controls['username'].value))
 
       const formModal = new window.bootstrap.Modal(

@@ -73,7 +73,12 @@
               <div class="col-md-6 col-sm-6 ">
                 <div class="form-control ">
                   <i class="bi bi-house me-1"></i>
-                  <input  type="text" formControlName="lycee" placeholder="Lycée">
+                  <select class="form-select text-nowrap" aria-label="Default select example" formControlName="lycee">
+                    <option value="" selected disabled hidden>Lycée</option>
+                    <option value="Lycée pilote de Sousse">Lycée pilote de Sousse</option>
+                    <option value="Lycée El Amel">Lycée El Amel</option>
+                    <option value="Lycee Secondary Ali Bourgiba">Lycee Secondary Ali Bourgiba</option>
+                  </select>
                 </div>
                 <div [style.opacity]="f['lycee'].touched && f['lycee'].invalid ? 1 : 0" class="text-danger ms-4" >
                   Lycée est obligatoire.
@@ -83,8 +88,18 @@
                 <div class="form-control ">
                   <i class="bi bi-mortarboard me-1" ></i>
                   <select class="form-select text-nowrap" aria-label="Default select example" formControlName="idLevel"  >
-                    <option value="" selected disabled hidden>niveau d'étude</option>
-                    <option *ngFor="let item of levels" [value]="item.id" >{{item.name}} </option>
+                    <option value="" selected disabled hidden>spécialité</option>
+                    <option value="mathématique">Mathématique</option>
+                    <option value="arabe">Arabe</option>
+                    <option value="français">Français</option>
+                    <option value="anglais">Anglais</option>
+                    <option value="physique">Physique</option>
+                    <option value="informatique">Informatique</option>
+                    <option value="philosophie">Philosophie</option>
+                    <option value="electrique">Electrique</option>
+                    <option value="mecanique">mecanique</option>
+                    <option value="sciences">Sciences de la vie et de la terre</option>
+                    <!-- <option *ngFor="let item of levels" [value]="item.id" >{{item.name}} </option> -->
                   </select>
                 </div>
                 <div [style.opacity]="f['idLevel'].touched && f['idLevel'].invalid ? 1 : 0" class="text-danger ms-4" >

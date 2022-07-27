@@ -1,7 +1,7 @@
 import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { loggedin } from 'src/app/Services/Models/logedin';
-import { AuthService } from 'src/app/services/service/auth.service';
+import { AuthService } from './../../../Services/service/auth.service';
 
 
 @Component({

@@ -1,18 +1,17 @@
-import { AuthGuard } from './../Services/guards/auth.guard';
+import { AdminGuard } from '../Services/guards/admin.guard';
+import { HomeAdminComponent } from './home-admin/home-admin.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserGuard } from '../Services/guards/user.guard';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', 
     runGuardsAndResolvers: 'always',
-    canActivate: [UserGuard],
+    canActivate: [AdminGuard],
     children: [
       {
         path: "",
-        component: HomeComponent
+        component: HomeAdminComponent
       }
     ]
   }
@@ -22,4 +21,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MainRoutingModule { }
+export class DashbordAdminRoutingModule { }

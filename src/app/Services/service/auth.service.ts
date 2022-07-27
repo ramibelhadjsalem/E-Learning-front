@@ -24,6 +24,7 @@ export class AuthService {
         const user = res;
         if(user){
           this.setCurrentUser(user)
+          this.redirectUser(user.roles)
         }
       })
     )
@@ -48,5 +49,18 @@ export class AuthService {
   }
   confirmSms(model:any){
     return this.http.post(this.apiUrl+"auth/confirmsms",model);
+  }
+
+  redirectUser(roles:String[]){
+    switch( roles[0]){
+      case "ROLE_ADMIN" :
+        this.route.navigateByUrl('/admin')  
+        break;
+      case "ROLE_PROF" :
+          this.route.navigateByUrl('/prof')  
+          break;
+      default:
+        this.route.navigateByUrl("/home");
+    }
   }
 }

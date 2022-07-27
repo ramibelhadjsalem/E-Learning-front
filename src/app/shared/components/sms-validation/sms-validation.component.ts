@@ -22,11 +22,9 @@ export class SmsValidationComponent implements OnInit {
   constructor(private el: ElementRef,private fb:FormBuilder,private auth:AuthService, private toastr: ToastrService,private route:Router) { }
 
   ngOnInit(): void {
-    console.log("first",this.el.nativeElement.querySelector("#exampleModal"));
 
     const item = localStorage.getItem("phoneNumber")
     
-    console.log(item)
     if(item) this.phoneNumber = JSON.parse(item)
 
 

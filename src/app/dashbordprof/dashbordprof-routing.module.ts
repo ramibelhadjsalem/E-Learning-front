@@ -1,15 +1,15 @@
-import { AuthGuard } from './../Services/guards/auth.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserGuard } from '../Services/guards/user.guard';
+import { ProfGuard } from '../Services/guards/prof.guard';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {
     path: '',
     runGuardsAndResolvers: 'always',
-    canActivate: [UserGuard],
+    canActivate: [ProfGuard],
     children: [
+    
       {
         path: "",
         component: HomeComponent
@@ -22,4 +22,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MainRoutingModule { }
+export class DashbordprofRoutingModule { }

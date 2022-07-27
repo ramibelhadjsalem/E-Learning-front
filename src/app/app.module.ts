@@ -20,7 +20,7 @@ import { LevelService } from './Services/service/level.service';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './Services/interceptors/loading.interceptor';
-import { AuthService } from './services/service/auth.service';
+import { AuthService } from './Services/service/auth.service';
 
 
 

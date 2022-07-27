@@ -7,15 +7,12 @@ import { RouterModule } from '@angular/router';
 import { MainlayoutComponent } from './mainlayout/mainlayout.component';
 import { ErrorLayoutComponent } from './error-layout/error-layout.component';
 import { SharedModule } from '../shared/shared.module';
-import { EleveLayoutComponent } from './eleve-layout/eleve-layout.component';
 
 @NgModule({
   declarations: [
     AuthLayoutComponent,
     MainlayoutComponent,
     ErrorLayoutComponent,
-    EleveLayoutComponent,
-
   ],
   imports: [
     CommonModule,

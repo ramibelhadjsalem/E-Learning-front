@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Section } from 'src/app/services/Models/Section';
 declare var window: any;
 import { LevelService } from 'src/app/services/service/level.service';
-import { AuthService } from 'src/app/Services/service/auth.service';
+import { AuthService } from 'src/app/services/service/auth.service';
 import { level } from 'src/app/services/Models/modelLevel';
 
 @Component({

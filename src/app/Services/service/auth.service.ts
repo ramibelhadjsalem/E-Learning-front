@@ -42,7 +42,7 @@ export class AuthService {
   logOut(){
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
-    this.route.navigateByUrl("/")
+    this.route.navigateByUrl("about")
   }
   resetPassword(phoneModel:any){
     return this.http.post(this.apiUrl+"auth/resetpassword",phoneModel)

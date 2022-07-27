@@ -3,7 +3,8 @@ import { environment } from './../../../environments/environment.prod';
 
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { level } from 'src/app/services/Models/modelLevel';
+import { level } from '../Models/modelLevel';
+
 
 @Injectable({
   providedIn: 'root'

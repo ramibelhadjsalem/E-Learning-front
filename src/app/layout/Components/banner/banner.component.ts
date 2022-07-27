@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/service/auth.service';
+import { level } from 'src/app/Services/Models/modelLevel';
+import { AuthService } from 'src/app/Services/service/auth.service';
+import { LevelService } from 'src/app/Services/service/level.service';
 
 
 @Component({
@@ -8,13 +10,21 @@ import { AuthService } from 'src/app/services/service/auth.service';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-
-  constructor(public auth:AuthService) { }
+  levels :level[] =[]; 
+  constructor(public auth:AuthService,
+    private levelservice:LevelService,
+    ) { }
 
   ngOnInit(): void {
+    this.loadLevels();
   }
   logout(){
     this.auth.logOut()
+  }
+  loadLevels(){
+    this.levelservice.getAll().subscribe(res=>{
+      this.levels = res
+    })
   }
 
 }

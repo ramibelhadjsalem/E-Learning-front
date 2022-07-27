@@ -3,23 +3,29 @@
 
 <ul class="navbar-nav m-auto bg-white">
   <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="'/'">Accueil</a>
+    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="'/'">Accueil </a>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link  dropdown-toggle "  routerLinkActive="active" [routerLink]="'/services'">Levels</a>
+        <div class="dropdown-content">
+          <ul class=" p-0">
+            <li *ngFor="let item of levels" value="item.id"> {{item.name}}</li>
+          </ul>
+        </div>
+    
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="'/services'">Services</a>
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/about'">À Propos <i class="bi bi-chevron-down"></i></a>
+  </li>
+   <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/devenir'">Devenir <i class="bi bi-chevron-down"></i></a>
+  </li>
+  <!--<li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/reparateur'">Réparateur <i class="bi bi-chevron-down"></i></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="'/about'">À Propos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="'/devenir'">Devenir</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="'/reparateur'">Réparateur</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLinkActive="active" [routerLink]="'/contact'">Contact</a>
-  </li>
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/contact'">Contact <i class="bi bi-chevron-down"></i></a>
+  </li> -->
   <li  *ngIf="(auth.currentUser$|async)" class="nav-item logout">
     <a class="nav-link" (click)="logout()">Déconnecter</a>
   </li>

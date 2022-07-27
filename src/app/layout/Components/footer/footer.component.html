@@ -1,0 +1,82 @@
+
+    <footer>
+        <div class="row">
+            <div class=" col col-lg-3">
+                <i class="logo bi bi-book-half" style="font-size: 40px;color: rgb(254,74 ,85);"></i>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas molestiae neque in ipsum sapiente reprehenderit dignissimos deleniti veniam quibusdam! Quam exercitationem ducimus saepe officia tempore sapiente natus quas. Aut, totam.</p>
+    
+            </div>
+            
+            <div class=" col col-lg-3">
+                <h3>Address <div class="underline"><span></span></div></h3>
+                <ul class="navbar-nav">
+                <li>
+                    <i class="bi bi-geo-alt"></i>sousse sahloul 4 
+                </li>
+                 <li class="nav-item" >
+                    
+                    <a routerLink="tel:+00000000"><i class="bi bi-telephone"></i>22222222</a>
+                    </li>
+                 <li class="nav-item" >
+                   
+                    <a  class="email-id" routerLink="mailto:hello@odemy.com">  <i  class="bi bi-envelope"></i>hello@odemy.com</a>
+                    </li>
+                 
+                </ul>
+            </div>
+            
+            <div class=" col col-lg-3">
+                <h3>Links <div class="underline"><span></span></div></h3>
+                <ul class="navbar-nav m-auto ">
+                    <li class="nav-item ">
+                      <a class="nav-link " routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="'/'">Accueil </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" routerLinkActive="active" [routerLink]="'/'">Levels   </a>
+                      <div class="dropdown-content">
+                        <ul class=" p-0">
+                          <li *ngFor="let item of levels" value="item.id"> {{item.name}}</li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLinkActive="active" [routerLink]="'/about'">À Propos <i class="bi bi-chevron-down"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLinkActive="active" [routerLink]="'/devenir'">Devenir <i class="bi bi-chevron-down"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLinkActive="active" [routerLink]="'/reparateur'">Réparateur <i class="bi bi-chevron-down"></i></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" routerLinkActive="active" [routerLink]="'/contact'">Contact <i class="bi bi-chevron-down"></i></a>
+                    </li>
+                    
+                  </ul>
+            </div>
+          
+            <div class="social-icons  col col-lg-3">
+               <a routerLink="">
+                   <i class="bi bi-facebook"></i>
+               </a>
+              <a routerLink="">
+                   <i class="bi bi-instagram"></i>
+              </a>
+               <a routerLink="">
+                   <i class="bi bi-twitter"></i>
+               </a>
+               
+            </div>
+        
+        </div>
+        <div class="lines">
+          <div class="line "></div>
+          <div class="line2 "></div>
+          <div class="line3"></div>
+      </div>
+        <hr>
+        <p class="copyright">gggggggggggggggg</p>
+        
+    </footer>
+

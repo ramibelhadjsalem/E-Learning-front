@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
-import { AuthService } from 'src/app/services/service/auth.service';
+import { AuthService } from 'src/app/Services/service/auth.service';
 
 
 declare var window:any

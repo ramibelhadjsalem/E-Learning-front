@@ -5,8 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
-
-import { AuthService } from './../../services/service/auth.service';
+import { AuthService } from './../../Services/service/auth.service';
 declare var window:any
 
 
@@ -44,13 +43,16 @@ export class SignInComponent implements OnInit {
   }
   login(){
     localStorage.setItem("phoneNumber",JSON.stringify(this.loginForm.controls['username'].value))
-    this.auth.login(this.loginForm.value).subscribe((res)=>{
+    this.auth.login(this.loginForm.value).subscribe(res=>{
       this.toastr.success("Connecté ...")
-      this.route.navigateByUrl('/home')
+      
+      // this.route.navigateByUrl('/home')
 
       
     },err=>{
       if(err.status==406){
+
+        console.log("login response err",err)
         this.toastr.warning("compte n'est pas comfirmé , un SmS de comfirmation a ete envoyée ")
         
         const formModel  = new window.bootstrap.Modal(

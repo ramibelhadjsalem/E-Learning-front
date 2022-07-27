@@ -1,0 +1,26 @@
+
+
+
+<ul class="navbar-nav m-auto bg-white">
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="'/'">Accueil</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/services'">Services</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/about'">À Propos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/devenir'">Devenir</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/reparateur'">Réparateur</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLinkActive="active" [routerLink]="'/contact'">Contact</a>
+  </li>
+  <li  *ngIf="(auth.currentUser$|async)" class="nav-item logout">
+    <a class="nav-link" (click)="logout()">Déconnecter</a>
+  </li>
+</ul>

@@ -1,24 +1,30 @@
-
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SmsValidationComponent } from './components/sms-validation/sms-validation.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { SmsValidationComponent } from './components/sms-validation/sms-validation.component';
+
 
 @NgModule({
   declarations: [
     ResetPasswordComponent,
-    SmsValidationComponent,
+
+    SmsValidationComponent
+
    
   ],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
+    // FormsModule,
+    RouterModule,
+    ReactiveFormsModule
     
   ],
   exports: [
     SmsValidationComponent,
     ResetPasswordComponent,
+    
     
     
   ]

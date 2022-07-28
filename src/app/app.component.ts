@@ -4,6 +4,7 @@ import { map } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AuthService } from './Services/service/auth.service';
 
+import { TranslateService } from "@ngx-translate/core";
 
 
 
@@ -18,7 +19,11 @@ export class AppComponent implements OnInit,OnDestroy{
 
   title = 'E-Learning';
 
-  constructor(private auth:AuthService ,private route:Router){}
+  constructor(private auth:AuthService ,private route:Router,public translate:TranslateService){
+
+    translate.addLangs(['en','fr'])
+    translate.setDefaultLang('fr')
+  }
   ngOnDestroy(): void {
     this.auth.logOut();
   }
@@ -41,5 +46,8 @@ export class AppComponent implements OnInit,OnDestroy{
         }
       }
 
+  }
+  switchLang(lang :string){
+    this.translate.use(lang)
   }
 }

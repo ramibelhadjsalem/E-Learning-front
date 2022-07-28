@@ -3,12 +3,12 @@ import { BusyService } from './Services/service/busy.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ToastrModule } from 'ngx-toastr';
-
-
+import {TranslateLoader,TranslateModule} from '@ngx-translate/core'
+import {TranslateHttpLoader} from '@ngx-translate/http-loader'
 import { AppComponent } from './app.component';
 import { AuthRoutingModule } from './auth/auth-routing.module';
 import { AuthModule } from './auth/auth.module';
@@ -42,8 +42,15 @@ import { AuthService } from './Services/service/auth.service';
     ToastrModule.forRoot({timeOut:1000}),
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    NgxSpinnerModule
-    
+    NgxSpinnerModule,
+    TranslateModule.forRoot({
+      loader :{
+        provide :TranslateLoader,
+        useFactory:httpTranslateLoader,
+        deps:[HttpClient]
+
+      }
+    })
 
   ],
   providers: [LevelService,AuthService,BusyService,
@@ -53,3 +60,8 @@ import { AuthService } from './Services/service/auth.service';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+export function httpTranslateLoader(http:HttpClient){
+  return new TranslateHttpLoader(http);
+}

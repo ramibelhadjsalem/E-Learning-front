@@ -23,10 +23,10 @@ export class ResetPasswordComponent implements OnInit {
   constructor(private el: ElementRef,private fb:FormBuilder ,private auth :AuthService, private toastr: ToastrService,private route:Router) { }
 
   ngOnInit(): void {
-    this.auth.currentUser$.subscribe(res=>{
-      this.phone=res!.username
+    // this.auth.currentUser$.subscribe(res=>{
+    //   this.phone=res!.username
       
-    })
+    // })
    this.form = this.fb.group({
     
     phoneNumber:[this.phone,Validators.required],

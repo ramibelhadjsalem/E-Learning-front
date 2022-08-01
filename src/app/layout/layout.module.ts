@@ -16,6 +16,11 @@ import { SharedModule } from '../shared/shared.module';
 
 import { DashbordprogLayoutComponent } from './dashbordprog-layout/dashbordprog-layout.component';
 import { DashbordAdminLayoutComponent } from './dashbord-admin-layout/dashbord-admin-layout.component';
+import { SideBarProfComponent } from './Components/side-bar-prof/side-bar-prof.component';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../Services/service/language.service';
 
 
 
@@ -33,7 +38,8 @@ import { DashbordAdminLayoutComponent } from './dashbord-admin-layout/dashbord-a
     BannerComponent,
     FooterComponent,
     DashbordprogLayoutComponent,
-    DashbordAdminLayoutComponent
+    DashbordAdminLayoutComponent,
+    SideBarProfComponent
     
 
 
@@ -46,7 +52,25 @@ import { DashbordAdminLayoutComponent } from './dashbord-admin-layout/dashbord-a
   
     NgbModule,
     SharedModule,
+    TranslateModule.forRoot({
+      loader :{
+        provide :TranslateLoader,
+        useFactory:httpTranslateLoader,
+        deps:[HttpClient]
+
+      }
+    })
    
   ]
 })
-export class LayoutModule { }
+export class LayoutModule { 
+  constructor(public translate:TranslateService ,private lang:LanguageService){
+    translate.addLangs(lang.langs)
+    translate.setDefaultLang(lang.loadLang())
+  }
+}
+
+
+export function httpTranslateLoader(http:HttpClient){
+  return new TranslateHttpLoader(http);
+}

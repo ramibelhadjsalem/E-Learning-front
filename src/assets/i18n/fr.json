@@ -1,3 +1,27 @@
 {
-    "welcome":"bienvenue"
+    "welcome":"bienvenue",
+    "by":"au revoir",
+    "appname":"abajim",
+    "dashboard":"tableau de bord",
+    "courses":"Cours",
+    "logout":"Se déconnecter",
+    "settings":"Réglages",
+    "profile":"Profil",
+    "notifications":"Notifications",
+    "quizes":"Quiz",
+    "wallet":"Porte monnaie",
+    "meetings":"Réunions",
+    "new":"Nouveau",
+    "My courses":"Mes Cours",
+    "Invited courses":"Cours invité ",
+    "Organization courses":"Cours organizé",
+    "My purchases":"Mes achats",
+    "My comments":"Mes commentaires",
+    "Favorites":"Favoris",
+    "Languages":"Les langues",
+    "My reservations":"Mes reservations",
+    "Requests":"Demandes",
+    "Meeting statistics":"Statistiques de réunion",
+    "My timesheet":"Ma feuille de temps"
+
 }

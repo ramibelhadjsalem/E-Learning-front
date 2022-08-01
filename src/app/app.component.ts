@@ -21,8 +21,7 @@ export class AppComponent implements OnInit,OnDestroy{
 
   constructor(private auth:AuthService ,private route:Router,public translate:TranslateService){
 
-    translate.addLangs(['en','fr'])
-    translate.setDefaultLang('fr')
+  
   }
   ngOnDestroy(): void {
     this.auth.logOut();
@@ -36,15 +35,16 @@ export class AppComponent implements OnInit,OnDestroy{
       const item=localStorage.getItem('user')
       if(item != null){
         this.auth.setCurrentUser(JSON.parse(item))
-      }else{
-        const phoneNumber = localStorage.getItem("phoneNumber")
-        if(phoneNumber !=null){
-
-          this.route.navigateByUrl("auth/login")
-        }else{
-          this.route.navigateByUrl('about')
-        }
       }
+      // else{
+      //   const phoneNumber = localStorage.getItem("phoneNumber")
+      //   if(phoneNumber !=null){
+
+      //     this.route.navigateByUrl("auth/login")
+      //   }else{
+      //     this.route.navigateByUrl('about')
+      //   }
+      // }
 
   }
   switchLang(lang :string){

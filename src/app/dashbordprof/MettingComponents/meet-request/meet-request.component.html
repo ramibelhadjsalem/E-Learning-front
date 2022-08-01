@@ -1,0 +1,439 @@
+<div class="panel-content snipcss-opIUy w-100">
+    <section class="snip-section">
+      <h2 class="section-title snip-h2">
+        Meeting statistics
+      </h2>
+      <div class="activities-container mt-25 p-20 p-lg-35 snip-div">
+        <div class="row snip-div">
+          <div class="col-6 col-md-3 d-flex align-items-center justify-content-center snip-div">
+            <div class="d-flex flex-column align-items-center text-center snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/activity/49.svg" width="64" height="64" alt="" class="snip-img">
+              <strong class="font-30 font-weight-bold text-dark-blue mt-5">
+                1
+              </strong>
+              <span class="font-16 text-gray font-weight-500">
+                Pending meetings
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 d-flex align-items-center justify-content-center snip-div">
+            <div class="d-flex flex-column align-items-center text-center snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/activity/50.svg" width="64" height="64" alt="" class="snip-img">
+              <strong class="font-30 font-weight-bold text-dark-blue mt-5">
+                1
+              </strong>
+              <span class="font-16 text-gray font-weight-500">
+                Total meetings
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 d-flex align-items-center justify-content-center mt-5 mt-md-0 snip-div">
+            <div class="d-flex flex-column align-items-center text-center snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/activity/38.svg" width="64" height="64" alt="" class="snip-img">
+              <strong class="font-30 font-weight-bold text-dark-blue mt-5">
+                $750.00
+              </strong>
+              <span class="font-16 text-gray font-weight-500">
+                Sales amount
+              </span>
+            </div>
+          </div>
+          <div class="col-6 col-md-3 d-flex align-items-center justify-content-center mt-5 mt-md-0 snip-div">
+            <div class="d-flex flex-column align-items-center text-center snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/activity/hours.svg" width="64" height="64" alt="" class="snip-img">
+              <strong class="font-30 font-weight-bold text-dark-blue mt-5">
+                1:00
+              </strong>
+              <span class="font-16 text-gray font-weight-500">
+                Active hours
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="mt-25 snip-section">
+      <h2 class="section-title snip-h2">
+        Filter meetings
+      </h2>
+      <div class="panel-section-card py-20 px-25 mt-20 snip-div">
+        <form action="/panel/meetings/requests" method="get" class="row">
+          <div class="col-12 col-lg-4 snip-div">
+            <div class="row snip-div">
+              <div class="col-12 col-md-6 snip-div">
+                <div class="form-group snip-div">
+                  <label class="input-label">
+                    From
+                  </label>
+                  <div class="input-group snip-div">
+                    <div class="input-group-prepend snip-div">
+                      <span class="input-group-text" id="dateInputGroupPrepend">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar text-white snip-svg">
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                          </rect>
+                          <line x1="16" y1="2" x2="16" y2="6">
+                          </line>
+                          <line x1="8" y1="2" x2="8" y2="6">
+                          </line>
+                          <line x1="3" y1="10" x2="21" y2="10">
+                          </line>
+                        </svg>
+                      </span>
+                    </div>
+                    <input type="text" name="from" autocomplete="off" class="form-control  datefilter " aria-describedby="dateInputGroupPrepend" value="">
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 snip-div">
+                <div class="form-group snip-div">
+                  <label class="input-label">
+                    To
+                  </label>
+                  <div class="input-group snip-div">
+                    <div class="input-group-prepend snip-div">
+                      <span class="input-group-text" id="dateInputGroupPrepend">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar text-white snip-svg">
+                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2">
+                          </rect>
+                          <line x1="16" y1="2" x2="16" y2="6">
+                          </line>
+                          <line x1="8" y1="2" x2="8" y2="6">
+                          </line>
+                          <line x1="3" y1="10" x2="21" y2="10">
+                          </line>
+                        </svg>
+                      </span>
+                    </div>
+                    <input type="text" name="to" autocomplete="off" class="form-control  datefilter " aria-describedby="dateInputGroupPrepend" value="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6 snip-div">
+            <div class="row snip-div">
+              <div class="col-12 col-lg-4 snip-div">
+                <div class="form-group snip-div">
+                  <label class="input-label">
+                    Day
+                  </label>
+                  <select class="form-control" id="day" name="day">
+                    <option value="all">
+                      All Days
+                    </option>
+                    <option value="saturday">
+                      Saturday
+                    </option>
+                    <option value="sunday">
+                      Sunday
+                    </option>
+                    <option value="monday">
+                      Monday
+                    </option>
+                    <option value="tuesday">
+                      Tuesday
+                    </option>
+                    <option value="wednesday">
+                      Wednesday
+                    </option>
+                    <option value="thursday">
+                      Thursday
+                    </option>
+                    <option value="friday">
+                      Friday
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-12 col-lg-8 snip-div">
+                <div class="row snip-div">
+                  <div class="col-12 col-lg-8 snip-div">
+                    <div class="form-group snip-div">
+                      <label class="input-label">
+                        Student
+                      </label>
+                      <select name="student_id" class="form-control select2 select2-hidden-accessible" tabindex="-1" aria-hidden="true" data-select2-id="select2-data-5-8ivi">
+                        <option value="all" data-select2-id="select2-data-7-boca">
+                          All students
+                        </option>
+                        <option value="995">
+                          Cameron Schofield
+                        </option>
+                      </select>
+                      <span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="select2-data-6-t5m9" style="width: 100%;">
+                        <span class="selection">
+                          <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-student_id-k0-container">
+                            <button type="button" class="select2-selection__clear snip-button" tabindex="-1" title="Remove all items" aria-label="Remove all items" aria-describedby="select2-student_id-k0-container" data-select2-id="select2-data-8-t4ay">
+                              <span aria-hidden="true">
+                                ×
+                              </span>
+                            </button>
+                            <span class="select2-selection__rendered" id="select2-student_id-k0-container" role="textbox" aria-readonly="true" title="All students">
+                              All students
+                            </span>
+                            <span class="select2-selection__arrow" role="presentation">
+                              <b role="presentation">
+                              </b>
+                            </span>
+                          </span>
+                        </span>
+                        <span class="dropdown-wrapper" aria-hidden="true">
+                        </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-4 snip-div">
+                    <div class="form-group snip-div">
+                      <label class="input-label">
+                        Status
+                      </label>
+                      <select class="form-control" id="status" name="status">
+                        <option>
+                          All
+                        </option>
+                        <option value="open">
+                          Open
+                        </option>
+                        <option value="finished">
+                          Finished
+                        </option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-2 d-flex align-items-center justify-content-end snip-div">
+            <button type="submit" class="btn btn-sm btn-primary w-100 mt-2 snip-button">
+              Show Results
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="mt-35 snip-section">
+      <form action="/panel/meetings/requests?" method="get" class="d-flex align-items-start align-items-md-center justify-content-between flex-column flex-md-row">
+        <h2 class="section-title snip-h2">
+          Meeting requests list
+        </h2>
+        <div class="d-flex align-items-center flex-row-reverse flex-md-row justify-content-start justify-content-md-center mt-20 mt-md-0 snip-div">
+          <label class="cursor-pointer mb-0 mr-10 text-gray font-14 font-weight-500" for="openMeetingResult">
+            Show only open meetings
+          </label>
+          <div class="custom-control custom-switch snip-div">
+            <input type="checkbox" name="open_meetings" class="js-panel-list-switch-filter custom-control-input" id="openMeetingResult">
+            <label class="custom-control-label" for="openMeetingResult">
+            </label>
+          </div>
+        </div>
+      </form>
+      <div class="panel-section-card py-20 px-25 mt-20 snip-div">
+        <div class="row snip-div">
+          <div class="col-12 snip-div">
+            <div class="table-responsive snip-div">
+              <table class="table text-center custom-table">
+                <thead>
+                  <tr>
+                    <th>
+                      Student
+                    </th>
+                    <th class="text-center">
+                      Meeting Type
+                    </th>
+                    <th class="text-center">
+                      Day
+                    </th>
+                    <th class="text-center">
+                      Date
+                    </th>
+                    <th class="text-center">
+                      Time
+                    </th>
+                    <th class="text-center">
+                      Paid Amount
+                    </th>
+                    <th class="text-center">
+                      Students count
+                    </th>
+                    <th class="text-center">
+                      Status
+                    </th>
+                    <th>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-left">
+                      <div class="user-inline-avatar d-flex align-items-center snip-div">
+                        <div class="avatar bg-gray200 snip-div">
+                          <img src="https://lms.rocket-soft.org/store/995/avatar/6179b58ee64c7.png" class="img-cover snip-img" alt="">
+                        </div>
+                        <div class="ml-5 snip-div">
+                          <span class="d-block font-weight-500">
+                            Cameron Schofield
+                          </span>
+                          <span class="mt-5 font-12 text-gray d-block">
+                            student@demo.com
+                          </span>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="align-middle">
+                      <span class="font-weight-500">
+                        In-person
+                      </span>
+                    </td>
+                    <td class="align-middle">
+                      <span class="font-weight-500">
+                        Tue
+                      </span>
+                    </td>
+                    <td class="align-middle">
+                      <span>
+                        15 Mar 2022
+                      </span>
+                    </td>
+                    <td class="align-middle">
+                      <div class="d-inline-flex align-items-center rounded bg-gray200 py-5 px-15 font-14 font-weight-500 snip-div">
+                        <span class="">
+                          10:30
+                        </span>
+                        <span class="mx-1">
+                          -
+                        </span>
+                        <span class="">
+                          11:30
+                        </span>
+                      </div>
+                    </td>
+                    <td class="font-weight-500 align-middle">
+                      $750.00
+                    </td>
+                    <td class="align-middle font-weight-500">
+                      5
+                    </td>
+                    <td class="align-middle">
+                      <span class="font-weight-500">
+                        Pending
+                      </span>
+                    </td>
+                    <td class="align-middle text-right">
+                      <input type="hidden" class="js-meeting-password-1" value="">
+                      <input type="hidden" class="js-meeting-link-1" value="">
+                      <div class="btn-group dropdown table-actions snip-div">
+                        <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                            <circle cx="12" cy="12" r="1">
+                            </circle>
+                            <circle cx="12" cy="5" r="1">
+                            </circle>
+                            <circle cx="12" cy="19" r="1">
+                            </circle>
+                          </svg>
+                        </button>
+                        <div class="dropdown-menu menu-lg snip-div">
+                          <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&amp;dates=20220315T103000Z/20220315T113000Z&amp;ctz=UTC&amp;text=Meeting" target="_blank" class="webinar-actions d-block mt-10 font-weight-normal snip-a">
+                            Add to Calendar
+                          </a>
+                          <button type="button" data-user-id="995" data-item-id="1" data-user-type="student" class="contact-info btn-transparent webinar-actions d-block mt-10 snip-button">
+                            Contact student
+                          </button>
+                          <button type="button" data-id="1" class="webinar-actions js-finish-meeting-reserve d-block btn-transparent mt-10 font-weight-normal snip-button">
+                            Finish meeting
+                          </button>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="my-30 snip-div">
+      </div>
+    </section>
+    <div class="d-none snip-div" id="liveMeetingLinkModal">
+      <h3 class="section-title after-line font-20 text-dark-blue mb-25 snip-h3">
+        Add live meeting link
+      </h3>
+      <form action="/panel/meetings/create-link" method="post">
+        <input type="hidden" name="item_id" value="">
+        <div class="row snip-div">
+          <div class="col-12 col-md-8 snip-div">
+            <div class="form-group snip-div">
+              <label class="input-label">
+                URL
+              </label>
+              <input type="text" name="link" class="form-control">
+              <div class="invalid-feedback snip-div">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4 snip-div">
+            <div class="form-group snip-div">
+              <label class="input-label">
+                Password (Optional)
+              </label>
+              <input type="text" name="password" class="form-control">
+              <div class="invalid-feedback snip-div">
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="font-weight-500 font-12 text-gray snip-p">
+          You can use Zoom, Bigbluebutton, etc links
+        </p>
+        <div class="mt-30 d-flex align-items-center justify-content-end snip-div">
+          <button type="button" class="js-save-meeting-link btn btn-sm btn-primary snip-button">
+            Save
+          </button>
+          <button type="button" class="btn btn-sm btn-danger ml-10 close-swl snip-button">
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="d-none snip-div" id="joinMeetingLinkModal">
+      <h3 class="section-title after-line font-20 text-dark-blue mb-25 snip-h3">
+        Join live meeting
+      </h3>
+      <div class="row snip-div">
+        <div class="col-12 col-md-8 snip-div">
+          <div class="form-group snip-div">
+            <label class="input-label">
+              URL
+            </label>
+            <input type="text" readonly="" name="link" class="form-control">
+            <div class="invalid-feedback snip-div">
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 snip-div">
+          <div class="form-group snip-div">
+            <label class="input-label">
+              Password (Optional)
+            </label>
+            <input type="text" readonly="" name="password" class="form-control">
+            <div class="invalid-feedback snip-div">
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="font-weight-500 text-gray snip-p">
+        You can use Zoom, Bigbluebutton, etc links
+      </p>
+      <div class="mt-30 d-flex align-items-center justify-content-end snip-div">
+        <a href="" target="_blank" class="js-join-meeting-link btn btn-sm btn-primary snip-a">
+          Join
+        </a>
+        <button type="button" class="btn btn-sm btn-danger ml-10 close-swl snip-button">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+  

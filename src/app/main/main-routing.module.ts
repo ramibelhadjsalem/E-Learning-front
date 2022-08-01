@@ -7,8 +7,8 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    runGuardsAndResolvers: 'always',
-    canActivate: [UserGuard],
+    // runGuardsAndResolvers: 'always',
+    // canActivate: [UserGuard],
     children: [
       {
         path: "",

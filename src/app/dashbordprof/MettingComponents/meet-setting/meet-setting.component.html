@@ -1,0 +1,837 @@
+<div class="panel-content snipcss-W7Uyw snip-div w-100">
+    <form action="/panel/meetings/30/update" method="post">
+      <input type="hidden" name="_token" value="joJQBbxUjdpn2FY6tFa5IbTHahRz8Jxdei1MotBa">
+      <section class="snip-section">
+        <div class="d-flex align-items-start align-items-md-center justify-content-between flex-column flex-md-row snip-div">
+          <h2 class="section-title snip-h2">
+            {{'My timesheet'|translate}}
+          </h2>
+          <div class="d-flex align-items-center flex-row-reverse flex-md-row justify-content-start justify-content-md-center mt-20 mt-md-0 snip-div">
+            <label class="mb-0 mr-10 cursor-pointer font-14 text-gray font-weight-500" for="temporaryDisableMeetingsSwitch">
+              Temporary disable meetings
+            </label>
+            <div class="custom-control custom-switch snip-div">
+              <input type="checkbox" name="disabled" class="custom-control-input" id="temporaryDisableMeetingsSwitch">
+              <label class="custom-control-label" for="temporaryDisableMeetingsSwitch">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="panel-section-card time-sheet py-20 px-25 mt-20 snip-div">
+          <div class="row snip-div">
+            <div class="col-12 snip-div">
+              <div class="table-responsive snip-div">
+                <table class="table text-center custom-table">
+                  <thead>
+                    <tr>
+                      <td class="text-left text-gray font-weight-500">
+                        Day
+                      </td>
+                      <td class="text-left text-gray font-weight-500">
+                        Availability Times
+                      </td>
+                      <td class="text-right text-gray font-weight-500">
+                        Actions
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr id="saturdayTimeSheet" data-day="saturday">
+                      <td class="text-left">
+                        <span class="font-weight-500 text-dark-blue d-block">
+                          Saturday
+                        </span>
+                        <span class="font-12 text-gray">
+                          3 Hours Available
+                        </span>
+                      </td>
+                      <td class="time-sheet-items text-left align-middle">
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            10:00AM-11:30AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="93" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            12:15PM-01:45PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              In-person
+                            </span>
+                          </span>
+                          <span data-time-id="173" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-right align-middle">
+                        <div class="btn-group dropdown table-actions snip-div">
+                          <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                              <circle cx="12" cy="12" r="1">
+                              </circle>
+                              <circle cx="12" cy="5" r="1">
+                              </circle>
+                              <circle cx="12" cy="19" r="1">
+                              </circle>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu snip-div">
+                            <button type="button" class="add-time btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Add Time
+                            </button>
+                            <button type="button" class="clear-all btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Clear All
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr id="sundayTimeSheet" data-day="sunday">
+                      <td class="text-left">
+                        <span class="font-weight-500 text-dark-blue d-block">
+                          Sunday
+                        </span>
+                        <span class="font-12 text-gray">
+                          3.5 Hours Available
+                        </span>
+                      </td>
+                      <td class="time-sheet-items text-left align-middle">
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            05:00PM-06:00PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="94" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            06:30PM-07:30PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="95" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            10:00AM-11:30AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              In-person
+                            </span>
+                          </span>
+                          <span data-time-id="168" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-right align-middle">
+                        <div class="btn-group dropdown table-actions snip-div">
+                          <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                              <circle cx="12" cy="12" r="1">
+                              </circle>
+                              <circle cx="12" cy="5" r="1">
+                              </circle>
+                              <circle cx="12" cy="19" r="1">
+                              </circle>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu snip-div">
+                            <button type="button" class="add-time btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Add Time
+                            </button>
+                            <button type="button" class="clear-all btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Clear All
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr id="mondayTimeSheet" data-day="monday">
+                      <td class="text-left">
+                        <span class="font-weight-500 text-dark-blue d-block">
+                          Monday
+                        </span>
+                        <span class="font-12 text-gray">
+                          2.75 Hours Available
+                        </span>
+                      </td>
+                      <td class="time-sheet-items text-left align-middle">
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            09:45AM-10:15AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="96" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            11:00AM-11:45AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="97" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            06:00PM-07:30PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="98" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-right align-middle">
+                        <div class="btn-group dropdown table-actions snip-div">
+                          <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                              <circle cx="12" cy="12" r="1">
+                              </circle>
+                              <circle cx="12" cy="5" r="1">
+                              </circle>
+                              <circle cx="12" cy="19" r="1">
+                              </circle>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu snip-div">
+                            <button type="button" class="add-time btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Add Time
+                            </button>
+                            <button type="button" class="clear-all btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Clear All
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr id="tuesdayTimeSheet" data-day="tuesday">
+                      <td class="text-left">
+                        <span class="font-weight-500 text-dark-blue d-block">
+                          Tuesday
+                        </span>
+                        <span class="font-12 text-gray">
+                          2 Hours Available
+                        </span>
+                      </td>
+                      <td class="time-sheet-items text-left align-middle">
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            08:30AM-09:30AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="99" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            10:30AM-11:30AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              In-person
+                            </span>
+                          </span>
+                          <span data-time-id="169" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-right align-middle">
+                        <div class="btn-group dropdown table-actions snip-div">
+                          <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                              <circle cx="12" cy="12" r="1">
+                              </circle>
+                              <circle cx="12" cy="5" r="1">
+                              </circle>
+                              <circle cx="12" cy="19" r="1">
+                              </circle>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu snip-div">
+                            <button type="button" class="add-time btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Add Time
+                            </button>
+                            <button type="button" class="clear-all btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Clear All
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr id="wednesdayTimeSheet" data-day="wednesday">
+                      <td class="text-left">
+                        <span class="font-weight-500 text-dark-blue d-block">
+                          Wednesday
+                        </span>
+                        <span class="font-12 text-gray">
+                          4.25 Hours Available
+                        </span>
+                      </td>
+                      <td class="time-sheet-items text-left align-middle">
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            10:30AM-11:30AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="100" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            06:00PM-07:30PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="102" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            08:30PM-09:45PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="103" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            10:00PM-10:30PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="104" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-right align-middle">
+                        <div class="btn-group dropdown table-actions snip-div">
+                          <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                              <circle cx="12" cy="12" r="1">
+                              </circle>
+                              <circle cx="12" cy="5" r="1">
+                              </circle>
+                              <circle cx="12" cy="19" r="1">
+                              </circle>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu snip-div">
+                            <button type="button" class="add-time btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Add Time
+                            </button>
+                            <button type="button" class="clear-all btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Clear All
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr id="thursdayTimeSheet" data-day="thursday">
+                      <td class="text-left">
+                        <span class="font-weight-500 text-dark-blue d-block">
+                          Thursday
+                        </span>
+                        <span class="font-12 text-gray">
+                          3 Hours Available
+                        </span>
+                      </td>
+                      <td class="time-sheet-items text-left align-middle">
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            04:50PM-05:50PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="101" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            06:00PM-08:00PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="105" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-right align-middle">
+                        <div class="btn-group dropdown table-actions snip-div">
+                          <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                              <circle cx="12" cy="12" r="1">
+                              </circle>
+                              <circle cx="12" cy="5" r="1">
+                              </circle>
+                              <circle cx="12" cy="19" r="1">
+                              </circle>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu snip-div">
+                            <button type="button" class="add-time btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Add Time
+                            </button>
+                            <button type="button" class="clear-all btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Clear All
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr id="fridayTimeSheet" data-day="friday">
+                      <td class="text-left">
+                        <span class="font-weight-500 text-dark-blue d-block">
+                          Friday
+                        </span>
+                        <span class="font-12 text-gray">
+                          5.5 Hours Available
+                        </span>
+                      </td>
+                      <td class="time-sheet-items text-left align-middle">
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            10:15AM-11:45AM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Both
+                            </span>
+                          </span>
+                          <span data-time-id="106" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            04:30PM-05:30PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Online
+                            </span>
+                          </span>
+                          <span data-time-id="170" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            06:00PM-07:30PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              Online
+                            </span>
+                          </span>
+                          <span data-time-id="171" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                        <div class="position-relative selected-time px-15 py-5 mb-10 mb-lg-0 bg-gray200 rounded d-inline-block mr-10 snip-div">
+                          <span class="inner-time text-gray font-12">
+                            08:00PM-09:30PM
+                            <span class="mx-5">
+                              -
+                            </span>
+                            <span class="font-12 text-gray">
+                              In-person
+                            </span>
+                          </span>
+                          <span data-time-id="172" class="remove-time rounded-circle bg-danger">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x snip-svg">
+                              <line x1="18" y1="6" x2="6" y2="18">
+                              </line>
+                              <line x1="6" y1="6" x2="18" y2="18">
+                              </line>
+                            </svg>
+                          </span>
+                        </div>
+                      </td>
+                      <td class="text-right align-middle">
+                        <div class="btn-group dropdown table-actions snip-div">
+                          <button type="button" class="btn-transparent dropdown-toggle snip-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                              <circle cx="12" cy="12" r="1">
+                              </circle>
+                              <circle cx="12" cy="5" r="1">
+                              </circle>
+                              <circle cx="12" cy="19" r="1">
+                              </circle>
+                            </svg>
+                          </button>
+                          <div class="dropdown-menu snip-div">
+                            <button type="button" class="add-time btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Add Time
+                            </button>
+                            <button type="button" class="clear-all btn-transparent webinar-actions d-block mt-10 snip-button">
+                              Clear All
+                            </button>
+                          </div>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="mt-30 snip-div">
+        <h2 class="section-title after-line snip-h2">
+          Hourly charge
+        </h2>
+        <div class="row align-items-center mt-20 snip-div">
+          <div class="col-12 col-md-3 snip-div">
+            <label class="font-weight-500 font-14 text-dark-blue d-block">
+              Amount
+            </label>
+            <div class="input-group snip-div">
+              <div class="input-group-prepend snip-div">
+                <span class="input-group-text text-white font-16">
+                  $
+                </span>
+              </div>
+              <input type="number" name="amount" value="100" class="form-control" placeholder="Only numbers...">
+              <div class="invalid-feedback snip-div">
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3 snip-div">
+            <label class="font-weight-500 font-14 text-dark-blue d-block">
+              Discount rate (%)
+            </label>
+            <div class="input-group snip-div">
+              <div class="input-group-prepend snip-div">
+                <span class="input-group-text text-white font-16">
+                  %
+                </span>
+              </div>
+              <input type="number" name="discount" value="" class="form-control" placeholder="Only numbers...">
+              <div class="invalid-feedback snip-div">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-30 snip-div">
+        <h2 class="section-title after-line snip-h2">
+          In-person meetings
+        </h2>
+        <div class="row snip-div">
+          <div class="col-12 col-lg-3 mt-15 snip-div">
+            <div class="form-group mt-20 d-flex align-items-center justify-content-between snip-div">
+              <label class="cursor-pointer input-label" for="inPersonMeetingSwitch">
+                Available for In-person meetings
+              </label>
+              <div class="custom-control custom-switch snip-div">
+                <input type="checkbox" name="in_person" class="custom-control-input" id="inPersonMeetingSwitch" checked="">
+                <label class="custom-control-label" for="inPersonMeetingSwitch">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-3 snip-div" id="inPersonMeetingAmount">
+            <label class="font-weight-500 font-14 text-dark-blue d-block">
+              Hourly Price
+            </label>
+            <div class="input-group snip-div">
+              <div class="input-group-prepend snip-div">
+                <span class="input-group-text text-white font-16">
+                  $
+                </span>
+              </div>
+              <input type="number" name="in_person_amount" value="250" class="form-control" placeholder="Only numbers...">
+              <div class="invalid-feedback snip-div">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-30 snip-div">
+        <h2 class="section-title after-line snip-h2">
+          Group meeting
+        </h2>
+        <div class="row snip-div">
+          <div class="col-12 col-lg-3 mt-15 snip-div">
+            <div class="form-group mt-20 d-flex align-items-center justify-content-between snip-div">
+              <label class="cursor-pointer input-label" for="groupMeetingSwitch">
+                Available for group meetings
+              </label>
+              <div class="custom-control custom-switch snip-div">
+                <input type="checkbox" name="group_meeting" class="custom-control-input" id="groupMeetingSwitch" checked="">
+                <label class="custom-control-label" for="groupMeetingSwitch">
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-5 snip-div" id="onlineGroupMeetingOptions">
+            <h4 class="font-16 text-gray font-weight-bold snip-h4">
+              Online Group Meeting Options
+            </h4>
+            <div class="row mt-15 snip-div">
+              <div class="col-12 col-lg-3 snip-div">
+                <label class="font-weight-500 font-14 text-dark-blue d-block">
+                  Minimum Students
+                </label>
+                <input type="number" min="2" name="online_group_min_student" value="20" class="form-control" placeholder="Only numbers...">
+                <div class="invalid-feedback snip-div">
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 snip-div">
+                <label class="font-weight-500 font-14 text-dark-blue d-block">
+                  Maximum Students
+                </label>
+                <input type="number" name="online_group_max_student" value="200" class="form-control" placeholder="Only numbers...">
+                <div class="invalid-feedback snip-div">
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 snip-div">
+                <label class="font-weight-500 font-14 text-dark-blue d-block">
+                  Hourly Price
+                </label>
+                <div class="input-group snip-div">
+                  <div class="input-group-prepend snip-div">
+                    <span class="input-group-text text-white font-16">
+                      $
+                    </span>
+                  </div>
+                  <input type="text" name="online_group_amount" value="50" class="form-control" placeholder="Only numbers...">
+                  <div class="invalid-feedback snip-div">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-20 snip-div" id="inPersonGroupMeetingOptions">
+            <h4 class="font-16 text-gray font-weight-bold snip-h4">
+              In-person Group Meeting Options
+            </h4>
+            <div class="row mt-15 snip-div">
+              <div class="col-12 col-lg-3 snip-div">
+                <label class="font-weight-500 font-14 text-dark-blue d-block">
+                  Minimum Students
+                </label>
+                <input type="number" min="2" name="in_person_group_min_student" value="5" class="form-control" placeholder="Only numbers...">
+                <div class="invalid-feedback snip-div">
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 snip-div">
+                <label class="font-weight-500 font-14 text-dark-blue d-block">
+                  Maximum Students
+                </label>
+                <input type="number" name="in_person_group_max_student" value="30" class="form-control" placeholder="Only numbers...">
+                <div class="invalid-feedback snip-div">
+                </div>
+              </div>
+              <div class="col-12 col-lg-3 snip-div">
+                <label class="font-weight-500 font-14 text-dark-blue d-block">
+                  Hourly Price
+                </label>
+                <div class="input-group snip-div">
+                  <div class="input-group-prepend snip-div">
+                    <span class="input-group-text text-white font-16">
+                      $
+                    </span>
+                  </div>
+                  <input type="text" name="in_person_group_amount" value="150" class="form-control" placeholder="Only numbers...">
+                  <div class="invalid-feedback snip-div">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-15 snip-div">
+        <button type="button" id="meetingSettingFormSubmit" class="btn btn-sm btn-primary mt-30 snip-button">
+          Save
+        </button>
+      </div>
+    </form>
+  </div>
+  

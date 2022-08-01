@@ -1,0 +1,128 @@
+<div class="panel-content snipcss-XQh7f w-100">
+    <div class="snip-div">
+      <div data-action="/panel/quizzes/store" class="js-content-form quiz-form webinar-form">
+        <section class="snip-section">
+          <h2 class="section-title after-line snip-h2">
+            New quiz
+          </h2>
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="form-group mt-25">
+                <label class="input-label">
+                  Language
+                </label>
+                <select name="ajax[locale]" class="form-control " data-webinar-id="" data-id="" data-relation="quizzes" data-fields="title">
+                  <option value="EN">
+                    English
+                  </option>
+                  <option value="AR">
+                    Arabic
+                  </option>
+                  <option value="ES">
+                    Spanish
+                  </option>
+                </select>
+              </div>
+              <div class="form-group mt-25">
+                <label class="input-label">
+                  Course
+                </label>
+                <select name="ajax[webinar_id]" class="js-ajax-webinar_id custom-select">
+                  <option selected="" disabled="" value="">
+                    Select a course
+                  </option>
+                  <option value="1996">
+                    Learn Linux in 5 Days
+                  </option>
+                  <option value="1998">
+                    Excel from Beginner to Advanced
+                  </option>
+                  <option value="2007">
+                    Travel Management Course
+                  </option>
+                  <option value="2008">
+                    New Learning Page
+                  </option>
+                  <option value="2009">
+                    New In-App Live System
+                  </option>
+                </select>
+              </div>
+              <div class="form-group mt-25">
+                <label class="input-label">
+                  Section
+                </label>
+                <select name="ajax[chapter_id]" class="js-ajax-chapter_id custom-select">
+                  <option value="">
+                    No Section
+                  </option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="input-label">
+                  Quiz title
+                </label>
+                <input type="text" value="" name="ajax[title]" class="js-ajax-title form-control " placeholder="">
+                <div class="invalid-feedback">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="input-label">
+                  Time 
+                  <span class="braces">
+                    (Minutes)
+                  </span>
+                </label>
+                <input type="number" value="" name="ajax[time]" class="js-ajax-time form-control " placeholder="Leave it blank for unlimited.">
+                <div class="invalid-feedback">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="input-label">
+                  Number of attempts
+                </label>
+                <input type="number" name="ajax[attempt]" value="" class="js-ajax-attempt form-control " placeholder="Leave it blank for unlimited.">
+                <div class="invalid-feedback">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="input-label">
+                  Pass mark
+                </label>
+                <input type="number" name="ajax[pass_mark]" value="" class="js-ajax-pass_mark form-control " placeholder="">
+                <div class="invalid-feedback">
+                </div>
+              </div>
+              <div class="form-group mt-20 d-flex align-items-center justify-content-between">
+                <label class="cursor-pointer input-label" for="certificateSwitchrecord">
+                  Certificate included
+                </label>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" name="ajax[certificate]" class="js-ajax-certificate custom-control-input" id="certificateSwitchrecord">
+                  <label class="custom-control-label" for="certificateSwitchrecord">
+                  </label>
+                </div>
+              </div>
+              <div class="form-group mt-20 d-flex align-items-center justify-content-between">
+                <label class="cursor-pointer input-label" for="statusSwitchrecord">
+                  Active quiz
+                </label>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" name="ajax[status]" class="js-ajax-status custom-control-input" id="statusSwitchrecord">
+                  <label class="custom-control-label" for="statusSwitchrecord">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <input type="hidden" name="ajax[is_webinar_page]" value=" 0 ">
+        <div class="mt-20 mb-20">
+          <button type="button" class="js-submit-quiz-form btn btn-sm btn-primary snip-button">
+            Create
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

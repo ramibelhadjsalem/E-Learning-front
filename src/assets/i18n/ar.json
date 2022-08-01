@@ -1,0 +1,27 @@
+{
+    "welcome":"أهلا بك",
+    "by":" الى اللقاء",
+    "appname":" أ ب ج",
+    "dashboard":"لوحة القيادة",
+    "courses":"الدورات",
+    "logout":"تسجيل خروج",
+    "settings":"لإعدادات",
+    "profile":"ملفي",
+    "notifications":"إشعارات",
+    "quizes":"أحجية",
+    "wallet":"محفظة ",
+    "meetings":"الاجتماعات",
+    "new":"جديد",
+    "My courses":"دوراتي",
+    "Invited courses":"الدورات المدعوة",
+    "Organization courses":"دورات تنظيمية",
+    "My purchases":"مشترياتي",
+    "My comments":"تعليقاتي",
+    "Favorites":"المفضلة",
+    "Languages":"اللغات",
+    "My reservations":"حجوزاتي",
+    "Requests":"الطلبات",
+    "Meeting statistics":"إحصائيات الاجتماع",
+    "My timesheet":"الجدول الزمني الخاص بي"
+
+}

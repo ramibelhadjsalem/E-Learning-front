@@ -1,1 +1,423 @@
-<p>home dashbord profiseur works!</p>
+
+<div class="panel-content w-100 snipcss-JpRPT snip-div">
+    <section class="snip-section ">
+      <div class="d-flex align-items-start align-items-md-center justify-content-between flex-column flex-md-row snip-div">
+        <h1 class="section-title snip-h1 ms-4">
+          {{'dashboard'|translate}}
+        </h1>
+        <!-- <div class="d-flex align-items-center flex-row-reverse flex-md-row justify-content-start justify-content-md-center mt-20 mt-md-0 snip-div">
+          <label class="mb-0 mr-10 cursor-pointer text-gray font-14 font-weight-500" for="iNotAvailable">
+            Activate offline status
+          </label>
+          <div class="custom-control custom-switch snip-div">
+            <input type="checkbox" name="disabled" class="custom-control-input" id="iNotAvailable">
+            <label class="custom-control-label" for="iNotAvailable"></label>
+          </div>
+        </div> -->
+      </div>
+      <div class="bg-white 
+        dashboard-banner-container position-relative mx-1 px-15 px-ld-35 py-5 panel-shadow rounded-sm 
+        row align-items-center d-flex justify-content-between">
+        <div class=" col">
+            <h2 class="font-30 text-primary line-height-1 snip-h2">
+                <span class="d-block">
+                  Hi Robert Ransdell,
+                </span>
+                <span class="font-16 text-secondary font-weight-bold">
+                  You have 111 new events
+                </span>
+              </h2>
+              <ul class="mt-15 unread-notification-lists snip-ul">
+                <li class="font-14 mt-1 text-gray snip-li">
+                  - Course approve
+                </li>
+                <li class="font-14 mt-1 text-gray snip-li">
+                  - Course created
+                </li>
+                <li class="font-14 mt-1 text-gray snip-li">
+                  - Course approve
+                </li>
+                <li class="font-14 mt-1 text-gray snip-li">
+                  - Course approve
+                </li>
+                <li class="font-14 mt-1 text-gray snip-li">
+                  - Course approve
+                </li>
+                <li class="snip-li">
+                  &nbsp;&nbsp;...
+                </li>
+              </ul>
+              <a routerLink="/prof/notifications" class="mt-15 font-weight-500 text-dark-blue d-inline-block snip-a">
+                View all events
+              </a>
+        </div>
+        <div class="dashboard-banner col">
+          <img src="https://lms.rocket-soft.org/store/1/dashboard.png" alt="" class="img-fluid snip-img">
+        </div>
+      </div>
+    </section>
+    <section class="dashboard snip-section">
+      <div class="row snip-div">
+        <div class="col-12 col-lg-3 mt-35 snip-div">
+          <div class="bg-white account-balance rounded-sm panel-shadow py-15 py-md-30 px-10 px-md-20 snip-div">
+            <div class="text-center snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/activity/36.svg" class="account-balance-icon snip-img" alt="">
+              <h3 class="font-16 font-weight-500 text-gray mt-25 snip-h3">
+                Account Balance
+              </h3>
+              <span class="mt-5 d-block font-30 text-secondary">
+                $1477.6
+              </span>
+            </div>
+            <div class="mt-20 pt-30 border-top border-gray300 d-flex align-items-center justify-content-between snip-div">
+              <span class="font-16 font-weight-500 text-gray">
+                Withdrawable:
+              </span>
+              <span class="font-16 font-weight-bold text-secondary">
+                $995.2
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-3 mt-35 snip-div">
+          <a href=" /panel/meetings/requests " class="dashboard-stats rounded-sm panel-shadow p-10 p-md-20 d-flex align-items-center snip-a">
+            <div class="stat-icon requests snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/icons/request.svg" alt="" class="snip-img">
+            </div>
+            <div class="d-flex flex-column ml-15 snip-div">
+              <span class="font-30 text-secondary">
+                1
+              </span>
+              <span class="font-16 text-gray font-weight-500">
+                Pending meetings
+              </span>
+            </div>
+          </a>
+          <a href=" /panel/financial/sales " class="dashboard-stats rounded-sm panel-shadow p-10 p-md-20 d-flex align-items-center mt-15 mt-md-30 snip-a">
+            <div class="stat-icon monthly-sales snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/icons/monay.svg" alt="" class="snip-img">
+            </div>
+            <div class="d-flex flex-column ml-15 snip-div">
+              <span class="font-30 text-secondary">
+                0
+              </span>
+              <span class="font-16 text-gray font-weight-500">
+                Monthly Sales
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-3 mt-35 snip-div">
+          <a href="/panel/support" class="dashboard-stats rounded-sm panel-shadow p-10 p-md-20 d-flex align-items-center snip-a">
+            <div class="stat-icon support-messages snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/icons/support.svg" alt="" class="snip-img">
+            </div>
+            <div class="d-flex flex-column ml-15 snip-div">
+              <span class="font-30 text-secondary">
+                0
+              </span>
+              <span class="font-16 text-gray font-weight-500">
+                Support Messages
+              </span>
+            </div>
+          </a>
+          <a href=" /panel/webinars/comments " class="dashboard-stats rounded-sm panel-shadow p-10 p-md-20 d-flex align-items-center mt-15 mt-md-30 snip-a">
+            <div class="stat-icon comments snip-div">
+              <img src="https://lms.rocket-soft.org/assets/default/img/icons/comment.svg" alt="" class="snip-img">
+            </div>
+            <div class="d-flex flex-column ml-15 snip-div">
+              <span class="font-30 text-secondary">
+                0
+              </span>
+              <span class="font-16 text-gray font-weight-500">
+                Comments
+              </span>
+            </div>
+          </a>
+        </div>
+        <div class="col-12 col-lg-3 mt-35 snip-div">
+          <div class="bg-white account-balance rounded-sm panel-shadow py-15 py-md-15 px-10 px-md-20 snip-div" style="position: relative;">
+            <div data-percent="85" data-label="King Seller" id="nextBadgeChart" class="text-center snip-div" style="min-height: 217.724px;">
+              <div id="apexchartsrvazr1oz" class="apexcharts-canvas apexchartsrvazr1oz apexcharts-theme-light snip-div" style="width: 246px; height: 217.724px;">
+                <svg class="img-fluid" id="SvgjsSvg1001" width="246" height="217.72447204589844" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" class="apexcharts-svg snip-svg" xmlns:data="ApexChartsNS" transform="translate(0, -30)" style="background: transparent;">
+                  <g id="SvgjsG1003" class="apexcharts-inner apexcharts-graphical" transform="translate(-14, 0)">
+                    <defs id="SvgjsDefs1002">
+                      <clipPath id="gridRectMaskrvazr1oz">
+                        <rect id="SvgjsRect1005" width="282" height="300" x="-3" y="-1" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                        </rect>
+                      </clipPath>
+                      <clipPath id="gridRectMarkerMaskrvazr1oz">
+                        <rect id="SvgjsRect1006" width="280" height="302" x="-2" y="-2" rx="0" ry="0" opacity="1" stroke-width="0" stroke="none" stroke-dasharray="0" fill="#fff">
+                        </rect>
+                      </clipPath>
+                      <linearGradient id="SvgjsLinearGradient1011" x1="0" y1="1" x2="1" y2="1">
+                        <stop id="SvgjsStop1012" stop-opacity="1" stop-color="rgba(242,242,242,1)" offset="0">
+                        </stop>
+                        <stop id="SvgjsStop1013" stop-opacity="1" stop-color="rgba(169,39,249,1)" offset="1">
+                        </stop>
+                        <stop id="SvgjsStop1014" stop-opacity="1" stop-color="rgba(169,39,249,1)" offset="1">
+                        </stop>
+                      </linearGradient>
+                      <linearGradient id="SvgjsLinearGradient1023" x1="0" y1="1" x2="1" y2="1">
+                        <stop id="SvgjsStop1024" stop-opacity="1" stop-color="rgba(13,110,253,1)" offset="0">
+                        </stop>
+                        <stop id="SvgjsStop1025" stop-opacity="1" stop-color="rgba(169,39,249,1)" offset="1">
+                        </stop>
+                        <stop id="SvgjsStop1026" stop-opacity="1" stop-color="rgba(169,39,249,1)" offset="1">
+                        </stop>
+                      </linearGradient>
+                    </defs>
+                    <g id="SvgjsG1007" class="apexcharts-radialbar">
+                      <g id="SvgjsG1008">
+                        <g id="SvgjsG1009" class="apexcharts-tracks">
+                          <g id="SvgjsG1010" class="apexcharts-radialbar-track apexcharts-track" rel="1">
+                            <path id="apexcharts-radialbarTrack-0" d="M 74.49771826705788 191.28474118102744 A 82.89634146341464 82.89634146341464 0 1 1 201.50228173294212 191.28474118102744" fill="none" fill-opacity="1" stroke="rgba(242,242,242,0.85)" stroke-opacity="0.4" stroke-linecap="butt" stroke-width="26.343780487804885" stroke-dasharray="0" class="apexcharts-radialbar-area" data:pathorig="M 74.49771826705788 191.28474118102744 A 82.89634146341464 82.89634146341464 0 1 1 201.50228173294212 191.28474118102744">
+                            </path>
+                          </g>
+                        </g>
+                        <g id="SvgjsG1016">
+                          <image id="SvgjsImage1017" xlink:href="/assets/default/img/radial-image.png" width="140" height="140" x="68" y="68">
+                          </image>
+                          <g id="SvgjsG1022" class="apexcharts-series apexcharts-radial-series" seriesname="KingxSeller" rel="1" data:realindex="0">
+                            <path id="SvgjsPath1027" d="M 74.49771826705788 191.28474118102744 A 82.89634146341464 82.89634146341464 0 1 1 220.88371594909233 139.44674064338335" fill="none" fill-opacity="0.85" stroke="url(#SvgjsLinearGradient1023)" stroke-opacity="1" stroke-linecap="butt" stroke-width="27.15853658536586" stroke-dasharray="9" class="apexcharts-radialbar-area apexcharts-radialbar-slice-0" data:angle="221" data:value="85" index="0" j="0" data:pathorig="M 74.49771826705788 191.28474118102744 A 82.89634146341464 82.89634146341464 0 1 1 220.88371594909233 139.44674064338335">
+                            </path>
+                          </g>
+                          <circle id="SvgjsCircle1018" r="64.7244512195122" cx="138" cy="138" class="apexcharts-radialbar-hollow" fill="transparent">
+                          </circle>
+                          <g id="SvgjsG1019" class="apexcharts-datalabels-group" transform="translate(0, 0) scale(1)" style="opacity: 1;">
+                            <text id="SvgjsText1020" font-family="Helvetica, Arial, sans-serif" x="138" y="138" text-anchor="middle" dominant-baseline="auto" font-size="16px" font-weight="400" fill="#0d6efd" class="apexcharts-text apexcharts-datalabel-label" style="font-family: Helvetica, Arial, sans-serif;">
+                              King Seller
+                            </text>
+                            <text id="SvgjsText1021" font-family="Helvetica, Arial, sans-serif" x="138" y="170" text-anchor="middle" dominant-baseline="auto" font-size="14px" font-weight="400" fill="#373d3f" class="apexcharts-text apexcharts-datalabel-value" style="font-family: Helvetica, Arial, sans-serif;">
+                              85%
+                            </text>
+                          </g>
+                        </g>
+                      </g>
+                    </g>
+                    <line id="SvgjsLine1028" x1="0" y1="0" x2="276" y2="0" stroke="#b6b6b6" stroke-dasharray="0" stroke-width="1" class="apexcharts-ycrosshairs">
+                    </line>
+                    <line id="SvgjsLine1029" x1="0" y1="0" x2="276" y2="0" stroke-dasharray="0" stroke-width="0" class="apexcharts-ycrosshairs-hidden">
+                    </line>
+                  </g>
+                  <g id="SvgjsG1004" class="apexcharts-annotations">
+                  </g>
+                </svg>
+                <div class="apexcharts-legend snip-div">
+                </div>
+              </div>
+            </div>
+            <div class="mt-10 pt-10 border-top border-gray300 d-flex align-items-center justify-content-between snip-div">
+              <span class="font-16 font-weight-500 text-gray">
+                Next Badge:
+              </span>
+              <span class="font-16 font-weight-bold text-secondary">
+                Not defined
+              </span>
+            </div>
+            <div class="resize-triggers snip-div">
+              <div class="expand-trigger snip-div">
+                <div style="width: 287px; height: 294px;" class="snip-div">
+                </div>
+              </div>
+              <div class="contract-trigger snip-div">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row snip-div">
+        <div class="col-12 col-lg-6 mt-35 snip-div">
+          <div class="bg-white noticeboard rounded-sm panel-shadow py-10 py-md-20 px-15 px-md-30 snip-div">
+            <h3 class="font-16 text-dark-blue font-weight-bold snip-h3">
+              Noticeboard
+            </h3>
+            <div class="noticeboard-item py-15 snip-div">
+              <div class="d-flex align-items-center justify-content-between snip-div">
+                <div class="snip-div">
+                  <h4 class="js-noticeboard-title font-weight-500 text-secondary snip-h4">
+                    New Private Course Published
+                  </h4>
+                  <div class="font-12 text-gray mt-5 snip-div">
+                    <span class="mr-5">
+                      Created by Light Moon
+                    </span>
+                    |
+                    <span class="js-noticeboard-time ml-5">
+                      13 Jul 2021 | 23:58
+                    </span>
+                  </div>
+                </div>
+                <div class="snip-div">
+                  <button type="button" data-id="14" class="js-noticeboard-info btn btn-sm btn-border-white snip-button">
+                    More info
+                  </button>
+                  <input type="hidden" class="js-noticeboard-message" value="<p>Dear students and instructors. Travel Management Course published privately for you. please enroll on this course<br></p>">
+                </div>
+              </div>
+            </div>
+            <div class="noticeboard-item py-15 snip-div">
+              <div class="d-flex align-items-center justify-content-between snip-div">
+                <div class="snip-div">
+                  <h4 class="js-noticeboard-title font-weight-500 text-secondary snip-h4">
+                    New Class Published
+                  </h4>
+                  <div class="font-12 text-gray mt-5 snip-div">
+                    <span class="mr-5">
+                      Created by Light Moon
+                    </span>
+                    |
+                    <span class="js-noticeboard-time ml-5">
+                      13 Jul 2021 | 04:30
+                    </span>
+                  </div>
+                </div>
+                <div class="snip-div">
+                  <button type="button" data-id="13" class="js-noticeboard-info btn btn-sm btn-border-white snip-button">
+                    More info
+                  </button>
+                  <input type="hidden" class="js-noticeboard-message" value="&quot;Effective Time Management&quot; Live Class <font color=&quot;#6ba54a&quot; style=&quot;&quot;>Published</font>, for getting the final certificate it is necessary to Enroll in this class.">
+                </div>
+              </div>
+            </div>
+            <div class="noticeboard-item py-15 snip-div">
+              <div class="d-flex align-items-center justify-content-between snip-div">
+                <div class="snip-div">
+                  <h4 class="js-noticeboard-title font-weight-500 text-secondary snip-h4">
+                    New Year Sales Festival
+                  </h4>
+                  <div class="font-12 text-gray mt-5 snip-div">
+                    <span class="mr-5">
+                      Created by Staff
+                    </span>
+                    |
+                    <span class="js-noticeboard-time ml-5">
+                      12 Jul 2021 | 19:26
+                    </span>
+                  </div>
+                </div>
+                <div class="snip-div">
+                  <button type="button" data-id="12" class="js-noticeboard-info btn btn-sm btn-border-white snip-button">
+                    More info
+                  </button>
+                  <input type="hidden" class="js-noticeboard-message" value="<p>Due to the New Year Festival, users who buy more than $ 200 will be given a 20% discount code.</p>">
+                </div>
+              </div>
+            </div>
+            <div class="noticeboard-item py-15 snip-div">
+              <div class="d-flex align-items-center justify-content-between snip-div">
+                <div class="snip-div">
+                  <h4 class="js-noticeboard-title font-weight-500 text-secondary snip-h4">
+                    Instructor terms of services changed
+                  </h4>
+                  <div class="font-12 text-gray mt-5 snip-div">
+                    <span class="mr-5">
+                      Created by Staff
+                    </span>
+                    |
+                    <span class="js-noticeboard-time ml-5">
+                      10 Jul 2021 | 08:57
+                    </span>
+                  </div>
+                </div>
+                <div class="snip-div">
+                  <button type="button" data-id="11" class="js-noticeboard-info btn btn-sm btn-border-white snip-button">
+                    More info
+                  </button>
+                  <input type="hidden" class="js-noticeboard-message" value="<p>Instructors terms of services changed on July 17. You can read terms on the terms page.</p>">
+                </div>
+              </div>
+            </div>
+            <div class="noticeboard-item py-15 snip-div">
+              <div class="d-flex align-items-center justify-content-between snip-div">
+                <div class="snip-div">
+                  <h4 class="js-noticeboard-title font-weight-500 text-secondary snip-h4">
+                    Top summer classes
+                  </h4>
+                  <div class="font-12 text-gray mt-5 snip-div">
+                    <span class="mr-5">
+                      Created by Staff
+                    </span>
+                    |
+                    <span class="js-noticeboard-time ml-5">
+                      10 Jul 2021 | 08:55
+                    </span>
+                  </div>
+                </div>
+                <div class="snip-div">
+                  <button type="button" data-id="10" class="js-noticeboard-info btn btn-sm btn-border-white snip-button">
+                    More info
+                  </button>
+                  <input type="hidden" class="js-noticeboard-message" value="<p>You can find top summer courses on the platform homepage and get all of them with 50% discount by using &quot;mysummer&quot; discount coupon.</p>">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-lg-6 mt-35 snip-div">
+          <div class="bg-white monthly-sales-card rounded-sm panel-shadow py-10 py-md-20 px-15 px-md-30 snip-div">
+            <div class="d-flex align-items-center justify-content-between snip-div">
+              <h3 class="font-16 text-dark-blue font-weight-bold snip-h3">
+                Monthly Sales
+              </h3>
+              <span class="font-16 font-weight-500 text-gray">
+                Jul 2022
+              </span>
+            </div>
+            <div class="monthly-sales-chart snip-div">
+              <div class="chartjs-size-monitor snip-div">
+                <div class="chartjs-size-monitor-expand snip-div">
+                  <div class="snip-div">
+                  </div>
+                </div>
+                <div class="chartjs-size-monitor-shrink snip-div">
+                  <div class="snip-div">
+                  </div>
+                </div>
+              </div>
+              <canvas id="myChart" width="678" height="338" style="display: block; height: 271px; width: 543px;" class="chartjs-render-monitor">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="d-none snip-div" id="iNotAvailableModal">
+      <div class="offline-modal snip-div">
+        <h3 class="section-title after-line snip-h3">
+          Activate offline status
+        </h3>
+        <p class="mt-20 font-16 text-gray snip-p">
+          If you put your account offline, a message will be displayed in your profile and it will be noticed to users. You can type a personalized message in the following input.
+        </p>
+        <div class="form-group mt-15 snip-div">
+          <label>
+            Offline message
+          </label>
+          <textarea name="message" rows="4" class="form-control ">
+          </textarea>
+          <div class="invalid-feedback snip-div">
+          </div>
+        </div>
+        <div class="mt-30 d-flex align-items-center justify-content-end snip-div">
+          <button type="button" class="js-save-offline-toggle btn btn-primary btn-sm snip-button">
+            Save
+          </button>
+          <button type="button" class="btn btn-danger ml-10 close-swl btn-sm snip-button">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="d-none snip-div" id="noticeboardMessageModal">
+      <div class="text-center snip-div">
+        <h3 class="modal-title font-20 font-weight-500 text-dark-blue snip-h3">
+        </h3>
+        <span class="modal-time d-block font-12 text-gray mt-25">
+        </span>
+        <p class="modal-message font-weight-500 text-gray mt-4 snip-p">
+        </p>
+      </div>
+    </div>
+  </div>
+  

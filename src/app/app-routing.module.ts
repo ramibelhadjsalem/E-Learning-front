@@ -4,7 +4,7 @@ import { DashbordAdminLayoutComponent } from './layout/dashbord-admin-layout/das
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
-import { EleveLayoutComponent } from './layout/eleve-layout/eleve-layout.component';
+
 import { ErrorLayoutComponent } from './layout/error-layout/error-layout.component';
 import { MainlayoutComponent } from './layout/mainlayout/mainlayout.component';
 import { AboutComponent } from './layout/Components/About/About.component';
@@ -20,7 +20,7 @@ const routes: Routes = [
         component:AboutComponent
       },
       {
-        path: '',
+        path: 'aa',
         loadChildren: () => import('./main/main.module').then(m => m.MainModule)
       }
     ]
@@ -49,14 +49,7 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: 'eleve', component:EleveLayoutComponent ,children: [
-      {
-        path: '',
-        loadChildren: () => import('./views/eleve/eleve.module').then(m => m.EleveModule)
-      }
-    ]
-  },
+  
   {
     path: '', component:ErrorLayoutComponent ,children: [
     

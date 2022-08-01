@@ -82,7 +82,7 @@
             <div class="col-md-6 col-sm-6">
               <div class="form-control ">
                 <i class="bi bi-mortarboard me-1" ></i>
-                <select class="form-select text-nowrap" aria-label="Default select example" formControlName="idlevel"  (change)="ListSection($event)">
+                <select class="form-select text-nowrap" aria-label="Default select example" formControlName="idlevel"  >
                   <option value="" selected disabled hidden>niveau d'étude</option>
                   <option *ngFor="let item of levels" [value]="item.id" >{{item.name}} </option>
                 </select>

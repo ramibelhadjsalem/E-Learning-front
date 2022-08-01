@@ -36,14 +36,6 @@ export class AppComponent implements OnInit,OnDestroy{
       const item=localStorage.getItem('user')
       if(item != null){
         this.auth.setCurrentUser(JSON.parse(item))
-      }else{
-        const phoneNumber = localStorage.getItem("phoneNumber")
-        if(phoneNumber !=null){
-
-          this.route.navigateByUrl("auth/login")
-        }else{
-          this.route.navigateByUrl('about')
-        }
       }
 
   }

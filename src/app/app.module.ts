@@ -18,9 +18,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AuthService } from './Services/service/auth.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { LevelService } from './Services/service/';
+
 import { BusyService } from './Services/service/busy.service';
-import { LoadingInterceptor } from './Services/'; 
+import { LevelService } from './services/service/level.service';
+import { LoadingInterceptor } from './Services/interceptors/loading.interceptor';
+
 
 
 

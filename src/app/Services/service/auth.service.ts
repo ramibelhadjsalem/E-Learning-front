@@ -1,7 +1,7 @@
-import { environment } from '../../../environments/environment.prod';
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { empty, map, Observable, of, ReplaySubject } from 'rxjs';
+import { map, Observable, ReplaySubject } from 'rxjs';
 
 import { Router } from '@angular/router';
 import { loggedin } from '../Models/logedin';

@@ -1,4 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { InfosServiceService } from 'src/app/Services/service/infos-service.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AppUser } from './../../../Services/Models/AppUser';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-info-tab',
@@ -6,10 +9,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./info-tab.component.css'],
 })
 export class InfoTabComponent implements OnInit {
+  // @Input() Model!:AppUser
 
-  constructor() { }
+  infoForm !: FormGroup
+  constructor(private fb :FormBuilder,public info:InfosServiceService){ }
 
   ngOnInit(): void {
+   
   }
+  
+
+ 
 
 }

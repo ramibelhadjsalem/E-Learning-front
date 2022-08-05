@@ -1,20 +1,23 @@
+
+
+
 <div class="panel-content snipcss-913L2 snip-div">
     <div class="webinar-progress d-flex align-items-center p-15 panel-shadow bg-white rounded-sm snip-div w-100">
       <div class="progress-item d-flex align-items-center snip-div">
-        <a [routerLink]="['.']" [queryParams]='{tab: 0}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Basic Information">
+        <a [routerLink]="['.']" [queryParams]='{tab: 0}' routerLinkActive="active"  [ngClass]="{'active': tabs == 0}" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" >
           <img src="https://lms.rocket-soft.org/assets/default/img/icons/basic-info.svg" class="img-cover snip-img" alt="">
         </a>
-        <div class="ml-10 d-lg-none  snip-div">
+        <div class="ml-10 snip-div" [ngClass]="{'d-lg-none': tabs != 0}">
           <h4 class="font-16 text-secondary font-weight-bold snip-h4">
             Basic Information
           </h4>
         </div>
       </div>
       <div class="progress-item d-flex align-items-center snip-div">
-        <a [routerLink]="['.']" [queryParams]='{tab: 1}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Images">
+        <a [routerLink]="['.']" [queryParams]='{tab: 1}'  routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Images">
           <img src="https://lms.rocket-soft.org/assets/default/img/icons/images.svg" class="img-cover snip-img" alt="">
         </a>
-        <div class="ml-10 d-lg-none snip-div">
+        <div  [ngClass]="{'d-lg-none': tabs !=1 }" class="ml-10 snip-div"  >
           <h4 class="font-16 text-secondary font-weight-bold snip-h4">
             Images
           </h4>
@@ -24,67 +27,49 @@
         <a [routerLink]="['.']" [queryParams]='{tab:2}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="About">
           <img src="https://lms.rocket-soft.org/assets/default/img/icons/about.svg" class="img-cover snip-img" alt="">
         </a>
-        <div class="ml-10 d-lg-none snip-div">
+        <div  [ngClass]="{'d-lg-none': tabs !=2 }" class="ml-10 snip-div">
           <h4 class="font-16 text-secondary font-weight-bold snip-h4">
             About
           </h4>
         </div>
       </div>
-      <div class="progress-item d-flex align-items-center snip-div">
+      <div class="progress-item d-flex align-items-center snip-div" aria-label="calendar"  aria-description="Game schedule for the Boston Red Sox 2021 Season">
         <a  [routerLink]="['.']" [queryParams]='{tab: 3}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Education">
           <img src="https://lms.rocket-soft.org/assets/default/img/icons/graduate.svg" class="img-cover snip-img" alt="">
         </a>
-        <div class="ml-10 d-lg-none snip-div">
+        <div  [ngClass]="{'d-lg-none': tabs !=3 }" class="ml-10 snip-div">
           <h4 class="font-16 text-secondary font-weight-bold snip-h4">
             Education
           </h4>
         </div>
       </div>
+     
+     
       <div class="progress-item d-flex align-items-center snip-div">
-        <a  [routerLink]="['.']" [queryParams]='{tab: 4}' routerLinkActive="active"class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Experiences">
-          <img src="https://lms.rocket-soft.org/assets/default/img/icons/experiences.svg" class="img-cover snip-img" alt="">
-        </a>
-        <div class="ml-10 d-lg-none snip-div">
-          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
-            Experiences
-          </h4>
-        </div>
-      </div>
-      <div class="progress-item d-flex align-items-center snip-div">
-        <a  [routerLink]="['.']" [queryParams]='{tab: 5}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Skill Topics">
-          <img src="https://lms.rocket-soft.org/assets/default/img/icons/skills.svg" class="img-cover snip-img" alt="">
-        </a>
-        <div class="ml-10 d-lg-none snip-div">
-          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
-            Skill Topics
-          </h4>
-        </div>
-      </div>
-      <div class="progress-item d-flex align-items-center snip-div">
-        <a  [routerLink]="['.']" [queryParams]='{tab: 6}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Identity &amp; Financial">
+        <a  [routerLink]="['.']" [queryParams]='{tab: 4}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Identity &amp; Financial">
           <img src="https://lms.rocket-soft.org/assets/default/img/icons/financial.svg" class="img-cover snip-img" alt="">
         </a>
-        <div class="ml-10 d-lg-none snip-div">
-          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
-            Identity &amp; Financial
+        <div  [ngClass]="{'d-lg-none': tabs !=4 }" class="ml-10  snip-div">
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4 text-nowrap">
+            Identity &amp;Financial
           </h4>
         </div>
       </div>
       <div class="progress-item d-flex align-items-center snip-div">
-        <a  [routerLink]="['.']" [queryParams]='{tab: 7}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Zoom API">
+        <a  [routerLink]="['.']" [queryParams]='{tab: 5}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Zoom API">
           <img src="https://lms.rocket-soft.org/assets/default/img/icons/zoom.svg" class="img-cover snip-img" alt="">
         </a>
-        <div class="ml-10 d-lg-none snip-div">
+        <div  [ngClass]="{'d-lg-none': tabs !=5 }" class="ml-10 snip-div">
           <h4 class="font-16 text-secondary font-weight-bold snip-h4">
             Zoom API
           </h4>
         </div>
       </div>
       <div class="progress-item d-flex align-items-center snip-div">
-        <a [routerLink]="['.']" [queryParams]='{tab: 8}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Extra Information">
+        <a [routerLink]="['.']" [queryParams]='{tab: 6}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Extra Information">
           <img src="https://lms.rocket-soft.org/assets/default/img/icons/extra_info.svg" class="img-cover snip-img" alt="">
         </a>
-        <div class="ml-10 d-lg-none snip-div">
+        <div  [ngClass]="{'d-lg-none': tabs !=6 }" class="ml-10  snip-div">
           <h4 class="font-16 text-secondary font-weight-bold snip-h4">
             Extra Information
           </h4>
@@ -92,14 +77,15 @@
       </div>
     </div>
 
-    <div class="w-100">
-      <app-info-tab *ngIf="tabs==0" ></app-info-tab>
-      <app-photos-tab *ngIf="tabs==1"></app-photos-tab>
-      <app-about-tab *ngIf="tabs==2"></app-about-tab>
+    <div class="w-100" >
+      <app-info-tab *ngIf="tabs==0"  ></app-info-tab>
+      <app-photos-tab *ngIf="tabs==1" ></app-photos-tab>
+      <app-about-tab *ngIf="tabs==2"  [Model]="user" ></app-about-tab>
       <app-education-tab *ngIf="tabs==3"></app-education-tab>
-      <app-experience-tab *ngIf="tabs==4" ></app-experience-tab>
-      <app-skils-tab *ngIf="tabs==5"></app-skils-tab>
-      <app-identity-tab *ngIf="tabs==6"></app-identity-tab>
+      <app-experience-tab *ngIf="tabs==3" ></app-experience-tab>
+      <!-- <app-skils-tab *ngIf="tabs==5"></app-skils-tab> -->
+      <app-identity-tab *ngIf="tabs==4" ></app-identity-tab>
+      <app-extra-info *ngIf="tabs==6" ></app-extra-info>
     </div>
 
     <div class="create-webinar-footer d-flex align-items-center justify-content-between mt-20 pt-15 border-top snip-div">
@@ -123,7 +109,7 @@
         <a href="/panel/setting/deleteAccount" class="delete-action btn btn-sm btn-danger snip-a" data-confirm="Yes, I confirm!" data-title="After confirmation by the site admin, your account will be deleted and your information will not be restored.">
           Delete account
         </a>
-        <button type="button" id="saveData" class="btn btn-sm btn-primary ml-15 snip-button">
+        <button type="button" id="saveData" class="btn btn-sm btn-primary ml-15 snip-button" (click)="saveUser()">
           Save
         </button>
       </div>

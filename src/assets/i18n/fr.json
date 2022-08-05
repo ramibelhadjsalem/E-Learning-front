@@ -22,6 +22,11 @@
     "My reservations":"Mes reservations",
     "Requests":"Demandes",
     "Meeting statistics":"Statistiques de réunion",
-    "My timesheet":"Ma feuille de temps"
+    "My timesheet":"Ma feuille de temps",
+    "new education":"nouvelle éducation",
+    "Describe your education in a single line.":"Décrivez votre formation en une seule ligne.",
+    "Experiences":"Expériences",
+    "Education":"Educations",
+    "Add education":"Ajouter l'éducation"
 
 }

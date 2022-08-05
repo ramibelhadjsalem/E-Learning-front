@@ -1,3 +1,4 @@
+import { AuthInterceptor } from './Services/interceptors/auth.interceptor';
 import { BusyService } from './Services/service/busy.service';
 
 import { NgModule } from '@angular/core';
@@ -21,6 +22,7 @@ import { LevelService } from './Services/service/level.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './Services/interceptors/loading.interceptor';
 import { AuthService } from './Services/service/auth.service';
+import { JwtInterceptor } from './Services/interceptors/jwt.interceptor';
 
 
 
@@ -54,7 +56,9 @@ import { AuthService } from './Services/service/auth.service';
 
   ],
   providers: [LevelService,AuthService,BusyService,
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   
   ],
   bootstrap: [AppComponent]

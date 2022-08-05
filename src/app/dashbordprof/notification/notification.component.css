@@ -1,24 +1,4 @@
-@font-face { 
-    font-family:'main-font-family';
-    font-style:normal;
-    font-weight:400;
-    font-display:swap;
-    src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://lms.rocket-soft.org/store/1/fonts/montserrat-regular.woff2) format('woff2');
-  } 
-  @font-face { 
-    font-family:'main-font-family';
-    font-style:normal;
-    font-weight:bold;
-    font-display:swap;
-    src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://lms.rocket-soft.org/store/1/fonts/montserrat-bold.woff2) format('woff2');
-  } 
-  @font-face { 
-    font-family:'main-font-family';
-    font-style:normal;
-    font-weight:500;
-    font-display:swap;
-    src:local('Montserrat Regular'), local('Montserrat-Regular'), url(https://lms.rocket-soft.org/store/1/fonts/montserrat-medium.woff2) format('woff2');
-  } 
+
     a {  
       color:#343434;
     }  

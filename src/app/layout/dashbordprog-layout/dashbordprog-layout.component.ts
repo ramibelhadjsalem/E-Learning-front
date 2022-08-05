@@ -1,3 +1,4 @@
+import { InfosServiceService } from 'src/app/Services/service/infos-service.service';
 import { LanguageService } from './../../Services/service/language.service';
 import { TranslateService } from '@ngx-translate/core';
 import { AuthService } from 'src/app/Services/service/auth.service';
@@ -11,7 +12,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class DashbordprogLayoutComponent implements OnInit {
 
-  constructor(private el: ElementRef,private auth:AuthService,private router: Router ,public lang:LanguageService) { 
+  constructor(private el: ElementRef,private auth:AuthService,private router: Router ,public lang:LanguageService ,public info :InfosServiceService) { 
     router.events.subscribe((val) => {
       let el: HTMLElement = this.el.nativeElement.querySelector("#panelSidebar");
       if(el.classList.contains("nav-show")){
@@ -21,7 +22,7 @@ export class DashbordprogLayoutComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    
+    this.info.loadUser()
   }
   showhidenav(){
     let el: HTMLElement = this.el.nativeElement.querySelector("#panelSidebar");
@@ -43,6 +44,7 @@ export class DashbordprogLayoutComponent implements OnInit {
   }
   logout(){
     this.auth.logOut()
+    this.info.logout()
   }
   changelang(event:any){
   

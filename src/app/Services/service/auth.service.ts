@@ -5,6 +5,7 @@ import { empty, map, Observable, of, ReplaySubject } from 'rxjs';
 
 import { Router } from '@angular/router';
 import { loggedin } from '../Models/logedin';
+import { InfosServiceService } from './infos-service.service';
 
 
 
@@ -16,7 +17,7 @@ export class AuthService {
   currentUser$ = this.currentUserSource.asObservable();
   apiUrl = "http://localhost:8080/api/"
   // apiUrl=environment.apiurl
-  constructor(private http:HttpClient,private route:Router) { }
+  constructor(private http:HttpClient,private route:Router,private info:InfosServiceService) { }
 
   login(model:any){
     return this.http.post<loggedin>(this.apiUrl+"auth/signin" ,model).pipe(
@@ -25,6 +26,7 @@ export class AuthService {
         if(user){
           this.setCurrentUser(user)
           this.redirectUser(user.roles)
+         
         }
       })
     )

@@ -1,3 +1,4 @@
+import { InfosServiceService } from './../Services/service/infos-service.service';
 import { OrganizedCoursComponent } from './CoursesComponents/organized-cours/organized-cours.component';
 import { PurchesCoursComponent } from './CoursesComponents/purches-cours/purches-cours.component';
 import { MyComentCoursComponent } from './CoursesComponents/my-coment-cours/my-coment-cours.component';
@@ -13,7 +14,7 @@ import { MeetRequestComponent } from './MettingComponents/meet-request/meet-requ
 import { MeetSettingComponent } from './MettingComponents/meet-setting/meet-setting.component';
 import { MeetReservationComponent } from './MettingComponents/meet-reservation/meet-reservation.component';
 import { NotificationComponent } from './notification/notification.component';
-import { NgModule } from '@angular/core';
+import { NgModule, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProfGuard } from '../Services/guards/prof.guard';
 import { HomeComponent } from './home/home.component';
@@ -22,8 +23,8 @@ import { SettingsComponent } from './settings/settings.component';
 const routes: Routes = [
   {
     path: '',
-    // runGuardsAndResolvers: 'always',
-    // canActivate: [ProfGuard],
+    runGuardsAndResolvers: 'always',
+    canActivate: [ProfGuard],
     children: [
     
       {
@@ -118,4 +119,7 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DashbordprofRoutingModule { }
+export class DashbordprofRoutingModule  {
+  
+
+ }

@@ -469,6 +469,80 @@
   .table-actions.dropdown .dropdown-menu a:hover  { 
       color: var(--primary);
   } 
+  /* ************************************Modal************ */
+  .modeltitle{
+    color: #13243d;
+    font-family: "Montserrat Regular";
+    /* width: 100%; */
+    padding-bottom: 15px;
+    border-bottom: 2px solid #1f3b64;
+    font-size: 25px;
+    
+  }
   
+  .btns{
+    border-top: 2px solid #1f3b64;
+    margin-bottom: 30px;
+  }
+  .btns a:hover{
+    scale: 1.02;
+  }
+  .btns a{
+   
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Montserrat Regular';
+    padding: 7px 20px;
+    border-radius: 5px;
+    margin:  0 5px ;
+  }
+  .btns .submit{
+    background-color: #2aba5e;
+  }
+  .btns .cancel{
+    background-color: #f63c3c;
+  }
+  .modalbody form{
+    padding-bottom: 30px;
+  }
+  .modalbody i {
+    color: #1f3b64;
+    font-size: 60px;
+  }
+  .modalbody label{
+    font-size: 20px ;
+    color: #13243d;
+    font-family: "Montserrat-Regular";
+  }
+  .modalbody p{
+   color: #343434;
+    font-size: 15px;
+    font-family:"Montserrat-Regular" ;
+  }
+  .modalbody input[type=text]{
+    all: unset;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #34343457;
+    border-radius: 7px;
+    text-align: left !important;
+    padding-left: 20px;
+  }
+  .modalbody input[type=text]:focus{
+    border-color: #2aba5e;
+  }
   
-  
+  .btns button{
+    all: unset;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Montserrat Regular';
+    padding: 7px 20px;
+    border-radius: 5px;
+    margin:  0 5px ;
+    user-select: none;
+    cursor: pointer;
+  }
+  .btns button:disabled{
+    cursor: not-allowed;
+  }

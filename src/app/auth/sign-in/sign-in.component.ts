@@ -1,3 +1,4 @@
+import { InfosServiceService } from 'src/app/Services/service/infos-service.service';
 
 
 import { Component, OnInit } from '@angular/core';
@@ -25,7 +26,9 @@ export class SignInComponent implements OnInit {
   constructor(private fb :FormBuilder 
       ,private auth:AuthService ,
       private route:Router,
-      private toastr: ToastrService) { }
+      private toastr: ToastrService,
+      private info:InfosServiceService
+      ) { }
  
   ngOnInit(): void {
     const item = localStorage.getItem("phoneNumber")
@@ -46,7 +49,7 @@ export class SignInComponent implements OnInit {
     localStorage.setItem("phoneNumber",JSON.stringify(this.loginForm.controls['username'].value))
     this.auth.login(this.loginForm.value).subscribe(res=>{
       this.toastr.success("Connecté ...")
-      
+      this.info.loadUser()
       // this.route.navigateByUrl('/home')
 
       

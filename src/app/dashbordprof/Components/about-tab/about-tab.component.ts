@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { InfosServiceService } from 'src/app/Services/service/infos-service.service';
+import { Component, Input, OnInit } from '@angular/core';
+import { AppUser } from 'src/app/Services/Models/AppUser';
 
 @Component({
   selector: 'app-about-tab',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about-tab.component.css']
 })
 export class AboutTabComponent implements OnInit {
-
-  constructor() { }
+  @Input() Model!:AppUser
+  
+  constructor(public info:InfosServiceService) { }
 
   ngOnInit(): void {
   }

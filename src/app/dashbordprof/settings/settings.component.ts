@@ -1,3 +1,6 @@
+import { ToastrService } from 'ngx-toastr';
+import { AppUser } from './../../Services/Models/AppUser';
+import { InfosServiceService } from 'src/app/Services/service/infos-service.service';
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
@@ -11,8 +14,9 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 })
 export class SettingsComponent implements OnInit {
   tabs:number=0
+  user !:AppUser;
  
-  constructor(private route: ActivatedRoute, private router:Router) { 
+  constructor(private route: ActivatedRoute, private router:Router,public info:InfosServiceService ,private toaster:ToastrService ) { 
 
     route.queryParams.subscribe(params =>{
       if(params['tab']){
@@ -27,7 +31,10 @@ export class SettingsComponent implements OnInit {
     } );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // this.loadUserInfo()
+  
+  }
   next(){
     this.tabs++;
     if(this.tabs>8){
@@ -42,6 +49,19 @@ export class SettingsComponent implements OnInit {
       this.tabs=8
     }
     return this.tabs
+  }
+
+ 
+  saveUser(){
+      this.info.updateInfo(this.user).subscribe(res=>{
+         this.user =res
+         this.toaster.success(" User Updated .......")
+          
+
+      },err=>{
+        this.toaster.error("error")
+      })
+    
   }
 
   

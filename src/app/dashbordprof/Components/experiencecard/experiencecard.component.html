@@ -1,0 +1,27 @@
+<div *ngIf="education" class="row my-4 ">
+    <div class="col-12 ">
+        <div class="education-card px-4 pl-5 py-15 py-lg-30 d-flex align-items-center justify-content-between ">
+            <div class="col-8 ">{{education.description}}</div>
+            <div class="col-2 ">
+                <div class="btn-group  d-flex flex-row-reverse">
+                    <button  type="button"  class="btn-transparent2 " (click)="showedit($event)">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" class="feather feather-more-vertical snip-svg">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <circle cx="12" cy="5" r="1"></circle>
+                            <circle cx="12" cy="19" r="1"></circle>
+                        </svg>
+                    </button>
+                    <div  [ngClass]="{'d-none': show ==false }" class="dropdown-content-edit ">
+                        <a type="button" 
+                            class="">Edit</a>
+                        <a type="button"  (click)="deleteExperience()"
+                            class="">delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

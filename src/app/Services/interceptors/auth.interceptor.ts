@@ -18,7 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
       catchError(error=>{
         if(error){
           switch(error.status){
-            case 401:this.route.navigateByUrl('/login'); break;
+            case 401:this.route.navigateByUrl('auth/login'); break;
 
             default:
               console.log(error)

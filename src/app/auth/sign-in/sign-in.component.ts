@@ -1,3 +1,4 @@
+import { InfosServiceService } from 'src/app/Services/service/infos-service.service';
 
 
 import { Component, OnInit } from '@angular/core';
@@ -6,7 +7,6 @@ import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/app/Services/service/auth.service';
-
 
 declare var window:any
 
@@ -25,7 +25,9 @@ export class SignInComponent implements OnInit {
   constructor(private fb :FormBuilder 
       ,private auth:AuthService ,
       private route:Router,
-      private toastr: ToastrService) { }
+      private toastr: ToastrService,
+      private info:InfosServiceService
+      ) { }
  
   ngOnInit(): void {
     const item = localStorage.getItem("phoneNumber")
@@ -44,13 +46,16 @@ export class SignInComponent implements OnInit {
   }
   login(){
     localStorage.setItem("phoneNumber",JSON.stringify(this.loginForm.controls['username'].value))
-    this.auth.login(this.loginForm.value).subscribe((res)=>{
+    this.auth.login(this.loginForm.value).subscribe(res=>{
       this.toastr.success("Connecté ...")
-      this.route.navigateByUrl('/home')
+      this.info.loadUser()
+      // this.route.navigateByUrl('/home')
 
       
     },err=>{
       if(err.status==406){
+
+        console.log("login response err",err)
         this.toastr.warning("compte n'est pas comfirmé , un SmS de comfirmation a ete envoyée ")
         
         const formModel  = new window.bootstrap.Modal(

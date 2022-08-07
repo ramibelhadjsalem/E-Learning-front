@@ -1,0 +1,29 @@
+<section class="snipcss-myBl3 snip-section">
+    <h3 class="section-title after-line mt-35 snip-h3">
+      About
+    </h3>
+    <div class="row mt-20 snip-div" *ngIf="user">
+      <div class="col-12 col-lg-6 snip-div">
+        <div class="form-group snip-div">
+          <label class="input-label">
+            Biography
+          </label>
+          <input type="text"  [(ngModel)]="user.bio" placeholder="Biography description" >
+        </div>
+        <div class="form-group snip-div">
+          <label class="input-label">
+            Job Title
+          </label>
+          <input type="text"  [(ngModel)]="user.jobTitle" placeholder="Jobe Tile">
+          <div class="mt-15 snip-div">
+            <p class="font-12 text-gray snip-p">
+              - The "Job title" will be displayed at the bottom of your name on the profile cards.
+            </p>
+            <p class="font-12 text-gray snip-p">
+              - Keep it short (2 or 3 words) Eg "Product designer, Senior software engineer".
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

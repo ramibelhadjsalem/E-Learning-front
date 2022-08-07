@@ -5,6 +5,7 @@ import { empty, map, Observable, of, ReplaySubject } from 'rxjs';
 
 import { Router } from '@angular/router';
 import { loggedin } from '../Models/logedin';
+import { InfosServiceService } from './infos-service.service';
 
 
 
@@ -16,7 +17,7 @@ export class AuthService {
   currentUser$ = this.currentUserSource.asObservable();
   apiUrl = "http://localhost:8080/api/"
   // apiUrl=environment.apiurl
-  constructor(private http:HttpClient,private route:Router) { }
+  constructor(private http:HttpClient,private route:Router,private info:InfosServiceService) { }
 
   login(model:any){
     return this.http.post<loggedin>(this.apiUrl+"auth/signin" ,model).pipe(
@@ -24,6 +25,8 @@ export class AuthService {
         const user = res;
         if(user){
           this.setCurrentUser(user)
+          this.redirectUser(user.roles)
+         
         }
       })
     )
@@ -41,12 +44,25 @@ export class AuthService {
   logOut(){
     localStorage.removeItem('user');
     this.currentUserSource.next(null);
-    this.route.navigateByUrl("/")
+    this.route.navigateByUrl("about")
   }
   resetPassword(phoneModel:any){
     return this.http.post(this.apiUrl+"auth/resetpassword",phoneModel)
   }
   confirmSms(model:any){
     return this.http.post(this.apiUrl+"auth/confirmsms",model);
+  }
+
+  redirectUser(roles:String[]){
+    switch( roles[0]){
+      case "ROLE_ADMIN" :
+        this.route.navigateByUrl('/admin')  
+        break;
+      case "ROLE_PROF" :
+          this.route.navigateByUrl('/prof')  
+          break;
+      default:
+        this.route.navigateByUrl("/home");
+    }
   }
 }

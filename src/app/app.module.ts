@@ -1,10 +1,13 @@
-
+import { AuthInterceptor } from './Services/interceptors/auth.interceptor';
+import { BusyService } from './Services/service/busy.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import {TranslateLoader,TranslateModule} from '@ngx-translate/core'
+import {TranslateHttpLoader} from '@ngx-translate/http-loader'
 import { AppComponent } from './app.component';
 import { LayoutModule } from './layout/layout.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -13,10 +16,7 @@ import { LevelService } from './Services/service/level.service';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './Services/interceptors/loading.interceptor';
 import { AuthService } from './Services/service/auth.service';
-
-
-
-
+import { JwtInterceptor } from './Services/interceptors/jwt.interceptor';
 
 @NgModule({
   declarations: [
@@ -35,14 +35,31 @@ import { AuthService } from './Services/service/auth.service';
     ToastrModule.forRoot({timeOut:1000}),
     ReactiveFormsModule,
     BrowserAnimationsModule,
-     NgxSpinnerModule
+     NgxSpinnerModule,
     
+     TranslateModule.forRoot({
+      loader :{
+        provide :TranslateLoader,
+        useFactory:httpTranslateLoader,
+        deps:[HttpClient]
+
+      }
+    })
 
   ],
-  providers: [LevelService,AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
   
+  
+  
+  providers: [LevelService,AuthService,BusyService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+export function httpTranslateLoader(http:HttpClient){
+  return new TranslateHttpLoader(http);
+}

@@ -1,0 +1,55 @@
+.education-card{
+    background-color: #fff;
+    border-radius: 10px;
+    user-select: none;
+    box-shadow: 0 12px 23px 0 rgba(62,73,84,.04);
+}
+.education-card .col-8{
+    color: #1f3b64;
+}
+.btn-group .btn-transparent2{
+    all: unset;
+    cursor: pointer;
+}
+
+
+.py-15 { 
+    padding-top:  20px!important;
+    padding-bottom: 20px!important;
+} 
+
+@media (min-width: 992px){ 
+    .px-lg-25 { 
+      padding-right:  25px!important;
+      padding-left: 25px!important;
+    } 
+    .py-lg-30 { 
+        padding-top:  30px !important;
+        padding-bottom: 30px !important;
+    } 
+}   
+
+[type="button"],button { 
+    -webkit-appearance: button;
+} 
+
+
+.dropdown-content-edit{
+    display: none;
+    position: absolute;
+    height: 90px;
+    width: 80px;
+    background-color:#fff;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    transform: translate(-30px ,-30px);
+    box-shadow:  0 3px 15px 0 rgba(0,0,0,.16);
+}
+.dropdown-content-edit a{
+    padding: 10px 20px;
+    color: #343434;
+}
+.dropdown-content-edit a:hover{
+    color:  #43d477
+}

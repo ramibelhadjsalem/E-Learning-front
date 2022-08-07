@@ -6,6 +6,8 @@ import { SmsValidationComponent } from './components/sms-validation/sms-validati
 import { ReactiveFormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RouterModule } from '@angular/router';
+import { ModalComponent } from './modal/modal.component';
+import { NoResultComponent } from './components/no-result/no-result.component';
 
 
 
@@ -15,8 +17,10 @@ import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     ResetPasswordComponent,
-    SmsValidationComponent
-   
+    SmsValidationComponent,
+    ModalComponent,
+    NoResultComponent,
+ 
   ],
   imports: [
     CommonModule,
@@ -27,8 +31,10 @@ import { RouterModule } from '@angular/router';
   ],
   exports: [
     SmsValidationComponent,
-    ResetPasswordComponent
-    
+    ResetPasswordComponent,
+    ModalComponent,
+    NoResultComponent,
+ 
     
   ]
   

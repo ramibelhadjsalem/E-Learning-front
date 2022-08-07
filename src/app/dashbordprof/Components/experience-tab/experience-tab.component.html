@@ -1,0 +1,36 @@
+<section class="mt-30 snipcss-aXB82 snip-section">
+    <div class="d-flex justify-content-between align-items-center mb-10 snip-div">
+      <h2 class="section-title after-line snip-h2">
+        {{"Experiences"|translate}}
+      </h2>
+      <button id="userAddExperiences" type="button" class="btn btn-primary btn-sm snip-button" (click)="openModal()">
+        {{"Add experiences"|translate}}
+      </button>
+    </div>
+    <div *ngIf="experiences" id="userListExperiences" class="snip-div">
+      <app-experiencecard *ngFor="let item of  experiences " [education]="item"  (deleteRow)="deleteExperience($event)"></app-experiencecard>
+    </div>
+    <app-no-result *ngIf="experiences.length==0 || !experiences" ></app-no-result>
+  </section>
+
+  <modal #modal>
+    <div class="modeltitle mx-3  my-4 text-capitalize" >
+        {{"new experience"|translate}}
+    </div>
+    <div class="modalbody px-3 text-center">
+
+        <i class="bi bi-info-circle"></i>
+        <form [formGroup]="expForm" (submit)="expForm.valid &&addExperience()" class="w-100">
+            <label for="text">Describe your experience in a single line.</label>
+            <p >Example: Marketing manager at Microsoft 2012 - 2013</p>
+            <input formControlName="description" type="text" class="w-75">
+
+        </form>
+    </div>
+
+    <div class="btns mx-3 pt-3 d-flex justify-content-end">
+        <button [disabled]="!expForm.valid"  (click)="addExperience()" role="button" class="submit">{{"submit"|translate}}</button>
+        <a (click)="closeModal()" role="button" class="cancel">{{"cancel"|translate}}</a>
+    </div>
+  </modal>
+  

@@ -10,7 +10,10 @@ import { LevelService } from 'src/app/Services/service/level.service';
   styleUrls: ['./banner.component.css']
 })
 export class BannerComponent implements OnInit {
-  levels :level[] =[]; 
+
+
+  levels :level[] =[];
+
   constructor(public auth:AuthService,
     private levelservice:LevelService,
     ) { }

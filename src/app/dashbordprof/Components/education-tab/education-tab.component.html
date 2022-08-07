@@ -1,0 +1,35 @@
+<section class="mt-30 snipcss-LpUic snip-section">
+    <div class="d-flex justify-content-between align-items-center mb-10 snip-div">
+        <h2 class="section-title after-line snip-h2">{{"Education"|translate}}</h2>
+        <button id="userAddEducations" type="button" class="btn btn-primary btn-sm snip-button" (click)="openModal()">{{"Add education"|translate}}</button>
+    </div>
+
+    <div *ngIf="educations" id="userListEducations" class="snip-div">
+        <app-educationcart *ngFor="let item of  educations" [education]="item" (deleteRow)="deleteExperience($event)"></app-educationcart>
+    </div>
+    <app-no-result *ngIf="educations.length==0 || !educations" ></app-no-result>
+
+   
+
+</section>
+
+<modal #modal  >
+    <div class="modeltitle mx-3  my-4 text-capitalize" >
+        {{"new education"|translate}}
+    </div>
+    <div class="modalbody px-3 text-center">
+
+        <i class="bi bi-info-circle"></i>
+        <form [formGroup]="eduForm" (submit)="eduForm.valid &&addEducation()" class="w-100">
+            <label for="text">{{"Describe your education in a single line."|translate}}</label>
+            <p >Example: Marketing manager at Microsoft 2012 - 2013</p>
+            <input formControlName="description" type="text" class="w-75">
+
+        </form>
+    </div>
+
+    <div class="btns mx-3 pt-3 d-flex justify-content-end">
+        <button  role="button" [disabled]="!eduForm.valid" (click)="addEducation()"  class="submit">{{"submit"|translate}}</button>
+        <a (click)="closeModal()" role="button" class="cancel">{{"cancel"|translate}}</a>
+    </div>
+  </modal>

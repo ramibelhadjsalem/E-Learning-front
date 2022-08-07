@@ -1,0 +1,117 @@
+
+
+
+<div class="panel-content snipcss-913L2 snip-div">
+    <div class="webinar-progress d-flex align-items-center p-15 panel-shadow bg-white rounded-sm snip-div w-100">
+      <div class="progress-item d-flex align-items-center snip-div">
+        <a [routerLink]="['.']" [queryParams]='{tab: 0}' routerLinkActive="active"  [ngClass]="{'active': tabs == 0}" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" >
+          <img src="https://lms.rocket-soft.org/assets/default/img/icons/basic-info.svg" class="img-cover snip-img" alt="">
+        </a>
+        <div class="ml-10 snip-div" [ngClass]="{'d-lg-none': tabs != 0}">
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
+            Basic Information
+          </h4>
+        </div>
+      </div>
+      <div class="progress-item d-flex align-items-center snip-div">
+        <a [routerLink]="['.']" [queryParams]='{tab: 1}'  routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Images">
+          <img src="https://lms.rocket-soft.org/assets/default/img/icons/images.svg" class="img-cover snip-img" alt="">
+        </a>
+        <div  [ngClass]="{'d-lg-none': tabs !=1 }" class="ml-10 snip-div"  >
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
+            Images
+          </h4>
+        </div>
+      </div>
+      <div class="progress-item d-flex align-items-center snip-div">
+        <a [routerLink]="['.']" [queryParams]='{tab:2}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="About">
+          <img src="https://lms.rocket-soft.org/assets/default/img/icons/about.svg" class="img-cover snip-img" alt="">
+        </a>
+        <div  [ngClass]="{'d-lg-none': tabs !=2 }" class="ml-10 snip-div">
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
+            About
+          </h4>
+        </div>
+      </div>
+      <div class="progress-item d-flex align-items-center snip-div" aria-label="calendar"  aria-description="Game schedule for the Boston Red Sox 2021 Season">
+        <a  [routerLink]="['.']" [queryParams]='{tab: 3}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Education">
+          <img src="https://lms.rocket-soft.org/assets/default/img/icons/graduate.svg" class="img-cover snip-img" alt="">
+        </a>
+        <div  [ngClass]="{'d-lg-none': tabs !=3 }" class="ml-10 snip-div">
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
+            Education
+          </h4>
+        </div>
+      </div>
+     
+     
+      <div class="progress-item d-flex align-items-center snip-div">
+        <a  [routerLink]="['.']" [queryParams]='{tab: 4}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Identity &amp; Financial">
+          <img src="https://lms.rocket-soft.org/assets/default/img/icons/financial.svg" class="img-cover snip-img" alt="">
+        </a>
+        <div  [ngClass]="{'d-lg-none': tabs !=4 }" class="ml-10  snip-div">
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4 text-nowrap">
+            Identity &amp;Financial
+          </h4>
+        </div>
+      </div>
+      <div class="progress-item d-flex align-items-center snip-div">
+        <a  [routerLink]="['.']" [queryParams]='{tab: 5}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Zoom API">
+          <img src="https://lms.rocket-soft.org/assets/default/img/icons/zoom.svg" class="img-cover snip-img" alt="">
+        </a>
+        <div  [ngClass]="{'d-lg-none': tabs !=5 }" class="ml-10 snip-div">
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
+            Zoom API
+          </h4>
+        </div>
+      </div>
+      <div class="progress-item d-flex align-items-center snip-div">
+        <a [routerLink]="['.']" [queryParams]='{tab: 6}' routerLinkActive="active" class="progress-icon p-10 d-flex align-items-center justify-content-center rounded-circle snip-a" data-toggle="tooltip" data-placement="top" title="" data-original-title="Extra Information">
+          <img src="https://lms.rocket-soft.org/assets/default/img/icons/extra_info.svg" class="img-cover snip-img" alt="">
+        </a>
+        <div  [ngClass]="{'d-lg-none': tabs !=6 }" class="ml-10  snip-div">
+          <h4 class="font-16 text-secondary font-weight-bold snip-h4">
+            Extra Information
+          </h4>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-100" >
+      <app-info-tab *ngIf="tabs==0" [user]="user" ></app-info-tab>
+      <app-photos-tab *ngIf="tabs==1" [user]="user"></app-photos-tab>
+      <app-about-tab *ngIf="tabs==2"  [user]="user" ></app-about-tab>
+      <app-education-tab *ngIf="tabs==3"></app-education-tab>
+      <app-experience-tab *ngIf="tabs==3" ></app-experience-tab>
+      <app-identity-tab *ngIf="tabs==4" ></app-identity-tab>
+      <app-extra-info *ngIf="tabs==6" [user]="user"></app-extra-info>
+    </div>
+
+    <div class="create-webinar-footer d-flex align-items-center justify-content-between mt-20 pt-15 border-top snip-div">
+      <div class="d-flex align-items-center snip-div">
+        <div>
+        <a  [routerLink]="['.']" [queryParams]='{tab:next()}' class="btn btn-sm btn-primary mx-1  snip-a">
+          next
+        </a>
+      </div>
+        <a   [routerLink]="['.']" [queryParams]='{tab:prev()}' class="btn btn-sm btn-primary mx-1 snip-a">
+          Previous
+        </a>
+        <!-- <button type="button" (click)="prev()" class="btn btn-sm btn-primary ml-15 snip-button">
+          Previous
+        </button>
+        <button type="button" (click)="next()" class="btn btn-sm btn-primary ml-15 snip-button">
+          Next
+        </button> -->
+      </div>
+      <div class="d-flex align-items-center snip-div">
+        <button (click)="reset()" class="delete-action btn btn-sm btn-danger snip-a" data-confirm="Yes, I confirm!" data-title="After confirmation by the site admin, your account will be deleted and your information will not be restored.">
+          Reset information
+        </button>
+        <button type="button" id="saveData" class="btn btn-sm btn-primary ml-15 snip-button" (click)="saveUser()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+  

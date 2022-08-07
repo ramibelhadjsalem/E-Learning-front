@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ErrorRoutingModule } from './error-routing.module';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AccessDeniedComponent } from './access-denied/access-denied.component';
 
 
 @NgModule({
   declarations: [
-    NotfoundComponent
+    NotfoundComponent,
+    AccessDeniedComponent
   ],
   imports: [
     CommonModule,

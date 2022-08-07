@@ -26,11 +26,10 @@ export class InfosServiceService {
 
 
   loadEducationAndExperience(){
-
-   
-    
    return this.Http.get<ExpAndEdu>(this.baseurl+"experience/experienceandeduction");
   }
+
+
   AddEducation(model:any){
     return this.Http.post<EduExp>(this.baseurl+"education",model)
   }
@@ -43,6 +42,8 @@ export class InfosServiceService {
 
     return this.Http.get<EduExp[]>(this.baseurl+"education")
   }
+
+
   loadExperiences(){
     if(this.experiences.length > 0)  return of(this.experiences)
 
@@ -61,34 +62,32 @@ export class InfosServiceService {
     return this.Http.get<AppUser>(this.baseurl+"user").subscribe(res=>{
       if(res) this.currentUserSource.next(res)
     })
-                        // .pipe(
-                        //   map(res=>{
-                        //     if(res){
-                        //       this.currentUserSource.next(res)
-                        //     }
-                        //     return res
-                        //   })
-                        // )
+   
 
   }
   updateInfo(model:any){
 
-    this.UserInfo$.subscribe(res=>{
-      this.user = res
-    })
    
-    return this.Http.post<AppUser>(this.baseurl+"user",this.user).pipe(
-      map(res=>{
-        if(res){
-          this.currentUserSource.next(res)
-        } 
-        return res
-      })
-    )
-  }
+   
+    return this.Http.post<AppUser>("http://localhost:8080/api/user",model)
+                      .pipe(
+                        map(res=>{
+                          if(res){
+                            this.currentUserSource.next(res)
+                          } 
+                          return res
+                        })
+                      )
+                    }
 
   logout(){
     this.currentUserSource.unsubscribe();
+  }
+
+  
+
+  loadinfo(){
+    return this.Http.get<AppUser>(this.baseurl+"user")
   }
   
 }

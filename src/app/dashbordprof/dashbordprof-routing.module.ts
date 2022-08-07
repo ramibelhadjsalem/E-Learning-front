@@ -23,8 +23,8 @@ import { SettingsComponent } from './settings/settings.component';
 const routes: Routes = [
   {
     path: '',
-    runGuardsAndResolvers: 'always',
-    canActivate: [ProfGuard],
+    // runGuardsAndResolvers: 'always',
+    // canActivate: [ProfGuard],
     children: [
     
       {

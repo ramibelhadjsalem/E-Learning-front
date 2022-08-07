@@ -78,14 +78,13 @@
     </div>
 
     <div class="w-100" >
-      <app-info-tab *ngIf="tabs==0"  ></app-info-tab>
-      <app-photos-tab *ngIf="tabs==1" ></app-photos-tab>
-      <app-about-tab *ngIf="tabs==2"  [Model]="user" ></app-about-tab>
+      <app-info-tab *ngIf="tabs==0" [user]="user" ></app-info-tab>
+      <app-photos-tab *ngIf="tabs==1" [user]="user"></app-photos-tab>
+      <app-about-tab *ngIf="tabs==2"  [user]="user" ></app-about-tab>
       <app-education-tab *ngIf="tabs==3"></app-education-tab>
       <app-experience-tab *ngIf="tabs==3" ></app-experience-tab>
-      <!-- <app-skils-tab *ngIf="tabs==5"></app-skils-tab> -->
       <app-identity-tab *ngIf="tabs==4" ></app-identity-tab>
-      <app-extra-info *ngIf="tabs==6" ></app-extra-info>
+      <app-extra-info *ngIf="tabs==6" [user]="user"></app-extra-info>
     </div>
 
     <div class="create-webinar-footer d-flex align-items-center justify-content-between mt-20 pt-15 border-top snip-div">
@@ -106,9 +105,9 @@
         </button> -->
       </div>
       <div class="d-flex align-items-center snip-div">
-        <a href="/panel/setting/deleteAccount" class="delete-action btn btn-sm btn-danger snip-a" data-confirm="Yes, I confirm!" data-title="After confirmation by the site admin, your account will be deleted and your information will not be restored.">
-          Delete account
-        </a>
+        <button (click)="reset()" class="delete-action btn btn-sm btn-danger snip-a" data-confirm="Yes, I confirm!" data-title="After confirmation by the site admin, your account will be deleted and your information will not be restored.">
+          Reset information
+        </button>
         <button type="button" id="saveData" class="btn btn-sm btn-primary ml-15 snip-button" (click)="saveUser()">
           Save
         </button>

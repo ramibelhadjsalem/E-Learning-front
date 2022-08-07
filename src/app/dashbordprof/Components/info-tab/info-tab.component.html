@@ -1,4 +1,4 @@
-<div class="container-fluid w-100" *ngIf="(info.UserInfo$|async) as user">
+<div class="container-fluid w-100" *ngIf="user">
   <!-- <div class="form-group snip-div">
             <label class="input-label">
               Email
@@ -37,12 +37,6 @@
             </label> 
             <input type="password" name="password" value="" [(ngModel)]="user.password" class="form-control " placeholder="">
           </div>
-          <!-- <div class="form-group snip-div">
-            <label class="input-label">
-              Retype Password
-            </label>
-            <input type="password" name="password_confirmation" value="" class="form-control " placeholder="">
-          </div> -->
           <div class="form-group snip-div">
             <label class="input-label">
               Phone

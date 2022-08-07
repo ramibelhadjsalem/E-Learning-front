@@ -9,10 +9,9 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./info-tab.component.css'],
 })
 export class InfoTabComponent implements OnInit {
-  // @Input() Model!:AppUser
-
+  @Input() user !:AppUser
   infoForm !: FormGroup
-  constructor(private fb :FormBuilder,public info:InfosServiceService){ }
+  constructor(){ }
 
   ngOnInit(): void {
    

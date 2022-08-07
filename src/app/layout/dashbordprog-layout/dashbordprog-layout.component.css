@@ -757,9 +757,32 @@
   } 
   
   .collapse:not(.show) { 
+    
+     
       display: none;
   } 
-  
+  @keyframes lineInserted {
+    from {
+      height: 0;
+    }
+    to {
+      height: 200px; /* your line height here */
+    }
+  }
+  .collapse.show{
+    animation-duration: 1s;
+    animation-name: lineInserted;
+    transition: height 1s;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .collapse.show::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    
+}
+
   .mr-10 { 
       margin-right: 10px!important;
   } 
@@ -904,14 +927,7 @@
     transition: var(--tran-05);
 
 }
-@media screen and (max-width:992px) {
-    .home{
-        width: 100%;
-        left: 0;
-        padding-top: 50px;
-    }
-   
-}
+
 
 @media screen and  (max-width: 991px){
     .panel-sidebar.nav-show {
@@ -930,3 +946,11 @@
 
 
 
+@media screen and (max-width:992px) {
+    .home{
+        width: 100%;
+        left: 0;
+        padding-top: 50px;
+    }
+   
+}

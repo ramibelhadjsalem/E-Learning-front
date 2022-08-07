@@ -10,9 +10,10 @@
     <div *ngIf="experiences" id="userListExperiences" class="snip-div">
       <app-experiencecard *ngFor="let item of  experiences " [education]="item"  (deleteRow)="deleteExperience($event)"></app-experiencecard>
     </div>
+    <app-no-result *ngIf="experiences.length==0 || !experiences" ></app-no-result>
   </section>
 
-  <modal #modal  >
+  <modal #modal>
     <div class="modeltitle mx-3  my-4 text-capitalize" >
         {{"new experience"|translate}}
     </div>

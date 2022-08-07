@@ -7,6 +7,7 @@
     <div *ngIf="educations" id="userListEducations" class="snip-div">
         <app-educationcart *ngFor="let item of  educations" [education]="item" (deleteRow)="deleteExperience($event)"></app-educationcart>
     </div>
+    <app-no-result *ngIf="educations.length==0 || !educations" ></app-no-result>
 
    
 

@@ -7,6 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { RouterModule } from '@angular/router';
 import { ModalComponent } from './modal/modal.component';
+import { NoResultComponent } from './components/no-result/no-result.component';
 
 
 
@@ -18,6 +19,7 @@ import { ModalComponent } from './modal/modal.component';
     ResetPasswordComponent,
     SmsValidationComponent,
     ModalComponent,
+    NoResultComponent,
  
   ],
   imports: [
@@ -31,6 +33,7 @@ import { ModalComponent } from './modal/modal.component';
     SmsValidationComponent,
     ResetPasswordComponent,
     ModalComponent,
+    NoResultComponent,
  
     
   ]

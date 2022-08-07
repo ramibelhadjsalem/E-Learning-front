@@ -8,7 +8,7 @@ import { AppUser } from 'src/app/Services/Models/AppUser';
   styleUrls: ['./about-tab.component.css']
 })
 export class AboutTabComponent implements OnInit {
-  @Input() Model!:AppUser
+  @Input() user!:AppUser
   
   constructor(public info:InfosServiceService) { }
 

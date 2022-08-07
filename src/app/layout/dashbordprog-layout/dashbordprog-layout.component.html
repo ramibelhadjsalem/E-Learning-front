@@ -1,12 +1,12 @@
 <div class="container-fluid" >
     <div class="xs-panel-nav d-lg-none w-0 justify-content-between py-5 px-15 snipcss-cnRia snip-div">
-        <div class="user-info d-flex align-items-center justify-content-between snip-div">
+        <div class="user-info d-flex align-items-center justify-content-between snip-div" *ngIf="(info.UserInfo$|async) as user">
           <div class="user-avatar bg-gray200 snip-div">
-            <img src="https://lms.rocket-soft.org/store/1015/avatar/617a4f2fb8a6d.png" class="img-cover snip-img" alt="Robert Ransdell">
+            <img src="{{user.coverUrl ||'../../../assets/images/avatar.png' }}" class="img-cover snip-img" alt="Robert Ransdell">
           </div>
           <div class="user-name ml-15 snip-div">
-            <h3 class="font-16 font-weight-bold snip-h3" *ngIf="(info.UserInfo$|async) as user">
-              {{user.firstname}}
+            <h3 class="font-16 font-weight-bold snip-h3" >
+              {{user.firstname+" "+user.lastname}
             </h3>
           </div>
         </div>
@@ -23,13 +23,13 @@
         <button class="btn-transparent panel-sidebar-close sidebarNavToggle snip-button d-lg-none" (click)="showhidenav()">
           <i class="bi bi-x-lg text-black"></i>
         </button>
-        <div class="user-info d-flex align-items-center flex-row flex-lg-column justify-content-lg-center snip-div">
+        <div class="user-info d-flex align-items-center flex-row flex-lg-column justify-content-lg-center snip-div" *ngIf="(info.UserInfo$|async) as user">
           <a href="/panel" class="user-avatar bg-gray200 snip-a">
-            <img src="https://lms.rocket-soft.org/store/1015/avatar/617a4f2fb8a6d.png" class="img-cover snip-img" alt="Robert Ransdell">
+            <img src="{{user.photoUrl ||'../../../assets/images/avatar.png' }}" class="img-cover snip-img" alt="Robert Ransdell">
           </a>
           <div class="d-flex flex-column align-items-center justify-content-center snip-div">
             <a href="/panel" class="user-name mt-15 snip-a">
-              <h3 class="font-16 font-weight-bold snip-h3" *ngIf="(info.UserInfo$|async) as user">
+              <h3 class="font-16 font-weight-bold snip-h3" >
                 {{user.firstname+" "+user.lastname}}
               </h3>
             </a>
@@ -331,7 +331,7 @@
                               Results
                             </a>
                           </li>
-                          <!-- <li class="mt-5 snip-li">
+                           <li class="mt-5 snip-li">
                             <a href="/panel/quizzes/my-results" class="snip-a">
                               My results
                             </a>
@@ -340,7 +340,7 @@
                             <a href="/panel/quizzes/opens" class="snip-a">
                               Not Participated
                             </a>
-                          </li> -->
+                          </li>
                         </ul>
                       </div>
                     </li>
@@ -971,9 +971,12 @@
                       </a>
                     </li>
                     <li class="sidenav-item snip-li">
-                      <a (click)="showhidedrop($event)" class="d-flex align-items-center snip-a" data-toggle="collapse"  role="button" aria-expanded="true" aria-controls="webinarCollapse">
+                      <a (click)="showhidedrop($event)" routerLinkActive="sidenav-item-active" class="d-flex align-items-center snip-a" data-toggle="collapse"  role="button" aria-expanded="true" aria-controls="webinarCollapse">
                         <span class="sidenav-item-icon mr-10">
-                         
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-translate" viewBox="0 0 16 16">
+                            <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z"/>
+                            <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z"/>
+                          </svg>
                         </span>
                         <span class="font-14 text-dark-blue font-weight-500">
                           {{"Languages"|translate}}
@@ -986,7 +989,7 @@
                               {{item}}
                             </a>
                           </li>
-                          <!-- <li class="mt-5 snip-li">
+                           <li class="mt-5 snip-li">
                             <a  (click)="changelang($event)" role="button" class="snip-a">
                               anglais
                             </a>
@@ -994,8 +997,8 @@
                           <li class="mt-5 snip-li">
                             <a  (click)="changelang($event)" role="button" class="snip-a">
                               arabe
-                            </a> -->
-                          <!-- </li> -->
+                            </a> 
+                           </li> 
                          
                         </ul>
                       </div>

@@ -2,11 +2,11 @@
     <div class="xs-panel-nav d-lg-none w-0 justify-content-between py-5 px-15 snipcss-cnRia snip-div">
         <div class="user-info d-flex align-items-center justify-content-between snip-div" *ngIf="(info.UserInfo$|async) as user">
           <div class="user-avatar bg-gray200 snip-div">
-            <img src="{{user.coverUrl ||'../../../assets/images/avatar.png' }}" class="img-cover snip-img" alt="Robert Ransdell">
+            <img src="{{user.photoUrl ||'../../../assets/images/avatar.png' }}" class="img-cover snip-img" alt="Robert Ransdell">
           </div>
           <div class="user-name ml-15 snip-div">
             <h3 class="font-16 font-weight-bold snip-h3" >
-              {{user.firstname+" "+user.lastname}
+              {{user.firstname+" "+user.lastname}}
             </h3>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { refreshTokenModel } from './../Models/refreshToken';
 import { environment } from '../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -15,8 +16,9 @@ import { InfosServiceService } from './infos-service.service';
 export class AuthService {
   private currentUserSource = new ReplaySubject<loggedin |null>(1);
   currentUser$ = this.currentUserSource.asObservable();
-  apiUrl = "http://localhost:8080/api/"
-  // apiUrl=environment.apiurl
+
+  apiUrl=environment.apiurl
+  refreshTokenmodel !:refreshTokenModel
   constructor(private http:HttpClient,private route:Router,private info:InfosServiceService) { }
 
   login(model:any){
@@ -64,5 +66,15 @@ export class AuthService {
       default:
         this.route.navigateByUrl("/home");
     }
+  }
+
+  refreshToken(){
+   
+    this.currentUser$.subscribe(res=>{
+      if(res) this.refreshTokenmodel.refreshToken = res?.refreshToken
+    })
+    this.http.post(this.apiUrl+"auth/refreshtoken", this.refreshToken).subscribe(res=>{
+
+    })
   }
 }

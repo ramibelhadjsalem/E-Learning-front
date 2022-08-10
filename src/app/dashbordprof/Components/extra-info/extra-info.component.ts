@@ -14,7 +14,7 @@ export class ExtraInfoComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+   
   }
 
  

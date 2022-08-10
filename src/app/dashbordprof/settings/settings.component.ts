@@ -59,6 +59,7 @@ export class SettingsComponent implements OnInit, OnDestroy {
       this.tabs=6
     }
     return this.tabs
+    
   }
 
  

@@ -45,6 +45,7 @@ import { JwtInterceptor } from './Services/interceptors/jwt.interceptor';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     NgxSpinnerModule,
+   
     TranslateModule.forRoot({
       loader :{
         provide :TranslateLoader,

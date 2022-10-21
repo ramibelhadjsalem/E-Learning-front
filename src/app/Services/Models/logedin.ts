@@ -6,5 +6,5 @@ export interface loggedin{
     email:string,
     roles:string[],
     accessToken:string,
-    refreshToken:string
+    refresh_Token:string
 }

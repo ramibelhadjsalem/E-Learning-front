@@ -68,13 +68,13 @@ export class AuthService {
     }
   }
 
-  refreshToken(){
+  // refreshToken(){
    
-    this.currentUser$.subscribe(res=>{
-      if(res) this.refreshTokenmodel.refreshToken = res?.refreshToken
-    })
-    this.http.post(this.apiUrl+"auth/refreshtoken", this.refreshToken).subscribe(res=>{
+  //   this.currentUser$.subscribe(res=>{
+  //     if(res) this.refreshTokenmodel.refreshToken = res?.refreshToken
+  //   })
+  //   this.http.post(this.apiUrl+"auth/refreshtoken", this.refreshToken).subscribe(res=>{
 
-    })
-  }
+  //   })
+  // }
 }

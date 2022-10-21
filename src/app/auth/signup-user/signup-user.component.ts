@@ -7,8 +7,8 @@ declare var window: any;
 import { level } from '../../Services/Models/modelLevel';
 
 import { LevelService } from '../../Services/service/level.service';
-import { AuthService } from 'src/app/Services/service/auth.service';
-import { Section } from 'src/app/services/Models/Section';
+import { AuthService } from '../../Services/service/auth.service';
+import { Section } from '../../Services/Models/Section';
 
 @Component({
   selector: 'app-signup-user',

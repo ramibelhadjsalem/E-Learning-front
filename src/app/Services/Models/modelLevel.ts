@@ -1,4 +1,4 @@
-import { Section } from 'src/app/services/Models/Section';
+import { Section } from "./Section"
 import { Subject } from "./Subject"
 
 export interface level{

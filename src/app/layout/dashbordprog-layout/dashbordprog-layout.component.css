@@ -46,13 +46,13 @@
       overflow-y: scroll;
   } 
   
-  :host() { 
+  /* :host() { 
       --panel-bg:  #fbfbfd; 
       --primary:  #43d477; 
       --secondary:  #1f3b64; 
       --font-family-base:  "main-font-family"; 
   
-  } 
+  }  */
   
   @media (min-width: 992px){ 
     .d-lg-none { 

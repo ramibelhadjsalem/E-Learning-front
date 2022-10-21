@@ -3,12 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Section } from 'src/app/services/Models/Section';
 declare var window: any;
 import { level } from '../../Services/Models/modelLevel';
 
 import { LevelService } from '../../Services/service/level.service';
 import { AuthService } from 'src/app/Services/service/auth.service';
+import { Section } from 'src/app/services/Models/Section';
 
 @Component({
   selector: 'app-signup-user',
